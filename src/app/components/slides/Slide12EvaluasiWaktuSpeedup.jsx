@@ -1,12 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Zap, Clock, Calculator } from "lucide-react";
+import { Gauge, Clock, Zap, CheckCircle2 } from "lucide-react";
 
 const container = {
   hidden: {},
   visible: {
-    transition: { staggerChildren: 0.16, delayChildren: 0.05 },
+    transition: { staggerChildren: 0.14, delayChildren: 0.05 },
   },
 };
 
@@ -23,67 +23,79 @@ const item = {
 export default function Slide12EvaluasiWaktuSpeedup() {
   return (
     <motion.div
-      className="flex flex-col h-full"
+      className="flex flex-col h-full overflow-hidden"
       variants={container}
       initial="hidden"
       animate="visible"
     >
       <motion.div variants={item}>
         <div className="slide-heading-accent" />
-        <h2 className="slide-title">Evaluasi Performa Waktu & Speedup Ratio</h2>
-        <p className="slide-subtitle mt-1">
-          Pemangkasan inefisiensi pendaftaran mahasiswa baru melalui otomatisasi
+        <h2 className="slide-title">Evaluasi Efisiensi Waktu &amp; Speedup Ratio</h2>
+        <p className="slide-subtitle mt-0.5">
+          Perbandingan kuantitatif durasi pengisian formulir manual vs sistem OCR Autofill
         </p>
       </motion.div>
 
-      <div className="flex-1 flex flex-col justify-center gap-5 mt-3">
-        <div className="grid grid-cols-12 gap-5 items-stretch">
-          {/* Glowing Metric Highlight Card */}
-          <motion.div variants={item} className="col-span-5 content-card-gold flex flex-col justify-center items-center text-center p-6">
-            <div className="w-14 h-14 rounded-full flex items-center justify-center text-emerald-400 mb-3" style={{ background: "rgba(52, 211, 153, 0.1)", border: "1px solid rgba(52, 211, 153, 0.25)" }}>
-              <Zap size={28} />
+      <div className="flex-1 grid grid-cols-12 gap-4 mt-2 items-stretch min-h-0 overflow-hidden">
+        {/* Left Column: Metrics & Formula */}
+        <div className="col-span-6 flex flex-col justify-between gap-2.5">
+          {/* Main Speedup Callout */}
+          <motion.div variants={item} className="content-card-gold p-3.5 flex items-center justify-between">
+            <div>
+              <span className="text-[0.68rem] text-gold-400 font-bold uppercase tracking-wider block">Efisiensi Kecepatan Pendaftaran</span>
+              <p className="text-2xl font-black text-cream-100 font-mono mt-0.5">3.66× Lebih Cepat</p>
             </div>
-            <p className="text-xs uppercase tracking-widest text-cream-300 font-semibold mb-1">Speedup Ratio</p>
-            <h3 className="text-5xl font-black text-emerald-400 my-2 font-mono" style={{ textShadow: "0 0 30px rgba(52, 211, 153, 0.4)" }}>
-              3.66x
-            </h3>
-            <p className="text-sm font-semibold text-cream-100 mt-1">Lebih Cepat Dibanding Manual</p>
+            <div className="w-12 h-12 rounded-full bg-gold-400/20 border border-gold-400/40 flex items-center justify-center text-gold-300">
+              <Zap size={24} />
+            </div>
           </motion.div>
 
-          {/* Math Formula Block & Empirical Simulation Details */}
-          <div className="col-span-7 flex flex-col justify-between gap-3">
-            {/* Math Formula Card */}
-            <motion.div variants={item} className="content-card p-4">
-              <div className="flex items-center gap-2 mb-2 text-gold-400 text-xs font-bold uppercase tracking-wider">
-                <Calculator size={16} />
-                <span>Formulasi Komparasi Efisiensi Waktu (Persamaan 2.16)</span>
-              </div>
-              <div className="rounded-lg p-3 text-center font-mono text-sm font-bold text-cream-100" style={{ background: "rgba(0,0,0,0.4)", border: "1px solid rgba(255,255,255,0.08)" }}>
-                {"Speedup Ratio = T_manual / T_autofill = 120s / 32.77s = 3.66x"}
-              </div>
-            </motion.div>
+          {/* Time Duration Cards */}
+          <motion.div variants={item} className="grid grid-cols-2 gap-2.5">
+            <div className="p-3 rounded-xl bg-red-500/10 border border-red-500/20">
+              <span className="text-[0.68rem] text-red-400 uppercase font-bold block">Input Manual</span>
+              <span className="text-xl font-mono font-bold text-cream-100">120.00 Detik</span>
+              <p className="text-[0.68rem] text-cream-300 mt-0.5">Rata-rata ngetik manual 2 menit</p>
+            </div>
+            <div className="p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/20">
+              <span className="text-[0.68rem] text-emerald-400 uppercase font-bold block">Autofill OCR</span>
+              <span className="text-xl font-mono font-bold text-cream-100">32.77 Detik</span>
+              <p className="text-[0.68rem] text-cream-300 mt-0.5">Ekstraksi otomatis Tesseract</p>
+            </div>
+          </motion.div>
 
-            {/* Empirical Simulation Breakdown */}
-            <motion.div variants={item} className="content-card p-4">
-              <div className="flex items-center gap-2 mb-2 text-cream-300 text-xs font-semibold">
-                <Clock size={16} className="text-amber-400" />
-                <span>Hasil Pengukuran Durasi Rata-rata</span>
-              </div>
-              <div className="grid grid-cols-2 gap-3 text-xs">
-                <div className="p-2.5 rounded bg-red-500/10 border border-red-500/20">
-                  <span className="text-[0.7rem] text-red-400 uppercase font-bold block">Input Manual (T_manual)</span>
-                  <span className="text-base font-mono font-bold text-cream-100">120.00 Detik</span>
-                  <p className="text-[0.7rem] text-cream-300 mt-0.5">Pengetikan manual formulir oleh calon mahasiswa</p>
-                </div>
-                <div className="p-2.5 rounded bg-emerald-500/10 border border-emerald-500/20">
-                  <span className="text-[0.7rem] text-emerald-400 uppercase font-bold block">Autofill OCR (T_autofill)</span>
-                  <span className="text-base font-mono font-bold text-cream-100">32.77 Detik</span>
-                  <p className="text-[0.7rem] text-cream-300 mt-0.5">Ekstraksi otomatis Tesseract + API latency</p>
-                </div>
-              </div>
-            </motion.div>
-          </div>
+          {/* Speedup Formula Box */}
+          <motion.div variants={item} className="content-card p-3 font-mono text-xs">
+            <span className="text-[0.68rem] text-gold-400 uppercase font-bold block mb-1">Rumus Speedup Ratio</span>
+            <div className="p-2 rounded bg-black/40 text-cream-100 text-center font-bold">
+              Speedup = T_manual / T_autofill = 120.00 / 32.77 = 3.66×
+            </div>
+          </motion.div>
         </div>
+
+        {/* Right Column: Speedup Image Asset (Auto-supports .jpeg, .png, .jpg) */}
+        <motion.div variants={item} className="col-span-6 flex items-center">
+          <div className="image-placeholder w-full h-full min-h-[270px] rounded-xl flex items-center justify-center p-3">
+            <img
+              src="/assets/tabel-speedup.jpeg"
+              alt="Tabel Speedup Ratio"
+              className="w-full h-full object-contain"
+              onError={(e) => {
+                if (!e.target.dataset.triedPng) {
+                  e.target.dataset.triedPng = "true";
+                  e.target.src = "/assets/tabel-speedup.png";
+                } else if (!e.target.dataset.triedJpg) {
+                  e.target.dataset.triedJpg = "true";
+                  e.target.src = "/assets/tabel-speedup.jpg";
+                } else {
+                  e.target.style.display = "none";
+                  e.target.parentElement.innerHTML =
+                    '<span style="color:#ddd6c8;font-size:0.75rem">tabel-speedup</span>';
+                }
+              }}
+            />
+          </div>
+        </motion.div>
       </div>
     </motion.div>
   );
