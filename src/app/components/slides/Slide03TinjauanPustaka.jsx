@@ -1,12 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { BookOpen, Sparkles } from "lucide-react";
+import { Sparkles } from "lucide-react";
 
 const container = {
   hidden: {},
   visible: {
-    transition: { staggerChildren: 0.12, delayChildren: 0.05 },
+    transition: { staggerChildren: 0.1, delayChildren: 0.05 },
   },
 };
 
@@ -47,6 +47,14 @@ const papers = [
   },
   {
     no: "4",
+    author: "Sherin et al. (2024)",
+    objek: "Dokumen Ujian",
+    teknologi: "OCR",
+    hasil: "Efektif otomatisasi input",
+    beda: "Konteks administrasi umum, bukan PMB",
+  },
+  {
+    no: "5",
     author: "Azzahra & Nugroho (2025)",
     objek: "Surat Digital",
     teknologi: "Tesseract, Laravel",
@@ -66,35 +74,35 @@ export default function Slide03TinjauanPustaka() {
       <motion.div variants={item}>
         <div className="slide-heading-accent" />
         <h2 className="slide-title">Tinjauan Pustaka & Positionality Penelitian</h2>
-        <p className="slide-subtitle mt-1">
+        <p className="slide-subtitle mt-0.5">
           Matriks perbandingan penelitian terkait dan kebaruan (novelty) yang diusulkan
         </p>
       </motion.div>
 
-      <div className="flex-1 flex flex-col justify-between mt-3">
-        {/* Table Matrix */}
+      <div className="flex-1 flex flex-col justify-between mt-2.5">
+        {/* Table Matrix - Exactly 5 Rows */}
         <motion.div variants={item} className="content-card p-0 overflow-hidden">
           <div className="overflow-x-auto">
             <table className="w-full text-left text-xs border-collapse">
               <thead>
                 <tr className="bg-white/5 text-gold-400 border-b border-white/10 uppercase tracking-wider font-semibold">
-                  <th className="py-2.5 px-3">No</th>
-                  <th className="py-2.5 px-3">Peneliti & Tahun</th>
-                  <th className="py-2.5 px-3">Objek</th>
-                  <th className="py-2.5 px-3">Teknologi</th>
-                  <th className="py-2.5 px-3">Hasil Utama</th>
-                  <th className="py-2.5 px-3">Perbedaan / Celah Penelitian</th>
+                  <th className="py-2 px-3">No</th>
+                  <th className="py-2 px-3">Peneliti & Tahun</th>
+                  <th className="py-2 px-3">Objek</th>
+                  <th className="py-2 px-3">Teknologi</th>
+                  <th className="py-2 px-3">Hasil Utama</th>
+                  <th className="py-2 px-3">Perbedaan / Celah Penelitian</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-white/5 text-cream-200">
                 {papers.map((p, i) => (
                   <tr key={i} className="hover:bg-white/5 transition-colors">
-                    <td className="py-2 px-3 font-mono text-gold-300 font-bold">{p.no}</td>
-                    <td className="py-2 px-3 font-semibold text-cream-100">{p.author}</td>
-                    <td className="py-2 px-3">{p.objek}</td>
-                    <td className="py-2 px-3 font-mono text-[0.7rem] text-cyan-300">{p.teknologi}</td>
-                    <td className="py-2 px-3 font-bold text-amber-300">{p.hasil}</td>
-                    <td className="py-2 px-3 text-cream-300 text-[0.72rem]">{p.beda}</td>
+                    <td className="py-1.5 px-3 font-mono text-gold-300 font-bold">{p.no}</td>
+                    <td className="py-1.5 px-3 font-semibold text-cream-100">{p.author}</td>
+                    <td className="py-1.5 px-3">{p.objek}</td>
+                    <td className="py-1.5 px-3 font-mono text-[0.68rem] text-cyan-300">{p.teknologi}</td>
+                    <td className="py-1.5 px-3 font-bold text-amber-300">{p.hasil}</td>
+                    <td className="py-1.5 px-3 text-cream-300 text-[0.7rem]">{p.beda}</td>
                   </tr>
                 ))}
               </tbody>
@@ -103,9 +111,9 @@ export default function Slide03TinjauanPustaka() {
         </motion.div>
 
         {/* Highlight Novelty Banner */}
-        <motion.div variants={item} className="content-card-gold p-4 mt-3">
-          <div className="flex items-center gap-2 mb-1.5 text-gold-400">
-            <Sparkles size={18} />
+        <motion.div variants={item} className="content-card-gold p-3 mt-2">
+          <div className="flex items-center gap-2 mb-1 text-gold-400">
+            <Sparkles size={16} />
             <h3 className="text-xs font-bold uppercase tracking-wider">Kebaruan Penelitian Ini (Aegner Billik, 2026)</h3>
           </div>
           <p className="text-cream-200 text-xs leading-relaxed">

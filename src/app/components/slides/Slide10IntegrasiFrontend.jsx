@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Server, Layout, ArrowRight, Code } from "lucide-react";
+import { Server } from "lucide-react";
 
 const container = {
   hidden: {},
@@ -59,7 +59,7 @@ export default function Slide10IntegrasiFrontend() {
               </div>
             </motion.div>
 
-            {/* JSON Response Sample */}
+            {/* JSON Response Sample Payload */}
             <motion.div variants={item} className="content-card p-3 font-mono text-[0.65rem] bg-[#060b13]">
               <div className="text-gold-400 font-bold mb-1 border-b border-white/10 pb-0.5">JSON Payload Response (200 OK)</div>
               <pre className="text-emerald-400 overflow-x-auto">
@@ -78,12 +78,12 @@ export default function Slide10IntegrasiFrontend() {
             </motion.div>
           </div>
 
-          {/* Right Column: Frontend Autofill Simulation Image */}
+          {/* Right Column: Frontend Autofill Simulation Image Asset */}
           <motion.div variants={item} className="col-span-7 flex items-center">
             <div className="image-placeholder w-full h-full min-h-[270px] rounded-xl flex items-center justify-center p-3">
               <img
                 src="/assets/simulasi-frontend.png"
-                alt="Simulasi Keberhasilan Autofill pada Frontend PMB"
+                alt="Simulasi Frontend"
                 className="w-full h-full object-contain"
                 onError={(e) => {
                   e.target.style.display = "none";

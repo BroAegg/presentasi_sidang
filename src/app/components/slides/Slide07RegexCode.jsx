@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Code2, ShieldAlert, Layers } from "lucide-react";
 
 const container = {
   hidden: {},
@@ -40,7 +39,7 @@ export default function Slide07RegexCode() {
         <div className="grid grid-cols-12 gap-5 w-full items-stretch">
           {/* Left Column: Fallback Logic Breakdown */}
           <div className="col-span-5 flex flex-col justify-between gap-3">
-            <motion.div variants={item} className="space-y-2">
+            <motion.div variants={item} className="space-y-2.5">
               <div className="p-3 rounded-lg bg-emerald-500/10 border border-emerald-500/20">
                 <span className="text-[0.7rem] font-bold text-emerald-400 uppercase tracking-wider block mb-0.5">Lapis 1: Label Keyword</span>
                 <p className="text-cream-200 text-[0.72rem]">Cari label &quot;NIK&quot; lalu ekstrak 16 digit setelahnya.</p>
@@ -65,41 +64,19 @@ export default function Slide07RegexCode() {
             </motion.div>
           </div>
 
-          {/* Right Column: Live Python Regex Code */}
-          <motion.div variants={item} className="col-span-7 content-card p-4 font-mono text-[0.68rem] leading-relaxed flex flex-col justify-between" style={{ background: "#060b13" }}>
-            <div>
-              <div className="flex items-center justify-between mb-2 pb-1 border-b border-white/10 text-gold-400">
-                <div className="flex items-center gap-2">
-                  <Code2 size={14} />
-                  <span className="font-semibold text-xs text-cream-200">_extract_nik(text) — Python Regex</span>
-                </div>
-                <span className="text-[0.65rem] text-cream-300">Multi-Layered Fallback</span>
-              </div>
-
-              <pre className="text-cream-200 overflow-x-auto">
-{`def _extract_nik(text):
-    # Layer 1: Search by NIK Label Header
-    m = re.search(r"NIK\\s*[:\\-]?\\s*(\\d[\\d\\s]{14,19}\\d)", text, re.IGNORECASE)
-    if m:
-        clean = re.sub(r"\\s", "", m.group(1))
-        if len(clean) >= 16: return clean[:16]
-        
-    # Layer 2: Fallback — Absolute 16-Digit Match
-    found = re.findall(r"\\b(\\d{16})\\b", text)
-    if found: return found[0]
-    
-    # Layer 3: Fallback — Relaxed Spaced Match
-    relaxed = re.findall(r"(\\d[\\d\\s]{14,19}\\d)", text)
-    for match in relaxed:
-        clean = re.sub(r"\\s", "", match)
-        if len(clean) >= 16: return clean[:16]
-        
-    return "Tidak Terbaca"`}
-              </pre>
-            </div>
-
-            <div className="mt-2 pt-2 border-t border-white/10 text-[0.68rem] text-gold-300">
-              🛡️ Algoritma tidak pernah <span className="font-bold text-red-400">fail-fast</span> jika label header KTP pudar/terpotong.
+          {/* Right Column: Regex Code Image Asset */}
+          <motion.div variants={item} className="col-span-7 flex items-center">
+            <div className="image-placeholder w-full h-full min-h-[270px] rounded-xl flex items-center justify-center p-3">
+              <img
+                src="/assets/code-regex.png"
+                alt="Regex Code"
+                className="w-full h-full object-contain"
+                onError={(e) => {
+                  e.target.style.display = "none";
+                  e.target.parentElement.innerHTML =
+                    '<span style="color:#ddd6c8;font-size:0.75rem">code-regex.png</span>';
+                }}
+              />
             </div>
           </motion.div>
         </div>

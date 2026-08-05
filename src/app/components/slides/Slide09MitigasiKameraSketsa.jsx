@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Undo2, Camera, ShieldCheck, ArrowRight } from "lucide-react";
+import { Undo2, Camera, ShieldCheck } from "lucide-react";
 
 const container = {
   hidden: {},
@@ -83,12 +83,12 @@ export default function Slide09MitigasiKameraSketsa() {
             </motion.div>
           </div>
 
-          {/* Right Column: Guideline Overlay Camera Image */}
+          {/* Right Column: MUST use ui-kamera.png Image Asset */}
           <motion.div variants={item} className="col-span-6 flex items-center">
             <div className="image-placeholder w-full h-full min-h-[270px] rounded-xl flex items-center justify-center p-3">
               <img
                 src="/assets/ui-kamera.png"
-                alt="UI Constraint Kamera Sketsa (Guideline Overlay)"
+                alt="Kamera Sketsa UI"
                 className="w-full h-full object-contain"
                 onError={(e) => {
                   e.target.style.display = "none";

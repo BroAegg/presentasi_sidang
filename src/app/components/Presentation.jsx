@@ -17,6 +17,7 @@ import Slide07RegexCode from "./slides/Slide07RegexCode";
 import Slide08EvaluasiPeladen from "./slides/Slide08EvaluasiPeladen";
 import Slide09MitigasiKameraSketsa from "./slides/Slide09MitigasiKameraSketsa";
 import Slide10IntegrasiFrontend from "./slides/Slide10IntegrasiFrontend";
+import Slide11LiveDemo from "./slides/Slide11LiveDemo";
 import Slide11GrafikCERFinal from "./slides/Slide11GrafikCERFinal";
 import Slide12EvaluasiWaktuSpeedup from "./slides/Slide12EvaluasiWaktuSpeedup";
 import Slide13KesimpulanSaran from "./slides/Slide13KesimpulanSaran";
@@ -33,6 +34,7 @@ const allSlideComponents = [
   Slide08EvaluasiPeladen,
   Slide09MitigasiKameraSketsa,
   Slide10IntegrasiFrontend,
+  Slide11LiveDemo,
   Slide11GrafikCERFinal,
   Slide12EvaluasiWaktuSpeedup,
   Slide13KesimpulanSaran,
@@ -199,7 +201,7 @@ export default function Presentation() {
         </button>
       </motion.div>
 
-      {/* Hidden Print Wrapper: Renders all 14 slides for window.print() PDF Export */}
+      {/* Hidden Print Wrapper: Renders all 15 slides for window.print() PDF Export */}
       <div className="hidden print:block print-wrapper">
         {allSlideComponents.map((SlideComp, idx) => (
           <div key={idx} className="print-slide-page">

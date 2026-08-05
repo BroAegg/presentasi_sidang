@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { AlertCircle, BarChart2, Terminal } from "lucide-react";
+import { AlertCircle } from "lucide-react";
 
 const container = {
   hidden: {},
@@ -79,17 +79,17 @@ export default function Slide08EvaluasiPeladen() {
             </motion.div>
           </div>
 
-          {/* Right Column: Terminal Output Image */}
+          {/* Right Column: MUST use terminal-colab.png Image Asset */}
           <motion.div variants={item} className="col-span-6 flex items-center">
             <div className="image-placeholder w-full h-full min-h-[270px] rounded-xl flex items-center justify-center p-3">
               <img
-                src="/assets/batch-terminal.png"
-                alt="Eksekusi Terminal Batch 50 Dataset"
+                src="/assets/terminal-colab.png"
+                alt="Colab Terminal CER"
                 className="w-full h-full object-contain"
                 onError={(e) => {
                   e.target.style.display = "none";
                   e.target.parentElement.innerHTML =
-                    '<span style="color:#ddd6c8;font-size:0.75rem">batch-terminal.png</span>';
+                    '<span style="color:#ddd6c8;font-size:0.75rem">terminal-colab.png</span>';
                 }}
               />
             </div>

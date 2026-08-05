@@ -11,6 +11,7 @@ import Slide07RegexCode from "./slides/Slide07RegexCode";
 import Slide08EvaluasiPeladen from "./slides/Slide08EvaluasiPeladen";
 import Slide09MitigasiKameraSketsa from "./slides/Slide09MitigasiKameraSketsa";
 import Slide10IntegrasiFrontend from "./slides/Slide10IntegrasiFrontend";
+import Slide11LiveDemo from "./slides/Slide11LiveDemo";
 import Slide11GrafikCERFinal from "./slides/Slide11GrafikCERFinal";
 import Slide12EvaluasiWaktuSpeedup from "./slides/Slide12EvaluasiWaktuSpeedup";
 import Slide13KesimpulanSaran from "./slides/Slide13KesimpulanSaran";
@@ -27,6 +28,7 @@ const slides = [
   Slide08EvaluasiPeladen,
   Slide09MitigasiKameraSketsa,
   Slide10IntegrasiFrontend,
+  Slide11LiveDemo,
   Slide11GrafikCERFinal,
   Slide12EvaluasiWaktuSpeedup,
   Slide13KesimpulanSaran,
