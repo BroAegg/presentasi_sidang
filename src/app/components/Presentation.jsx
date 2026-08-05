@@ -6,7 +6,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import SlideRenderer from "./SlideRenderer";
 import Footer from "./Footer";
 
-const TOTAL_SLIDES = 11;
+const TOTAL_SLIDES = 14;
 
 export default function Presentation() {
   const [currentSlide, setCurrentSlide] = useState(0);

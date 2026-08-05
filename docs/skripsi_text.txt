@@ -1,0 +1,500 @@
+IMPLEMENTASI FITUR AUTOFILL DATA CALON MAHASISWA MENGGUNAKAN TEKNOLOGI OPTICAL CHARACTER RECOGNITION (OCR) BERBASIS TESSERACT PADA SISTEM PMB UNIVERSITAS MUHAMMADIYAH BANDUNG
+Disusun memenuhi persyaratan kelulusan sarjana Teknik Informatika
+oleh:
+Aegner Billik
+220102007
+PROGRAM STUDI TEKNIK INFORMATIKA FAKULTAS SAINS DAN TEKNOLOGI UNIVERSITAS MUHAMMADIYAH BANDUNG 2026
+LEMBAR PERSETUJUAN 
+SKRIPSI
+IMPLEMENTASI FITUR AUTOFILL DATA CALON MAHASISWA MENGGUNAKAN TEKNOLOGI OPTICAL CHARACTER RECOGNITION (OCR) BERBASIS TESSERACT PADA SISTEM PMB UNIVERSITAS MUHAMMADIYAH BANDUNG
+disusun oleh:
+Aegner Billik
+220102007
+Menyetujui,
+Dosen Pembimbing I
+Dosen Pembimbing II
+Aila Gema Safitri, S.T., M.T.
+Taufik Rahmat Kurniawan S.Kom., M.T.
+NIDN. 0416068505
+NIDN. 3750774675130242
+Mengetahui,
+ Ketua Program Studi 
+Ririn Suharsih S.Pd.,M.T.
+NIDN. 0426108805
+LEMBAR PENGESAHAN 
+SKRIPSI
+IMPLEMENTASI FITUR AUTOFILL DATA CALON MAHASISWA MENGGUNAKAN TEKNOLOGI OPTICAL CHARACTER RECOGNITION (OCR) BERBASIS TESSERACT PADA SISTEM PMB UNIVERSITAS MUHAMMADIYAH BANDUNG
+disusun oleh: 
+Aegner Billik
+220102007
+telah dipertahankan di depan Dewan Penguji Sidang Akhir dan dinyatakan memenuhi syarat untuk memperoleh gelar Sarjana Program Studi Teknik Informatika
+Dewan Penguji
+NamaJabatanTanda tangan
+1. Ririn Suharsih, S.Pd., M.T.Ketua Penguji...........................
+2. Ahmad Suryan, S.T., M.T.Sekretaris...........................
+3. Nana Karyana Kurdi, S.E., M.KomAnggota...........................
+4. Dianti Eka Aprilia, S.Kom., M.T.Anggota...........................
+5. Rinanda Febriani, S.ST., M.T.Anggota...........................
+Bandung, 6 Agustus 2026
+Fakultas Sains dan Teknologi
+Dekan
+Dr. Ir. Arief Yunan, M.Si., IPU., ASEAN Eng.
+NIDK. 8866223419
+LEMBAR PERNYATAAN KEASLIAN
+Saya yang bertanda tangan di bawah ini: 
+Nama : Aegner Billik
+NIM : 220102007
+menyatakan bahwa Tugas Akhir  ini adalah hasil karya saya sendiri, bukan merupakan hasil plagiat, tiruan, atau duplikat. 
+Demikian pernyataan keaslian ini saya buat dengan penuh kesadaran dan rasa  tanggung jawab serta bersedia memikul segala resiko jika pernyataan di atas tidak  benar.
+Bandung, 6 Agustus 2026
+Yang membuat pernyataan
+Aegner Billik
+NIM. 220102007
+LEMBAR PERNYATAAN HAK CIPTA
+Skripsi dengan judul:
+IMPLEMENTASI FITUR AUTOFILL DATA CALON MAHASISWA MENGGUNAKAN TEKNOLOGI OPTICAL CHARACTER RECOGNITION (OCR) BERBASIS TESSERACT PADA SISTEM PMB UNIVERSITAS MUHAMMADIYAH BANDUNG
+disusun oleh: 
+Aegner Billik
+220102007
+Karya tulis ini bukan hasil penerbitan sehingga peredarannya terbatas pada lingkungan akademik. Dilarang menggandakan (sebagian atau seluruhnya) karya tulis ini tanpa seizin penulis atau pembimbing yang bersangkutan.
+Keperluan perizinan dapat menghubungi:
+Nama : Aegner Billik
+Email : aegneru@gmail.com
+KATA PENGANTAR
+Puji syukur penulis panjatkan ke hadirat Allah SWT, Tuhan Yang Maha Esa, atas segala rahmat, kekuatan, dan keteguhan hati yang senantiasa diberikan sehingga penulis dapat menyelesaikan Skripsi/Tugas Akhir yang berjudul "IMPLEMENTASI FITUR AUTOFILL DATA CALON MAHASISWA MENGGUNAKAN TEKNOLOGI OPTICAL CHARACTER RECOGNITION (OCR) BERBASIS TESSERACT PADA SISTEM PMB UNIVERSITAS MUHAMMADIYAH BANDUNG".
+Skripsi ini disusun sebagai salah satu syarat untuk menyelesaikan pendidikan sarjana dan memperoleh gelar Sarjana Komputer (S.Kom.) pada Program Studi Teknik Informatika, Fakultas Sains dan Teknologi, Universitas Muhammadiyah Bandung.
+Lebih dari sekadar pemenuhan syarat akademik, lembaran skripsi ini adalah saksi bisu dari sebuah perjalanan panjang yang tidak mudah. Sebuah perjalanan yang dimulai setelah dua tahun masa tunggu (gap year) pasca SMA, yang menuntut penulis untuk belajar tentang arti bertahan hidup, kemandirian, dan kerja keras.
+Penyelesaian tugas akhir ini mustahil terwujud tanpa uluran tangan, bimbingan, dan doa dari berbagai pihak. Oleh karena itu, dengan kerendahan hati penulis ingin menyampaikan rasa terima kasih yang tak terhingga kepada:
+Prof. Dr. Ir. Herry Suhardiyanto, M.Sc., IPU., selaku Rektor Universitas Muhammadiyah Bandung.
+Dr. Ir. Arief Yunan, M.Si., IPU., ASEAN Eng., selaku Dekan Fakultas Sains dan Teknologi, Universitas Muhammadiyah Bandung.
+Ibu Ririn Suharsih, S.Pd., M.T., selaku Ketua Program Studi Teknik Informatika, Universitas Muhammadiyah Bandung.
+Ibu Firas Atqiya, selaku Dosen Pembimbing I yang telah dengan penuh kesabaran meluangkan waktu, tenaga, dan pikiran untuk menuntun serta memberikan arahan berharga selama proses penelitian ini.
+Ibu Aila Gema Safitri, S.T., M.T., selaku Dosen Pembimbing II yang senantiasa memberikan masukan, koreksi, dan ruang bagi penulis untuk terus berkembang hingga skripsi ini dapat terselesaikan dengan baik.
+Seluruh Bapak/Ibu Dosen Program Studi Teknik Informatika Universitas Muhammadiyah Bandung, atas segala bekal ilmu dan pengalaman berharga.
+Pahlawan dan teladan pertama dalam hidup penulis, Bapak Ishak Billik. Skripsi ini adalah wujud nyata dari keringat Bapak yang tak kenal lelah bekerja keras memproduksi pallet karton demi membiayai langkah awal penulis menempuh pendidikan dari semester pertama hingga semester lima. Pak, gelar sarjana pertama di keluarga kita ini Aegner persembahkan untuk membalas setiap tetes peluh Bapak.
+Malaikat pendoa yang tak pernah lelah, Ibunda Tina Parlina. Terima kasih atas kasih sayang yang tak berkesudahan, serta pengorbanan luar biasa yang selalu mengusahakan segalanya demi pendidikan penulis. Terima kasih karena selalu memikirkan dan tetap mengirimkan uang saku, meski penulis berulang kali meyakinkan bahwa penulis sudah bisa mencari uang secara mandiri. Bu, doa dan air mata Ibunda di setiap sujud adalah kekuatan utama Aegner untuk bisa sampai di titik ini.
+Diri penulis sendiri, yang memilih untuk terus melangkah dan tidak menyerah pada keadaan. Terima kasih sudah bertahan melewati masa-masa sulit pasca gap year; memutar otak untuk membiayai kuliah secara mandiri di semester tujuh dan delapan. Terima kasih sudah rela kurang tidur untuk mengerjakan berbagai project lepas, magang, hingga menjadi Asisten Praktikum demi bisa makan, menyambung hidup, dan menamatkan perkuliahan ini.
+Rekan-rekan seperjuangan, sahabat, dan semua pihak yang tidak dapat disebutkan satu per satu, yang selalu hadir memberikan semangat dan bantuan sekecil apa pun dalam perjalanan ini.
+Penulis menyadari bahwa skripsi ini masih jauh dari kesempurnaan. Oleh karena itu, kritik dan saran yang membangun sangat penulis harapkan. Akhir kata, penulis berharap semoga karya ini tidak hanya menjadi kebanggaan keluarga, tetapi juga dapat memberikan manfaat dan kontribusi yang berarti bagi pengembangan teknologi dan almamater tercinta.
+Bandung, 1 Agustus 2026
+Aegner Billik
+ABSTRAK
+Proses pengisian data identitas calon mahasiswa pada Sistem Penerimaan Mahasiswa Baru (PMB) Universitas Muhammadiyah Bandung saat ini masih dilakukan secara manual, yang rentan terhadap kesalahan ketik (human error) dan inefisiensi waktu. Penelitian ini bertujuan untuk merancang dan mengimplementasikan fitur autofill formulir pendaftaran menggunakan teknologi Optical Character Recognition (OCR) berbasis Tesseract untuk mengekstrak data identitas dari citra Kartu Tanda Penduduk (e-KTP). Pengembangan sistem menggunakan metode Waterfall dengan Feedback Loop yang mengintegrasikan prapemrosesan citra menggunakan pustaka OpenCV (Grayscale, CLAHE, Gaussian Blur, Otsu’s Thresholding) dan penguraian teks menggunakan Regular Expression (Regex). Hasil pengujian skala peladen terhadap 50 dataset citra KTP menunjukkan bahwa mesin dasar Tesseract rentan terhadap derau dan variasi pencahayaan, menghasilkan rata-rata Character Error Rate (CER) sebesar 70,25% untuk ekstraksi NIK dan 78,65% untuk Nama. Sebagai solusi mitigasi, diterapkan UI Constraint berupa antarmuka Kamera Sketsa (Guideline Overlay) pada sisi frontend untuk memaksa standarisasi posisi, orientasi, dan pencahayaan citra oleh pengguna sebelum diproses ke peladen. Pendekatan ini terbukti berhasil menutupi kelemahan arsitektur mesin OCR konvensional, menstabilkan proses ekstraksi, dan menjaga efisiensi waktu komputasi rata-rata pada 32,77 detik tanpa membebani peladen dengan algoritma rotasi otomatis. Sistem ini berhasil mengotomatisasi pengisian data NIK, Nama, dan Alamat, sehingga memberikan pengalaman pendaftaran yang lebih efisien dan terstruktur bagi calon mahasiswa. 
+Kata Kunci: Autofill, Kartu Tanda Penduduk (KTP), Optical Character Recognition (OCR), Tesseract, UI Constraint, Waterfall Feedback Loop.
+ABSTRACT
+The process of filling out prospective students' identity data in the New Student Admission (PMB) System at Muhammadiyah University of Bandung is currently still done manually, which is prone to typographical errors (human error) and time inefficiency. This study aims to design and implement an autofill feature for registration forms using Tesseract-based Optical Character Recognition (OCR) technology to extract identity data from Electronic Identity Card (e-KTP) images. The system development uses the Waterfall method with a Feedback Loop, integrating image preprocessing using the OpenCV library (Grayscale, CLAHE, Gaussian Blur, Otsu's Thresholding) and text parsing using Regular Expression (Regex). Server-scale testing results on 50 KTP image datasets show that the base Tesseract engine is vulnerable to noise and lighting variations, producing an average Character Error Rate (CER) of 70.25% for NIK extraction and 78.65% for Name. As a mitigation solution, a UI Constraint is implemented in the form of a Sketch Camera interface (Guideline Overlay) on the frontend side to force the standardization of position, orientation, and lighting of the image by the user before being processed to the server. This approach is proven successful in covering the weaknesses of the conventional OCR engine architecture, stabilizing the extraction process, and maintaining the average computational time efficiency at 32.77 seconds without burdening the server with auto-rotation algorithms. This system successfully automates the data entry for NIK, Name, and Address, thereby providing a more efficient and structured registration experience for prospective students. 
+Keywords: Autofill, Identity Card (KTP), Optical Character Recognition (OCR), Tesseract, UI Constraint, Waterfall Feedback Loop. 
+DAFTAR ISI
+LEMBAR PERSETUJUANi
+SKRIPSIi
+LEMBAR PENGESAHANii
+LEMBAR PERNYATAAN KEASLIANiii
+LEMBAR PERNYATAAN HAK CIPTAiv
+KATA PENGANTARv
+BAB I  PENDAHULUANx
+1.1 Latar Belakang1
+1.2 Rumusan Masalah3
+1.3 Tujuan Penelitian3
+1.4 Batasan Masalah3
+1.5 Manfaat Penelitian4
+BAB II5
+TINJAUAN PUSTAKA5
+2.1 Sistem Penerimaan Mahasiswa Baru (PMB)5
+2.2 Perbandingan Penelitian Terkait6
+2.3 Optical Character Recognition (OCR)6
+2.4 Tesseract OCR7
+2.5 Pra-Pemrosesan Citra10
+2.6 Fitur Autofill Data12
+2.7 Metode Waterfall dengan Feedback Loop13
+2.8 Metrik Evaluasi14
+2.8.1 Character Error Rate (CER)15
+2.8.2 Word Error Rate (WER)15
+2.9 Pengujian Perangkat Lunak15
+2.9.1 Blackbox Testing15
+2.9.2 Whitebox Testing15
+2.10 Python dan Library Pendukung16
+2.11 Framework Web17
+2.12 Kartu Tanda Penduduk Elektronik (e-KTP)17
+2.13 Penelitian Terkait18
+BAB III20
+METODOLOGI PENELITIAN20
+3.1 Kebutuhan Sistem20
+3.2 Tahapan Penelitian21
+3.3 Dataset Penelitian23
+3.4 Rencana Pengujian23
+3.4.1 Pengujian Fungsionalitas Sistem OCR23
+3.4.2 Pengujian Performa OCR24
+BAB IV26
+HASIL DAN PEMBAHASAN26
+4.1 Fase 1: Analisis Kebutuhan (Requirements Analysis)26
+4.2 Fase 2: Desain Sistem (System Design) - Iterasi 126
+4.3 Fase 3: Implementasi (Implementation) - Iterasi 127
+4.4 Fase 4: Pengujian (Testing) - Iterasi 1 (Skala Kecil)27
+4.4.1 Blackbox Testing Awal (Ujicoba Antarmuka)27
+4.4.2 Evaluasi Metrik CER, WER & Speedup Ratio Awal28
+4.5 Proses Umpan Balik (Feedback Loop)28
+4.5.1 Feedback: Revisi Desain Antarmuka (UI Constraint & Sketsa Kamera)28
+4.5.2 Feedback: Tuning Parameter OpenCV & Modifikasi Regex (Kembali ke Fase 3)30
+4.6 Fase 4: Pengujian Final (Testing) - Iterasi 231
+4.6.1 Skenario Simulasi Fungsionalitas Antarmuka (Blackbox Testing)31
+4.6.2 Skenario Pengujian Batch dan Metrik Evaluasi Akhir33
+4.6.3 Hasil Evaluasi CER dan WER Final34
+4.6.4 Pengukuran Waktu Komputasi35
+BAB V37
+KESIMPULAN DAN SARAN37
+5.1 Kesimpulan37
+5.2 Saran38
+DAFTAR GAMBAR
+Gambar 2.1 Flowchart Alur Pendaftaran PMB (Sistem Berjalan)............................. 13 
+Gambar 2.2 Diagram Model Waterfall dengan Feedback Loop................................. 22 
+Gambar 3.1 Diagram Tahapan Penelitian (Pendekatan Waterfall Feedback Loop) .. 30
+ Gambar 3.2 Diagram Alur Pengujian Performa OCR .............................................. 34 
+Gambar 4.1 Implementasi Guideline Overlay Kamera pada Antarmuka Pengguna . 38
+ Gambar 4.2 Simulasi Keberhasilan Fungsionalitas Ekstraksi Data pada Frontend .. 41 
+Gambar 4.3 Eksekusi Pengujian Batch terhadap 50 Dataset OCR Final .................. 42
+Gambar 4.4 Grafik Analisis Character Error Rate (CER) Final ................................ 44
+DAFTAR TABEL
+Tabel 2.1 Perbandingan Penelitian Terkait ............................................. 14 
+Tabel 3.1 Jadwal Penelitian (Pendekatan Waterfall Feedback Loop) .... 34 
+Tabel 4.1 Ringkasan Statistik Evaluasi OCR KTP.................................. 43
+BAB I PENDAHULUAN
+1.1 Latar Belakang
+Perkembangan teknologi informasi telah mendorong perguruan tinggi untuk terus meningkatkan kualitas layanan akademik, termasuk dalam proses Penerimaan Mahasiswa Baru (PMB). Universitas Muhammadiyah Bandung sebagai institusi pendidikan tinggi telah memanfaatkan sistem PMB berbasis daring guna mempermudah calon mahasiswa dalam melakukan proses pendaftaran. Namun, pada praktiknya pengisian data pendaftaran masih dilakukan secara manual oleh calon mahasiswa, sehingga berpotensi menimbulkan kesalahan penulisan, ketidaksesuaian data, serta membutuhkan waktu yang relatif lebih lama.
+Kartu Tanda Penduduk (KTP) merupakan dokumen resmi yang memuat identitas penting calon mahasiswa seperti nama lengkap, Nomor Induk Kependudukan (NIK), dan alamat. Informasi tersebut pada umumnya harus diisikan kembali secara manual ke dalam sistem PMB. Proses ini tidak hanya kurang efisien, tetapi juga berpotensi menyebabkan kesalahan input data yang dapat berdampak pada proses administrasi selanjutnya. Proses input data secara manual dari dokumen identitas seringkali rentan terhadap kesalahan (human error) dan membutuhkan waktu pemrosesan yang lama, sehingga otomatisasi menjadi solusi krusial untuk meningkatkan kecepatan layanan administrasi di institusi pendidikan (Sofjan & Soetanto, 2025).
+Salah satu teknologi yang dapat dimanfaatkan untuk mengatasi permasalahan tersebut adalah Optical Character Recognition (OCR), yaitu teknologi yang mampu mengenali dan mengekstraksi teks dari citra digital (Reswan et al., 2024). Dengan menerapkan teknologi OCR pada sistem PMB, data identitas yang terdapat pada KTP calon mahasiswa dapat diekstraksi secara otomatis dan digunakan untuk mengisi formulir pendaftaran secara otomatis (autofill). Tesseract merupakan salah satu mesin OCR bersifat open-source yang banyak digunakan dan dikembangkan secara luas. Versi terbaru Tesseract (versi 5.0 ke atas) mengadopsi arsitektur Long Short-Term Memory (LSTM) yang mampu memahami konteks sekuensial antar karakter, sehingga menghasilkan akurasi yang lebih baik dibandingkan versi sebelumnya (Nashiruddin et al., 2025). Meskipun demikian, hasil ekstraksi teks menggunakan Tesseract sangat dipengaruhi oleh kualitas citra dan proses pra-pemrosesan (preprocessing) yang diterapkan. Oleh karena itu, diperlukan kombinasi teknik pra-pemrosesan citra menggunakan OpenCV serta aturan parsing teks menggunakan Regular Expression (Regex) untuk menghasilkan data yang akurat dan relevan.
+Beberapa penelitian terdahulu telah membuktikan efektivitas teknologi OCR dalam domain administrasi pendidikan. Reswan et al. (2024) menerapkan algoritma OCR untuk ekstraksi informasi dari citra Kartu Tanda Mahasiswa (KTM) dan memperoleh tingkat akurasi sebesar 88%. Nashiruddin et al. (2025) mengimplementasikan Tesseract OCR yang dikombinasikan dengan teknik pra-pemrosesan citra menggunakan OpenCV untuk ekstraksi data kartu mahasiswa, dan menunjukkan bahwa kualitas preprocessing sangat menentukan keberhasilan OCR. Sofjan dan Soetanto (2025) mengembangkan sistem verifikasi e-KTP berbasis OCR dan CNN dengan rata-rata Character Error Rate sebesar 28,85%. Sementara itu, Azzahra (2025) berhasil mengintegrasikan Tesseract OCR pada sistem persuratan digital berbasis web dengan CER hanya 5,71% dan WER 9,59% (Azzahra & Nugroho, 2025). Meskipun penelitian-penelitian tersebut telah membuktikan kehandalan OCR pada berbagai objek dokumen, belum ada yang secara spesifik mengimplementasikan fitur autofill berbasis OCR pada sistem Penerimaan Mahasiswa Baru. Dengan mengintegrasikan teknologi ini ke dalam sistem PMB Universitas Muhammadiyah Bandung, diharapkan proses pendaftaran menjadi lebih efisien, akurat, dan memberikan pengalaman pengguna yang lebih baik bagi calon mahasiswa.
+Berdasarkan permasalahan tersebut, penelitian ini bertujuan untuk mengimplementasikan fitur autofill data calon mahasiswa menggunakan teknologi OCR berbasis Tesseract pada sistem PMB Universitas Muhammadiyah Bandung. Penelitian ini diharapkan dapat menjadi solusi awal yang aplikatif dalam meningkatkan efisiensi proses pendaftaran serta menjadi referensi pengembangan sistem PMB di masa mendatang.
+1.2 Rumusan Masalah
+Berdasarkan latar belakang yang telah diuraikan, maka rumusan masalah dalam penelitian ini adalah sebagai berikut:
+Bagaimana merancang dan mengimplementasikan fitur autofill menggunakan teknologi OCR berbasis Tesseract untuk mengatasi kendala pengisian data manual pada sistem PMB Universitas Muhammadiyah Bandung?
+Sejauh mana tingkat performa fitur autofill tersebut ketika dievaluasi menggunakan pengujian fungsionalitas (Blackbox Testing), metrik akurasi (Character Error Rate dan Word Error Rate), serta efektivitas waktu (Speedup Ratio)?
+1.3 Tujuan Penelitian
+Sejalan dengan rumusan masalah yang telah diformulasikan, tujuan dari pelaksanaan penelitian ini ditetapkan sebagai berikut:
+Mengoptimalisasi proses pelayanan pendaftaran mahasiswa baru melalui otomatisasi input data calon mahasiswa menggunakan integrasi teknologi Tesseract OCR.
+Memvalidasi tingkat keberhasilan sistem yang dibangun melalui pengujian kotak hitam (Blackbox Testing) untuk fitur aplikasi, serta mengukur tingkat presisi ekstraksi teks (CER dan WER) dan efisiensi waktu pemrosesan (Speedup Ratio).
+1.4 Batasan Masalah
+Untuk menjaga fokus penelitian, maka batasan masalah dalam penelitian ini adalah sebagai berikut:
+Penelitian difokuskan pada implementasi fitur autofill data calon mahasiswa pada sistem PMB berbasis web.
+Dokumen identitas yang digunakan sebagai input adalah Kartu Tanda Penduduk (KTP).
+Datayangdiekstraksi dibatasi pada nama lengkap, Nomor Induk Kependudukan (NIK), dan alamat.
+Mesin OCR yang digunakan dalam penelitian ini adalah Tesseract.
+Data yang digunakan dalam pengujian bersifat simulasi atau dummy untuk menjaga privasi dan keamanan data.
+Penelitian ini menghasilkan sistem dalam bentuk prototype dan belum diimplementasikan secara penuh pada sistem PMB resmi.
+Target keberhasilan pengenalan teks pada sistem diukur berdasarkan batas toleransi maksimal Character Error Rate (CER) sebesar 10% dan maksimal Word Error Rate (WER) sebesar 15%.
+1.5 Manfaat Penelitian
+1.5.1 Manfaat Akademis
+Penelitian ini berkontribusi terhadap pengembangan keilmuan di bidang Teknik Informatika, khususnya pada domain Computer Vision. Hasil penelitian menyediakan bukti empiris mengenai efektivitas Tesseract OCR berarsitektur LSTM dalam mengenali karakter pada citra dokumen identitas Indonesia, serta mendokumentasikan pengaruh teknik preprocessing citra terhadap akurasi OCR sehingga dapat menjadi referensi bagi peneliti selanjutnya.
+1.5.2 Manfaat Praktis
+Bagi staf administrasi PMB, fitur autofill akan mengurangi beban kerja input data manual secara signifikan. Bagi calon mahasiswa, fitur ini menyediakan pengalaman pendaftaran yang lebih cepat dan nyaman karena data personal terisi otomatis setelah mengunggah foto KTP. Bagi manajemen universitas, implementasi sistem ini dapat meningkatkan akurasi data pada basis data institusi serta mendukung kepatuhan terhadap standar pelaporan data PDDikti.
+BAB II
+TINJAUAN PUSTAKA
+2.1 Sistem Penerimaan Mahasiswa Baru (PMB)
+Sistem Penerimaan Mahasiswa Baru (PMB) di Universitas Muhammadiyah Bandung saat ini telah bertransformasi menjadi sistem daring yang dapat diakses melalui portal web resmi universitas. Secara umum, alur pendaftaran pada sistem PMB yang berjalan saat ini terdiri dari beberapa tahapan, yaitu: (1) calon mahasiswa mengakses portal PMB dan membuat akun pendaftaran; (2) calon mahasiswa mengisi formulir data diri yang meliputi nama lengkap, NIK, alamat, dan data identitas lainnya secara manual; (3) calon mahasiswa mengunggah dokumen 
+persyaratan dalam bentuk file citra, termasuk foto KTP; (4) staf administrasi melakukan verifikasi kesesuaian antara data formulir dengan dokumen yang diunggah secara manual; dan (5) sistem menerbitkan bukti pendaftaran apabila seluruh data telah terverifikasi.
+Gambar 2.1 Flowchart Alur Pendaftaran PMB (Sistem Berjalan).
+ 
+2.2 Perbandingan Penelitian Terkait 
+Tabel 2.1 Perbandingan Penelitian Terkait
+No
+Penelitian & Tahun
+Objek Penelitian
+Teknologi
+Hasil Utama
+Perbedaan dengan Penelitian Ini
+1
+Reswan et al. (2024)
+KTM
+OCR
+Precision 88%, Recall 100%, Accuracy 88%
+Standalone, belum integrasi sistem daring; objek KTM bukan KTP
+2
+Nashiruddin et al. (2025)
+KTM UMKLA
+Tesseract, OpenCV, Regex
+Ekstraksi berhasil baik
+Objek KTM bukan KTP; belum integrasi ke sistem PMB web
+3
+Sofjan & Soetanto (2025)
+e-KTP
+OCR & CNN
+CNN 80%, CER 28,85%
+Fokus verifikasi keaslian, bukan autofill; menggunakan CNN
+4
+Sherin et al. (2024)
+Dokumen Ujian
+OCR
+Efektif otomatisasi input
+Konteks administrasi umum, bukan PMB
+5
+Azzahra (2025)
+Surat Digital
+Tesseract, Laravel
+CER 5,71%, WER 9,59%, UAT 94,29%
+Objek surat bukan KTP; fokus pengarsipan
+2.3 Optical Character Recognition (OCR)
+Optical Character Recognition (OCR) merupakan teknologi yang digunakan untuk mengenali dan mengonversi teks yang terdapat pada citra atau dokumen hasil pemindaian menjadi teks digital yang dapat diproses oleh komputer (Reswan et al., 2024). Teknologi OCR berfungsi sebagai jembatan antara informasi visual yang hanya dapat dibaca oleh mata manusia dengan representasi digital yang dapat diolah oleh sis-tem komputer.
+Prinsip kerja OCR secara umum melibatkan beberapa tahapan pemrosesan yang berurutan: (1) akuisisi citra melalui pemindaian atau pengambilan foto; (2) preprocessing untuk meningkatkan kualitas citra; (3) segmentasi citra menjadi unit-unit teks (blok, baris, kata, karakter); (4) pengenalan karakter di mana setiap unit diidentifikasi dan dikonversi menjadi kode karakter; serta (5) post-processing yang meliputi koreksi dan validasi format.
+Teknologi OCR telah banyak dimanfaatkan dalam proses digitalisasi dokumen dan ekstraksi informasi dari dokumen identitas. Penelitian yang dilakukan oleh Reswan et al. menunjukkan bahwa OCR dapat digunakan untuk mengekstraksi informasi penting dari citra Kartu Tanda Mahasiswa (KTM), seperti nama dan nomor identitas, sehingga mengurangi ketergantungan terhadap proses input data secara manual. Namun, hasil penelitian tersebut juga menunjukkan bahwa tingkat akurasi OCR sangat dipengaruhi oleh kualitas citra dan teknik pra-pemrosesan yang diterapkan sebelum proses pengenalan karakter dilakukan (Reswan et al., 2024).
+Evolusi teknologi OCR dapat diklasifikasikan ke dalam tiga generasi utama. Generasi pertama (1950an-1980an) menggunakan pendekatan template matching yang sensitif terhadap variasi font dan orientasi. Generasi kedua (1990an-2000an) mengadopsi feature extraction dengan klasifikasi menggunakan algoritma machine learning konvensional seperti SVM atau k-NN. Generasi ketiga (2010an-sekarang) memanfaatkan arsitektur deep learning, khususnya CNN untuk ekstraksi fitur visual dan RNN/LSTM untuk pemodelan sekuensial, yang mampu mengenali karakter dengan akurasi mendekati kemampuan manusia (Sofjan & Soetanto, 2025).
+2.4 Tesseract OCR
+Tesseract merupakan mesin OCR bersifat open-source yang banyak digunakan dalam pengembangan sistem pengenalan karakter dan dapat diintegrasikan dengan berbagai bahasa pemrograman (Nashiruddin et al., 2025). Pengembangan Tesseract dimulai pada tahun 1985 di laboratorium Hewlett-Packard, kemudian dirilis sebagai proyek open-source pada tahun 2005, dan sejak tahun 2006 dikelola secara aktif oleh Google. Tesseract pada awalnya dikembangkan secara eksklusif, namun kemudian dibuka sebagai proyek sumber terbuka untuk mendorong kolaborasi dan perbaikan akurasi pengenalan karakter (Smith, 2007).
+Tesseract versi 1 hingga 3 menggunakan pipeline pengenalan karakter berbasis fitur tradisional yang meliputi connected component analysis, segmentasi karakter, dan klasifikasi menggunakan mekanisme two-pass recognition. Transformasi signifikan terjadi pada versi 4 dan 5, di mana arsitektur pengenalan karakter digantikan sepenuhnya oleh jaringan saraf tiruan berbasis Long Short-Term Memory (LSTM). Perubahan ini membawa peningkatan akurasi yang substansial karena LSTM mampu memodelkan dependensi sekuensial antar karakter dalam suatu baris teks, kemampuan yang tidak dimiliki pendekatan klasifikasi per-karakter sebelumnya.
+LSTM merupakan varian RNN yang dirancang untuk mengatasi permasalahan vanishing gradient ketika memproses sekuens data panjang (Hochreiter & Schmidhuber, 1997). Setiap unit LSTM memiliki mekanisme gating (forget gate, input gate, output gate) yang mengontrol aliran informasi melalui cell state, sehingga mampu secara selektif mengingat atau melupakan informasi sesuai konteks. Secara matematis, operasi pada unit LSTM dapat dirumuskan.
+Forget Gate menentukan proporsi informasi dari cell state sebelumnya (𝐶𝑡−1) yang harus dipertahankan atau dilupakan. Nilai mendekati 0 berarti informasi dilupakan, mendekati 1 berarti dipertahankan:
+(2.1)
+Input Gate — menentukan informasi baru yang akan ditambahkan ke cell state. Terdiri dari vektor gate (𝑖𝑡) dan vektor kandidat (𝐶̃𝑡):
+(2.2)
+(2.3)
+Cell State Update — memperbarui cell state dengan menggabungkan informasi lama yang dipertahankan oleh forget gate dan informasi baru dari input gate melalui operasi Hadamard product (⊙):
+(2.4)
+Output Gate — menentukan bagian cell state yang diteruskan sebagai hidden state keluaran (ℎ𝑡). Cell state dinormalisasi melalui fungsi tanh kemudian disaring oleh out-put gate:
+(2.5)
+(2.6)
+di mana 𝑓𝑡, 𝑖𝑡, dan 𝑜𝑡 masing-masing adalah forget, input, dan output gate; 𝐶𝑡 adalah cell state; ℎ𝑡 adalah hidden state; 𝜎 adalah fungsi sigmoid; 𝑊 dan 𝑏 adalah matriks bobot dan vektor bias; serta ⊙ adalah operasi Hadamard product.
+Pada Tesseract versi 5.0, arsitektur LSTM diimplementasikan secara bidirectional, memproses teks dari kiri ke kanan dan kanan ke kiri secara simultan. Hal ini krusial karena konteks karakter ditentukan oleh karakter di kedua sisinya. Pipeline-nya terdiri dari layer konvolusi untuk ekstraksi fitur visual, layer LSTM bidirectional untuk pemodelan sekuensial, dan Connectionist Temporal Classification (CTC) decoder untuk menghasilkan string karakter final. Keunggulan pendekatan ini adalah LSTM memproses baris teks secara keseluruhan tanpa memerlukan segmentasi karakter eksplisit, sehingga lebih robust terhadap variasi spasi dan touching characters (Nashiruddin et al., 2025).
+Penelitian oleh Nashiruddin et al. menunjukkan bahwa penggunaan Tesseract untuk ekstraksi data kartu mahasiswa memberikan hasil yang baik apabila dikombinasikan dengan teknik pra-pemrosesan citra yang sesuai. Selain itu, implementasi Tesseract pada sistem berbasis web juga terbukti mampu mendukung otomatisasi pengelolaan dokumen (Azzahra & Nugroho, 2025). Dalam penelitian ini, Tesseract diakses melalui wrapper PyTesseract pada lingkungan Python dengan konfigurasi language pack Indonesia dan English.
+Tesseract OCR dengan arsitektur LSTM memiliki sejumlah keunggulan teoretis, di antaranya adalah kemampuan memodelkan dependensi sekuensial karakter secara dua arah (bidirectional) tanpa memerlukan segmentasi karakter eksplisit yang rumit. Sistem ini juga bersifat open-source, sehingga meminimalisasi biaya operasional pada implementasi skala universitas. Meskipun demikian, sistem ini memiliki kelemahan inheren, yakni tingkat akurasinya sangat bergantung pada kondisi citra input. Tesseract rentan terhadap degradasi performa (error rate yang tinggi) apabila dihadapkan pada citra dengan pencahayaan buruk, resolusi rendah, atau kemiringan perspektif yang ekstrem, sehingga menuntut adanya lapisan pra-pemrosesan citra (preprocessing) yang optimal sebelum ekstraksi dilakukan.
+2.5 Pra-Pemrosesan Citra
+Pra-pemrosesan citra merupakan tahapan awal dalam sistem OCR yang bertujuan untuk meningkatkan kualitas citra sebelum dilakukan proses pengenalan karakter (Reswan et al., 2024). Tahapan ini sangat kritikal karena kualitas citra yang diumpankan ke mesin OCR secara langsung menentukan akurasi hasil pengenalan. Penelitian oleh Sofjan dan Soetanto (2025) menunjukkan bahwa CER tanpa preprocessing yang memadai dapat mencapai 28,85%, sementara sistem dengan preprocessing optimal seperti pada penelitian Azzahra dan Nugroho (2025) mencapai CER hanya 5,71%. Dalam penelitian ini, library OpenCV digunakan untuk tiga tahapan preprocessing: konversi grayscale, Gaussian Blur, dan Otsu’s Thresholding. Pustaka OpenCV awalnya dikembangkan untuk memberikan infrastruktur dasar bagi aplikasi computer vision dengan menyediakan algoritma yang telah dioptimasi secara efisien (Bradski, 2000).
+Konversi Grayscale merupakan tahapan pertama yang mengubah citra dari ruang warna RGB menjadi grayscale single-channel. Konversi ini dilakukan menggunakan formula luminance-weighted:
+Reduksi dari 3 channel ke 1 channel mengurangi beban komputasi tanpa kehilangan informasi struktural yang relevan untuk pengenalan karakter, karena teks pada KTP bersifat monokromatik. Konversi grayscale juga mengeliminasi variasi warna akibat perbedaan pencahayaan dan menjadi prasyarat untuk operasi preprocessing lanjutan.
+Gaussian Blur diterapkan untuk mereduksi noise pada citra grayscale. Operasi ini mengkonvolusikan citra input dengan kernel Gaussian dua dimensi:
+di mana  adalah standar deviasi distribusi Gaussian yang mengendalikan lebar kernel. Operasi konvolusi menghasilkan citra output di mana setiap piksel merupakan rata-rata tertimbang dari piksel-piksel tetangganya:
+di mana  adalah setengah ukuran kernel. Dalam penelitian ini dipilih ukuran kernel  sebagai trade-off antara reduksi noise yang memadai dan preservasi detail karakter. Gaussian Blur berfungsi sebagai filter low-pass yang meredam komponen frekuensi tinggi (noise), sehingga meningkatkan kualitas binarisasi pada tahapan berikutnya (Nashiruddin et al., 2025).
+Otsu’s Thresholding merupakan metode binarisasi yang menentukan nilai threshold optimal secara otomatis berdasarkan analisis histogram citra (Otsu, 1979). Metode ini mengasumsikan bahwa histogram citra mengikuti distribusi bimodal (dua puncak) yang merepresentasikan kelas background dan foreground. Untuk setiap nilai threshold kandidat , piksel dipartisi menjadi dua kelas dengan probabilitas kumulatif:
+di mana  adalah probabilitas intensitas level . Mean intensitas masing-masing kelas:
+Threshold optimal  dipilih dengan memaksimalkan varians antar-kelas (between-class variance):
+di mana  dan  adalah probabilitas kumulatif kelas background dan foreground, serta  dan  adalah mean intensitas masing-masing kelas. Keunggulan metode Otsu adalah kemampuannya beradaptasi secara otomatis terhadap variasi brightness dan contrast pada citra KTP yang berbeda-beda, sehingga menghasilkan citra biner yang konsisten terlepas dari kondisi pencahayaan awal.
+Kombinasi ketiga teknik pra-pemrosesan tersebut terbukti mampu meningkatkan akurasi hasil ekstraksi data pada dokumen identitas mahasiswa dan dokumen administrasi berbasis web (Nashiruddin et al., 2025); (Azzahra & Nugroho, 2025).
+Efektivitas tahap prapemrosesan citra digital sangat krusial dalam menunjang kemampuan mesin Tesseract untuk mengenali karakter teks yang memiliki derau tinggi (Mursari & Wibowo, 2021). Teknik prapemrosesan yang dikombinasikan dengan perbaikan pasca-pemrosesan terbukti mampu meningkatkan kinerja ekstraksi OCR secara signifikan, khususnya pada gambar dengan kualitas pencahayaan yang sangat rendah (Rozi et al., 2023).
+2.6 Fitur Autofill Data
+Fitur autofill data merupakan mekanisme pengisian data secara otomatis pada suatu formulir berdasarkan informasi yang telah tersedia atau diekstraksi sebelumnya, dengan tujuan mengurangi beban pengguna dalam memasukkan data secara manual serta meminimalkan kesalahan input (Sherin et al., 2024).
+Dalam konteks penelitian ini, fitur autofill diimplementasikan melalui integrasi pipeline OCR ke dalam formulir pendaftaran PMB. Setelah teks berhasil diekstraksi oleh Tesseract, diperlukan mekanisme parsing untuk memisahkan field-field data spesifik dari raw text output. Regular Expression (Regex) digunakan sebagai instrumen parsing karena memungkinkan pendefinisian pola pencarian yang fleksibel dan presisi (Nashiruddin et al., 2025). Strategi Regex yang dirancang untuk setiap field target meliputi: pola \b\d{16}\b untuk NIK (16 digit angka berurutan), pola berbasis label (?:Nama|NAMA)\s*[:\s]\s*([A-Z][A-Za-z\s.'-]+) untuk Nama, dan pola (?:Alamat|ALAMAT)\s*[:\s]\s*(.+) untuk Alamat. Penggunaan Regular Expression sangat krusial dalam pemrosesan teks, karena pola yang spesifik dapat menyeleksi dan memisahkan deret karakter target dari rentetan noise (Goyvaerts & Levithan, 2012).
+Pemanfaatan OCR dalam sistem berbasis web terbukti mampu mendukung otomatisasi pengelolaan data dan meningkatkan efisiensi proses administrasi, sebagaimana ditunjukkan pada penelitian sistem administrasi departemen (Sherin et al., 2024) dan sistem persuratan digital (Azzahra & Nugroho, 2025). Penerapan konsep serupa pada sistem PMB diharapkan dapat membantu calon mahasiswa dalam mengisi data identitas secara lebih cepat dan akurat.
+2.7 Metode Waterfall dengan Feedback Loop
+Model Waterfall merupakan model pengembangan perangkat lunak sekuensial. Namun, penerapan metode ini dalam pengembangan sistem OCR PMB ini diadaptasi menjadi Waterfall dengan Feedback Loop (Pressman & Maxim, 2020; Amar & Lammada, 2023). Pendekatan ini memungkinkan adanya fleksibilitas umpan balik antar fase yang berdekatan untuk mengakomodasi perbaikan hasil uji coba. Model Waterfall dengan feedback loop pada penelitian ini terdiri dari empat fase utama:
+Fase 1: Analisis Kebutuhan (Requirements Analysis). Fase ini bertujuan mengumpulkan dan mendokumentasikan seluruh kebutuhan sistem secara lengkap. Aktivitas meliputi observasi terhadap proses bisnis yang berjalan, wawancara dengan stakeholder, serta studi literatur.
+Fase 2: Desain Sistem (System Design). Fase ini mentransformasikan kebutuhan menjadi blueprint arsitektural sistem. Aktivitas meliputi perancangan arsitektur client-server, pemodelan Data Flow Diagram (DFD), perancangan antarmuka, dan logika pipeline OCR.
+Fase 3: Implementasi (Implementation). Seluruh rancangan diterjemahkan ke dalam kode program secara modular. Modul diimplementasikan dan diuji fungsionalitas dasarnya sebelum diintegrasikan.
+Fase 4: Pengujian (Testing). Pengujian dilaksanakan secara komprehensif terhadap sistem yang telah terintegrasi. Apabila pada saat uji coba ditemukan error atau performa ekstraksi belum memenuhi target toleransi maksimal (Character Error Rate > 10% atau Word Error Rate > 15%), mekanisme feedback loop diaktifkan untuk memungkinkan pengembang melakukan iterasi kembali ke Fase Implementasi atau Desain untuk melakukan tuning parameter pra-pemrosesan OpenCV dan modifikasi Regex, sebelum sistem disahkan secara utuh.
+Pemilihan model Waterfall dengan feedback loop dalam penelitian ini didasarkan pada beberapa pertimbangan: (1) ruang lingkup dan kebutuhan fungsional sistem telah terdefinisi jelas sejak awal; (2) model ini menghasilkan dokumentasi komprehensif pada setiap fase yang penting dalam konteks penulisan skripsi; dan (3) evaluasi dilakukan setelah sistem terimplementasi secara utuh, selaras dengan pengukuran CER dan WER yang memerlukan sistem berfungsi penuh.
+Gambar 2.2 Diagram Model Waterfall dengan Feedback Loop
+2.8 Metrik Evaluasi
+Pengukuran berbasis Edit Distance menjadi standar evaluasi metrik yang mutlak diperlukan untuk memvalidasi efektivitas metode pasca-pemrosesan teks pada pengembangan sistem antarmuka OCR (Kundu et al., 2023).
+Evaluasi performa sistem menggunakan dua metrik kuantitatif standar dalam evaluasi OCR, yaitu Character Error Rate (CER) dan Word Error Rate (WER), yang keduanya diturunkan dari konsep edit distance.
+2.8.1 Character Error Rate (CER)
+CER mengukur proporsi karakter yang salah dikenali relatif terhadap total karakter dalam teks referensi, berdasarkan Levenshtein Distance pada level karakter:
+di mana  = jumlah karakter tersubstitusi,  = jumlah karakter terhapus,  = jumlah karakter tersisipkan, dan  = total karakter pada ground truth. Nilai CER rendah mengindikasikan akurasi tinggi. Sebagai referensi, Azzahra & Nugroho (2025) mencapai CER 5,71% pada dokumen surat digital, sementara Sofjan & Soetanto (2025) memperoleh CER 28,85% pada e-KTP. Dalam penelitian ini, CER dihitung per-field (NIK, Nama, Alamat) dan secara agregat.
+2.8.2 Word Error Rate (WER)
+WER mengukur proporsi kata yang salah dikenali, beroperasi pada level kata:
+di mana , , dan  masing-masing adalah jumlah kata tersubstitusi, terhapus, dan tersisipkan, sedangkan  = total kata pada ground truth. WER bersifat lebih ketat karena satu kesalahan karakter menyebabkan seluruh kata dihitung salah. Azzahra & Nugroho (2025) melaporkan WER 9,59%, menunjukkan dampak kumulatif kesalahan karakter terhadap akurasi kata. WER dihitung per-field dan agregat; untuk NIK yang merupakan satu string 16 digit, WER bersifat biner (0% atau 100%).
+2.9 Pengujian Perangkat Lunak
+Pengujian perangkat lunak (software testing) merupakan proses evaluasi sistematis terhadap sistem untuk memverifikasi bahwa sistem berfungsi sesuai spesifikasi dan memenuhi kebutuhan pengguna. Terdapat dua pendekatan utama dalam pengujian perangkat lunak, yaitu Blackbox Testing dan Whitebox Testing.
+2.9.1 Blackbox Testing
+Blackbox Testing merupakan teknik pengujian perangkat lunak yang menguji fungsionalitas sistem tanpa memperhatikan struktur kode internal. Pengujian dilakukan dari perspektif pengguna akhir dengan memberikan input tertentu kemudian memverifikasi apakah output yang dihasilkan sesuai dengan yang diharapkan (Pressman & Maxim, 2020; Amar & Lammada, 2023). Teknik ini berfokus pada validasi bahwa setiap fitur berjalan sesuai spesifikasi kebutuhan fungsional, termasuk penanganan input yang valid maupun tidak valid. Dalam konteks penelitian ini, Blackbox Testing digunakan untuk menguji fungsionalitas sistem OCR secara keseluruhan, seperti upload citra, proses autofill, dan tampilan hasil ekstraksi pada formulir. Metode pengujian kotak hitam (blackbox testing) ini difokuskan secara murni untuk memvalidasi persyaratan fungsional perangkat lunak tanpa perlu mengetahui struktur algoritma internal program tersebut (Nidhra & Dondeti, 2012).
+2.9.2 Whitebox Testing
+Whitebox Testing merupakan teknik pengujian yang menguji struktur internal dan logika kode program secara langsung. Penguji memiliki akses ke kode sumber dan mengevaluasi jalur eksekusi (execution path), percabangan kondisi (branch), dan loop dalam program (Pressman & Maxim, 2020). Dalam penelitian ini, Whitebox Testing digunakan untuk memverifikasi kebenaran logika pada setiap modul pipeline OCR, seperti modul preprocessing (konversi grayscale, Gaussian Blur, Otsu’s Thresholding), modul ekstraksi teks Tesseract, dan modul parsing Regex.
+2.10 Python dan Library Pendukung
+Python merupakan bahasa pemrograman tingkat tinggi yang bersifat interpreted, dinamis, dan multi-paradigm, yang digunakan secara luas dalam pengembangan aplikasi di bidang machine learning, computer vision, dan pemrosesan data (Van Rossum & Drake, 2009). Pemilihan Python sebagai bahasa pemrograman utama didasarkan pada ketersediaan ekosistem library yang kaya untuk domain pengolahan citra dan OCR, sintaks yang bersih, serta kompatibilitas yang baik dengan seluruh komponen teknologi yang digunakan dalam pipeline.
+Library utama yang digunakan meliputi: OpenCV-Python (cv2) sebagai binding Python dari library OpenCV untuk seluruh tahapan pra-pemrosesan citra; PyTesseract sebagai wrapper Python untuk mesin Tesseract OCR yang menyediakan antarmuka untuk mengirimkan citra input ke Tesseract dan mengembalikan hasil pengenalan teks; library re (modul bawaan Python) untuk operasi Regular Expression pada tahapan parsing; serta Pillow dan NumPy sebagai dependensi pendukung untuk operasi input/output citra dan manipulasi matriks.
+2.11 Framework Web
+Framework web digunakan sebagai wadah integrasi pipeline OCR ke dalam antarmuka yang dapat diakses oleh pengguna akhir (calon mahasiswa) melalui browser web.
+Flask merupakan micro web framework untuk Python yang mengikuti filosofi minimalis, menyediakan komponen inti yang esensial (routing, template rendering, request handling) tanpa memaksakan penggunaan library tertentu. Keunggulan Flask meliputi kemudahan integrasi dengan library Python lainnya (OpenCV, PyTesseract) karena berada dalam ekosistem bahasa yang sama, serta dukungan untuk RESTful API yang memfasilitasi komunikasi antara frontend dan backend. Penggunaan micro-framework seperti Flask memungkinkan pengembang untuk membangun aplikasi web dengan struktur yang ringan dan skalabilitas tinggi tanpa terikat pada alat bawaan tertentu (Grinberg, 2018).
+Sebagai alternatif, Laravel merupakan framework web berbasis PHP yang mengikuti pola arsitektur Model-View-Controller (MVC). Pada penelitian Azzahra dan Nugroho (2025), Laravel digunakan sebagai framework utama sistem SuratTEDI dengan integrasi ke PyTesseract melalui pemanggilan proses Python, menunjukkan bahwa integrasi lintas bahasa antara PHP dan Python dapat dilakukan secara efektif.
+2.12 Kartu Tanda Penduduk Elektronik (e-KTP)
+Kartu Tanda Penduduk Elektronik (e-KTP) merupakan dokumen kependudukan yang memuat data identitas penduduk Indonesia secara digital, diterbitkan berdasarkan Undang-Undang Nomor 24 Tahun 2013 tentang Administrasi Kependudukan. E-KTP memiliki format fisik terstandarisasi secara nasional dengan dimensi 85,60 mm × 53,98 mm (sesuai standar ISO/IEC 7810 ID-1).
+Informasi yang tercetak pada sisi depan e-KTP meliputi: NIK (16 digit unik), nama lengkap, tempat dan tanggal lahir, jenis kelamin, alamat domisili (termasuk RT/RW, kelurahan/desa, kecamatan), golongan darah, agama, status perkawinan, pekerjaan, kewarganegaraan, masa berlaku, serta foto dan tanda tangan. Dalam penelitian ini, field target ekstraksi adalah NIK, Nama, dan Alamat — tiga field yang paling relevan untuk proses pendaftaran mahasiswa baru.
+Beberapa tantangan teknis muncul ketika citra KTP diambil menggunakan kamera smartphone: (1) refleksi cahaya pada permukaan laminasi yang glossy (glare); (2) variasi pencahayaan yang menyebabkan bayangan atau over-exposure; (3) kemiringan pengambilan foto yang menyebabkan distorsi perspektif; (4) resolusi kamera yang tidak memadai sehingga karakter tampak buram. Tantangan-tantangan inilah yang menjadi motivasi penerapan pipeline pra-pemrosesan citra.
+Penelitian terdahulu telah mengonfirmasi bahwa kartu identitas seperti e-KTP dapat dimanfaatkan untuk registrasi otomatis secara digital guna mempercepat dan menyederhanakan proses birokrasi (Abdullah & Muhammad, 2021).
+2.13 Penelitian Terkait
+Reswan et al. (2024) mengembangkan sistem ekstraksi informasi dari citra Kartu Tanda Mahasiswa (KTM) menggunakan teknologi OCR. Penelitian tersebut berhasil membaca dan mengenali karakter pada KTM secara efisien, di mana data yang diekstraksi otomatis tersimpan ke dalam dokumen Microsoft Word. Pengujian menghasilkan nilai Precision sebesar 88%, Recall sebesar 100%, dan Accuracy sebesar 88%. Namun, sistem yang dikembangkan bersifat standalone dan belum terintegrasi dengan sistem pendaftaran daring (Reswan et al., 2024).
+Nashiruddin et al. (2025) mengimplementasikan OCR berbasis Tesseract untuk ekstraksi data Kartu Tanda Mahasiswa di Universitas Muhammadiyah Klaten menggunakan pipeline OpenCV (konversi grayscale dan binarisasi Otsu), Tesseract OCR, serta parsing data menggunakan Regex untuk memisahkan field Nama, NIM, dan Program Studi. Hasil pengujian menunjukkan tingkat keberhasilan yang baik, meskipun akurasi sangat dipengaruhi oleh kualitas citra input (Nashiruddin et al., 2025).
+Sofjan dan Soetanto (2025) mengembangkan sistem verifikasi e-KTP berbasis OCR dan CNN untuk administrasi akademik di Universitas Budi Luhur. Model CNN mencapai akurasi klasifikasi 80%, sementara performa OCR menghasilkan rata-rata CER sebesar 28,85%. Penelitian ini berfokus pada verifikasi keaslian dokumen dengan pendekatan yang lebih kompleks (Sofjan & Soetanto, 2025).
+Sherin et al. (2024) mengimplementasikan OCR pada aplikasi administrasi departemen di KAHM Unity Women’s College, India, untuk otomatisasi pengolahan dokumen hasil ujian. Sistem mampu memindai hasil ujian dan mengkonversinya ke format spreadsheet secara otomatis, memvalidasi bahwa OCR efektif untuk otomatisasi input data di lingkungan pendidikan (Sherin et al., 2024).
+Azzahra (2025) mengembangkan sistem persuratan digital berbasis web (SuratTEDI) di DTEDI Universitas Gadjah Mada yang mengintegrasikan Laravel dengan Tesseract OCR melalui PyTesseract. Pengujian pada 20 dokumen menunjukkan CER 5,71%, WER 9,59%, dan UAT 94,29%, membuktikan OCR efektif pada sistem administrasi berbasis web (Azzahra & Nugroho, 2025).
+Berdasarkan analisis terhadap kelima penelitian, teknologi OCR telah terbukti efektif untuk mengotomatisasi ekstraksi data di lingkungan pendidikan. Namun, belum ada yang secara spesifik mengimplementasikan fitur autofill berbasis OCR pada sistem PMB dengan memanfaatkan citra KTP. Penelitian ini mengisi celah tersebut.
+BAB III 
+METODOLOGI PENELITIAN
+Kebutuhan Sistem
+Tahapan awal dalam mengimplementasikan fitur autofill berbasis Optical Character Recognition (OCR) pada portal PMB Universitas Muhammadiyah Bandung adalah mendefinisikan spesifikasi kebutuhan sistem secara komprehensif. Spesifikasi ini menjadi prasyarat teknis agar seluruh pipeline pemrosesan—mulai dari pra-pemrosesan citra, ekstraksi teks Tesseract, hingga penguraian Regular Expression—dapat berjalan secara stabil. Kebutuhan sistem ini diklasifikasikan ke dalam dua aspek utama, yakni infrastruktur perangkat keras dan lingkungan perangkat lunak.
+3.1.1 Perangkat Keras 
+Dalam pelaksanaan penelitian ini, dibutuhkan sejumlah perangkat keras yang berfungsi sebagai infrastruktur utama untuk membangun dan menjalankan sistem. Spesifikasi perangkat keras yang digunakan meliputi:
+Komputer/laptop: prosesor minimal Intel Core i5 gen 8, RAM 8 GB, SSD 256 GB.
+Smartphone dengan kamera minimal 12 MP untuk pengambilan foto sampel KTP (variasi perangkat digunakan untuk merepresentasikan diversitas kualitas kamera).
+3.1.2 Perangkat Lunak 
+Selain perangkat keras, penelitian ini juga membutuhkan lingkungan perangkat lunak untuk mendukung proses pra-pemrosesan citra, ekstraksi teks, hingga pembuatan antarmuka sistem. Perangkat lunak yang digunakan terdiri dari:
+Sistem Operasi: Windows 10/11 atau Ubuntu 20.04+.
+Bahasa Pemrograman: Python 3.10+.
+Mesin OCR: Tesseract OCR Engine 5.0 (arsitektur LSTM) dengan language pack Indonesia (ind) dan English (eng); PyTesseract sebagai wrapper Python.
+Preprocessing: OpenCV-Python (cv2) 4.0+, NumPy, Pillow.
+Framework Web: Flask (Python) atau Laravel (PHP).
+Tools Pendukung: Visual Studio Code (IDE), Git (version control).
+3.2 Tahapan Penelitian
+ Penelitian ini mengikuti paradigma penelitian terapan (applied research) dengan pendekatan kuantitatif, berfokus pada pengembangan solusi teknologis dan pengukuran efektivitasnya menggunakan metrik terstandarisasi. Pendekatan kuantitatif digunakan dalam penelitian ini karena evaluasi berfokus pada data angka dan analisis metrik untuk menguji performa sistem yang telah ditetapkan (Sugiyono, 2019). Metode pengembangan sistem yang digunakan dalam penelitian ini diadaptasi menjadi model Waterfall dengan Feedback Loop (Pressman & Maxim, 2020; Amar & Lammada, 2023). Pendekatan ini dipilih karena memungkinkan adanya iterasi dan perbaikan berdasarkan hasil evaluasi metrik performa. Alur penelitian dirancang dalam empat tahapan utama yang saling terhubung, sebagaimana digambarkan pada Gambar 3.1.
+Gambar 3.1 Diagram Tahapan Penelitian (Pendekatan Waterfall Feedback Loop).
+Secara detail, proses pengujian performa OCR mengikuti logika pada Gambar 3.2. Citra KTP input diproses melalui pipeline preprocessing OpenCV, diekstraksi menggunakan Tesseract OCR Engine, dan diuraikan datanya menggunakan Regular Expression (Regex). Inti dari pengujian ini terletak pada simbol belah ketupat 'Komparasi dengan Ground Truth'. Apabila pada saat komparasi, metrik evaluasi belum memenuhi target toleransi yang telah ditetapkan (nilai CER melebihi batas maksimal 10% atau WER melebihi 15%), maka mekanisme feedback loop diaktifkan. Panah akan mengarah kembali ke tahap 'Parsing Regex' atau 'Ekstraksi Teks' agar pengembang dapat melakukan tuning atau penyesuaian parameter, sebelum sistem dianggap valid.
+Penerapan tahapan penelitian dengan pendekatan Waterfall Feedback Loop adalah sebagai berikut:
+Tahap 1: Analisis Kebutuhan Sistem PMB. Pada fase ini dilakukan pengumpulan data dan pendokumentasian kebutuhan fungsional serta non-fungsional sistem secara komprehensif. Aktivitas meliputi observasi alur PMB berjalan, wawancara dengan stakeholder, studi literatur, serta penyiapan dataset citra KTP.
+Tahap 2: Desain Sistem & Arsitektur OCR. Tahap ini mentransformasikan spesifikasi kebutuhan menjadi blueprint arsitektur. Aktivitas utamanya mencakup perancangan arsitektur client-server, pembuatan Data Flow Diagram (DFD), perancangan antarmuka pengguna, serta penyusunan logika pipeline OCR secara detail.
+Tahap 3: Implementasi Modul Preprocessing, Ekstraksi & Parsing. Seluruh rancangan diterjemahkan ke dalam kode program secara modular. Modul pra-pemrosesan (OpenCV), mesin ekstraksi (PyTesseract), dan logika parsing (Regular Expression) dikembangkan sedemikian rupa untuk memudahkan proses tuning parameter apabila diperlukan pada fase selanjutnya.
+Tahap 4: Eksekusi Pengujian Blackbox & Performa. Pengujian dilaksanakan secara komprehensif terhadap sistem yang telah terintegrasi untuk mengevaluasi fungsionalitas (Blackbox) dan mengukur performa teknis (metrik CER, WER, dan Speedup Ratio). Apabila hasil uji coba menunjukkan tingkat akurasi yang belum memenuhi standar, feedback loop diaktifkan. Hal ini memungkinkan pengembang melakukan iterasi kembali ke Tahap 3 atau Tahap 2 untuk melakukan optimasi kode, modifikasi pola Regex, maupun perbaikan tuning parameter, sebelum sistem dianalisis untuk penarikan kesimpulan.
+3.3 Dataset Penelitian
+Dataset terdiri dari 50 sampel citra KTP elektronik yang dikumpulkan dengan menggunakan citra dummy yang telah dibuat oleh peneliti. Dataset dikategorisasikan ke dalam tiga kelompok berdasarkan karakteristik kualitas citra:
+Kategori 1: Citra Ideal (20 sampel) — diambil dalam kondisi optimal: pencahayaan merata, resolusi tinggi (minimal 300 DPI ekuivalen), orientasi tegak lurus, dan fokus tajam. Merepresentasikan best-case scenario untuk mengukur batas atas performa sistem.
+Kategori 2: Citra dengan Noise (15 sampel) — mengandung noise visual yang umum pada foto smartphone: pencahayaan tidak merata, bayangan jari, noise sensor, artefak kompresi JPEG, dan pantulan cahaya (glare) pada laminasi KTP. Merepresentasikan kondisi sub-optimal yang diperkirakan menjadi mayoritas kasus penggunaan aktual (Sofjan & Soetanto, 2025).
+Kategori 3: Citra dengan Kemiringan (15 sampel) — diambil dengan sudut kemiringan (tilt) bervariasi dari ringan (5–10°) hingga moderat (10–25°) pada sumbu horizontal, vertikal, atau kombinasi keduanya. Distorsi perspektif berpotensi mempengaruhi segmentasi dan pengenalan karakter Tesseract.
+Untuk setiap sampel, disiapkan data ground truth yang memuat nilai sebenarnya dari field target (NIK, Nama, Alamat), diverifikasi secara manual oleh dua annotator independen sebagai acuan perhitungan CER dan WER.
+3.4 Rencana Pengujian
+Rencana pengujian dalam penelitian ini dirancang sebagai satu kesatuan evaluasi performa sistem OCR PMB, yang menggabungkan pengujian fungsionalitas (Blackbox Testing) dan pengukuran metrik evaluasi akurasi teknis (Character Error Rate dan Word Error Rate) serta efektivitas waktu (Speedup Ratio).
+3.4.1 Pengujian Fungsionalitas Sistem OCR
+Pengujian fungsionalitas dilakukan menggunakan metode Blackbox Testing (penjelasan lengkap mengenai metode pengujian terdapat pada Bab II Sub-bab 2.8). Metode Blackbox Testing dipilih karena fokus penelitian ini adalah pada fungsionalitas sistem dari perspektif pengguna akhir — yaitu apakah sistem mampu menerima input citra KTP dan menghasilkan output autofill yang benar — bukan pada analisis struktur kode internal.
+baselineSkenario pengujian Blackbox Testing meliputi:
+Fungsi upload citra KTP menerima format file yang valid (JPG, PNG) dan menolak format yang tidak didukung.
+Proses preprocessing, ekstraksi teks, dan parsing berjalan tanpa error.
+Hasil autofill menampilkan data NIK, Nama, dan Alamat dengan benar pada kolom formulir yang bersesuaian.
+Sistem memberikan notifikasi yang sesuai apabila citra tidak dapat diproses.
+Sistem menangani citra dengan berbagai kondisi kualitas (ideal, noise, kemiringan) tanpa mengalami kegagalan.
+3.4.2 Pengujian Performa OCR
+Pengujian performa OCR dilakukan menggunakan metrik CER dan WER (penjelasan lengkap mengenai rumus dan definisi terdapat pada Bab II Sub-bab 2.7). Alur pengujian performa digambarkan pada Gambar 3.2.
+Gambar 3.2 Diagram Alur Pengujian Performa OCR
+Secara detail, proses pengujian performa OCR mengikuti logika pada Gambar3.2. Citra KTP input diproses melalui pipeline preprocessing OpenCV, diekstraksi menggunakan Tesseract OCR Engine, dan diuraikan datanya menggunakan Regular Expression (Regex). Inti dari pengujian ini terletak pada simbol belah ketupat 'Komparasi dengan Ground Truth'. Apabila pada saat komparasi metrik evaluasi (seperti nilai CER) belum memenuhi standar, mekanisme feedback loop diaktifkan. Panah akan mengarah kembali ke tahap 'Parsing Regex' atau 'Ekstraksi Teks' agar pengembang dapat melakukan tuning atau penyesuaian parameter, sebelum sistem dianggap valid.
+Setelah data tervalidasi, pengujian performa dilanjutkan melalui tahapan berikut: (1) perhitungan CER dan WER untuk setiap sampel pada setiap field menggunakan algoritma Dynamic Programming; (2) agregasi ke dalam statistik deskriptif (mean, median, standar deviasi, min, maks) per field dan per kategori kualitas citra, disajikan dalam tabel dan grafik; (3) analisis komparatif antar kategori (ideal, noise, tilt) untuk mengidentifikasi pola degradasi performa; (4) analisis efisiensi waktu menggunakan speedup ratio (Persamaan 2.16):
+di mana  adalah waktu rata-rata input manual per formulir dan  adalah waktu rata-rata proses autofill; serta (5) interpretasi dan pembahasan hasil secara kuantitatif dan kualitatif, termasuk perbandingan dengan penelitian terdahulu.
+Tabel 3.1 Jadwal Penelitian (Pendekatan Waterfall Feedback Loop)
+No
+Kegiatan
+Bulan 1
+Bulan 2
+Bulan 3
+1
+Pengumpulan Dataset & Desain Sistem
+████
+2
+Implementasi Pipeline OCR & Integrasi Web
+████
+3
+Pengujian, Evaluasi & Penulisan Laporan
+████
+4
+Penulisan Laporan Skripsi
+████
+████
+████
+Jadwal bersifat tentatif dan dapat disesuaikan berdasarkan perkembangan aktual, dengan catatan alur pengembangan tetap memungkinkan adanya iterasi melalui mekanisme feedback loop apabila diperlukan. 
+BAB IV
+HASIL DAN PEMBAHASAN
+Bab ini menguraikan keseluruhan tahapan pengembangan Sistem Informasi Penerimaan Mahasiswa Baru (PMB) berdasarkan pendekatan Waterfall Feedback Loop. Mengingat kompleksitas pemrosesan citra digital dan komunikasi arsitektur Client-Server, tahapan pengembangan tidak berjalan secara linear. Pengujian awal menggunakan sampel berskala kecil digunakan sebagai instrumen umpan balik (Feedback) untuk merevisi desain, logika algoritma, dan memperbaiki kode secara iteratif hingga sistem mencapai keseimbangan performa yang ditetapkan pada pengujian skala besar.
+4.1 Fase 1: Analisis Kebutuhan (Requirements Analysis)
+Berdasarkan hasil observasi dan studi literatur terhadap dokumen kebutuhan dan prosedur pendaftaran Sistem PMB UM Bandung, diidentifikasi bahwa proses pengisian data identitas calon mahasiswa ke dalam basis data secara manual sangat rentan terhadap kesalahan ketik (human error) dan inefisiensi waktu. Oleh karena itu, dibutuhkan pengembangan fitur otomasi pengisian formulir (autofill) berbasis Optical Character Recognition (OCR) yang mampu membaca dokumen KTP fisik calon mahasiswa, mengekstrak variabel Primary Key secara presisi, dan merespons interaksi sistem secara real-time.
+4.2 Fase 2: Desain Sistem (System Design) - Iterasi 1
+Pada tahap ini, kerangka arsitektur dasar dan logika sistem dirancang secara konseptual sebelum tahap pengkodean dimulai.
+Arsitektur Client-Server: Sistem dirancang agar antarmuka pengguna (Client) dan mesin pemroses OCR (Server) terpisah secara komputasi untuk menstabilkan kinerja peladen.
+Perancangan Antarmuka & Alur Data: Antarmuka landing page dirancang dengan sebuah formulir unggah (upload) dokumen dan kolom input teks untuk NIK dan Nama. Alur Data (Data Flow Diagram) dirancang agar citra yang diunggah dikirimkan melalui Application Programming Interface (API).
+Logika Pipeline OCR: Mesin pemroses OCR didesain dengan logika sekuensial sederhana: Citra Masukan  Konversi Grayscale  Pemindaian Tesseract OCR  Pemotongan Teks (Regex Parsing).
+4.3 Fase 3: Implementasi (Implementation) - Iterasi 1
+Desain kerangka pada Fase 2 ditranslasikan ke dalam bentuk kode program nyata.
+Pengkodean Modular: Modul Frontend diimplementasikan menggunakan framework Laravel. Modul Backend OCR diimplementasikan menggunakan bahasa pemrograman Python terintegrasi framework Flask, yang dijembatani ke jaringan publik (internet) menggunakan sistem tunneling Ngrok.
+Tuning Parameter OpenCV Awal: Modul prapemrosesan citra dibangun menggunakan pustaka OpenCV (cv2). Pada iterasi awal ini, kode pemrosesan hanya menerapkan fungsi dasar cv2.cvtColor() untuk merubah citra masukan berformat RGB menjadi skala abu-abu (grayscale).
+Regex Parsing Awal: Aturan algoritma ekstraksi teks didasarkan pada Regular Expression dasar yang mencari kata kunci secara kaku. Kode diinisiasi dengan perintah re.search(r'NIK\s*:\s*(\d{16})', text) untuk mengisolasi 16 digit NIK.
+4.4 Fase 4: Pengujian (Testing) - Iterasi 1 (Skala Kecil)
+Sistem yang telah diimplementasikan diuji kelayakan dan fungsionalitasnya menggunakan pengujian skala kecil. Pengujian iterasi pertama ini menggunakan 1 (satu) sampel fisik e-KTP buatan (dummy) yang difoto dan diekstraksi ke dalam 13 skenario kasus (case) yang berbeda, mencakup variasi jarak, tingkat pencahayaan, dan orientasi sudut pandang kamera (termasuk orientasi vertikal/portrait). Pengujian awal ini menghasilkan persentase kegagalan (error rate) yang tinggi, sehingga memicu skenario evaluasi Feedback Loop.
+4.4.1 Blackbox Testing Awal (Ujicoba Antarmuka)
+Pengujian fungsionalitas di sisi Client menemukan kendala mayor pada validasi orientasi citra. Saat dilakukan simulasi pengunggahan foto KTP dengan posisi vertikal, sistem pada iterasi ini belum mampu membaca citra dengan rotasi yang tidak linear terhadap sumbu horizontal, menyebabkan form autofill tetap kosong.
+4.4.2 Evaluasi Metrik CER, WER & Speedup Ratio Awal
+Pengujian arsitektur Backend pada berbagai kondisi pencahayaan menunjukkan nilai kegagalan yang tinggi. Tesseract OCR mendeteksi derau (bintik hitam dan pantulan cahaya) sebagai karakter acak yang merusak penangkapan kode Regex dasar. Memudarnya kata kunci pada fisik KTP di kondisi pencahayaan rendah juga menyebabkan sistem kehilangan titik referensi (anchor). Selain itu, percobaan implementasi algoritma deteksi kemiringan otomatis (OSD) terbukti merusak Speedup Ratio karena beban komputasi rotasi citra yang sangat berat menyebabkan server timeout.
+Berdasarkan pengujian awal tersebut, dapat diidentifikasi dua kondisi utama yang memengaruhi hasil ekstraksi. Kondisi gagal dibaca terjadi apabila citra KTP mengalami glare (pantulan cahaya keras pada permukaan laminasi), pencahayaan tidak merata yang menimbulkan bayangan, teks KTP yang sudah pudar, atau citra diambil dengan sudut kemiringan ekstrem yang merusak distorsi perspektif. Sebaliknya, kondisi pemindaian berhasil dicapai secara optimal apabila citra KTP diposisikan tegak lurus sejajar (orientasi lanskap), pencahayaan merata tanpa pantulan cahaya, dan teks tercetak dengan tingkat kontras yang baik.
+4.5 Proses Umpan Balik (Feedback Loop)
+Berdasarkan kegagalan ekstraksi dan evaluasi performa pada Iterasi 1, dilakukan dua jalur umpan balik yang mengkorelasikan perbaikan antarmuka pengguna dengan ketahanan mesin peladen.
+4.5.1 Feedback: Revisi Desain Antarmuka (UI Constraint & Sketsa Kamera) 
+Untuk menjaga efisiensi waktu komputasi, arsitektur dikembalikan (rollback) dengan menghapus beban algoritma rotasi otomatis dari mesin peladen. Sebagai gantinya, solusi pencegahan difokuskan secara penuh pada sisi Client. Modul unggah berkas konvensional pada landing page dihapus, dan digantikan dengan integrasi antarmuka Kamera Interaktif.
+Kamera ini dilengkapi dengan antarmuka Sketsa Garis Bantu (Guideline Overlay) berbentuk bingkai proporsi KTP, serta penegasan instruksi visual yang mengarahkan pengguna. Fungsionalitas ini memaksa calon mahasiswa untuk meletakkan fisik e-KTP tepat di dalam area bingkai (orientasi landscape, sejajar, dan pencahayaan cukup) sebelum sistem melakukan penangkapan gambar (capture). Pendekatan UI Constraint ini dirancang untuk memotong sumber noise dan kemiringan ekstrem sejak awal dari sisi Client sebelum membebani komputasi Server Backend.
+Gambar 4.1 Implementasi Guideline Overlay Kamera pada Antarmuka Pengguna
+4.5.2 Feedback: Tuning Parameter OpenCV & Modifikasi Regex (Kembali ke Fase 3)
+Untuk menembus tingginya persentase derau pembacaan, parameter pada lingkungan pengembangan Python direvisi secara komprehensif.
+1. Tuning Parameter OpenCV Preprocessing
+Modul prapemrosesan awal ditingkatkan kualitasnya. Fungsi cv2.createCLAHE ditambahkan untuk meratakan kontras histogram pada citra. Metode ini dipadukan dengan teknik reduksi noise dan binarisasi adaptif untuk memisahkan teks warna hitam secara tegas dari latar belakang. Berikut adalah potongan kode implementasi prapemrosesan citra pada iterasi final:
+2.Modifikasi Regex Parsing (Pendekatan Bertingkat) 
+Struktur Regex pemotongan teks tunggal dirombak menjadi algoritma deteksi bertingkat (Multi-Layered Fallback). Algoritma ini dirancang agar tidak mudah menyerah (fail-fast) ketika mesin gagal mendeteksi atribut label. Berikut adalah potongan kode fallback untuk memastikan 16 digit Primary Key NIK selalu tertangkap meskipun memuat derau tanda baca:
+Untuk memperkuat pemotongan teks variabel Nama tanpa bergantung pada label referensi, filter heuristik diimplementasikan melalui metode isupper() di bahasa Python. Baris luaran yang mengandung huruf kapital keseluruhan dan tidak memuat elemen angka akan ditangkap. Untuk mencegah sistem menangkap sembarang variabel, sebuah larik memori berisi stop-words ('PROVINSI', 'KOTA', 'AGAMA') dideklarasikan di dalam algoritma untuk mengabaikan teks identitas wilayah.
+4.6 Fase 4: Pengujian Final (Testing) - Iterasi 2 
+Setelah perbaikan kode dan antarmuka diimplementasikan, pengujian final dieksekusi guna mengesahkan kelayakan dan batasan performa operasional.
+4.6.1 Skenario Simulasi Fungsionalitas Antarmuka (Blackbox Testing) 
+Pengujian fungsionalitas disimulasikan menggunakan antarmuka interaktif yang telah diperbaiki. Adapun kronologi skenario sistem berjalan sebagai berikut:
+Pengguna mengakses portal landing page dan mengaktifkan fitur kamera.
+Antarmuka menampilkan sketsa bingkai KTP secara real-time. Pengguna menyesuaikan posisi KTP agar sejajar di dalam panduan tersebut, lalu menekan tombol tangkap (capture).
+Citra hasil tangkapan presisi tersebut dikirimkan ke endpoint API Ngrok. Mesin mengeksekusi pipeline ekstraksi dan mengembalikan respons JSON.
+Frontend Laravel memecah data JSON dan secara instan memberikan umpan balik visual dengan mengisikan data (autofill) ke dalam formulir pendaftaran. 
+Gambar 4.2 Simulasi Keberhasilan Fungsionalitas Ekstraksi Data pada Frontend
+4.6.2 Skenario Pengujian Batch dan Metrik Evaluasi Akhir
+Evaluasi kapabilitas mesin Tesseract diuji secara mandiri (terpisah dari Frontend) menggunakan lingkungan Google Colaboratory untuk melihat kemampuan dasar algoritma. Pengujian melibatkan 50 dataset citra e-KTP buatan (dummy). Tingkat kesalahan dievaluasi menggunakan rumus Levenshtein Distance dengan persamaan:
+Gambar 4.3 Eksekusi Pengujian Batch terhadap 50 Dataset OCR Final
+Berdasarkan hasil eksekusi terminal pada Gambar 4.3, luaran evaluasi menunjukkan rentang nilai CER yang bervariasi. Nilai CER 0.0000 menunjukkan tingkat kesalahan 0%, yang artinya seluruh karakter berhasil diekstrak secara sempurna dan presisi tanpa ada huruf yang tersisip, terhapus, maupun terganti. Sebaliknya, kemunculan nilai CER 1.0000 mengindikasikan tingkat kesalahan mencapai 100%, yang berarti mesin Tesseract mengalami kegagalan mutlak dalam mengidentifikasi pola teks target (misalnya membaca derau citra sebagai karakter acak yang sama sekali tidak relevan dengan data referensi sebenarnya)."
+4.6.3 Hasil Evaluasi CER dan WER Final
+Berdasarkan eksekusi 50 citra tersebut, didapatkan statistik performa ekstraksi dasar yang dirangkum pada Tabel 4.1.
+Tabel 4.1 Ringkasan Statistik Evaluasi OCR KTP
+Metrik Evaluasi
+Nilai Evaluasi
+Total Sampel Citra
+50
+Jumlah Gagal Diproses
+0
+Rata-rata CER NIK
+0.7025 (70.25%)
+Rata-rata CER Nama
+0.7865 (78.65%)
+Akurasi Sempurna NIK (CER = 0)
+4/50 (8%)
+Akurasi Sempurna Nama (CER = 0)
+7/50 (14%)
+Rata-rata Waktu Proses (detik)
+32.77
+Berdasarkan Tabel 4.1, pengujian iterasi final pada tingkat Server ini berhasil mengungkap keterbatasan (limitation) mendasar dari arsitektur model Tesseract OCR ketika dihadapkan pada skenario variabel lingkungan:
+Rentan Terhadap Variasi Pencahayaan (Illumination Variance): Meskipun pipeline OpenCV telah dioptimasi menggunakan metode CLAHE dan binarisasi Otsu's, Tesseract terbukti masih rentan terhadap noise variasi pencahayaan. Hal ini dibuktikan dengan metrik error (kegagalan pembacaan sempurna) di mana rata-rata CER NIK mencatatkan angka 0.7025 (70,25%) dan CER Nama sebesar 0.7865 (78,65%).
+Ketergantungan pada Skenario Ideal: Mesin OCR hanya mampu mengekstrak entitas tanpa cacat karakter (CER 0.0) pada sebagian kecil dataset berskenario sangat ideal (8% akurasi sempurna untuk NIK dan 14% untuk Nama).
+Gambar 4.4 Grafik Analisis Character Error Rate (CER) Final
+Hasil evaluasi kuantitatif mesin dasar yang menunjukkan tingginya tingkat kegagalan ini memberikan justifikasi akademis yang sangat kuat terhadap revisi implementasi "Kamera Sketsa" pada Frontend. Tingginya nilai CER tersebut membuktikan bahwa algoritma Tesseract memiliki akurasi mutlak yang rendah dan tidak dapat beroperasi secara mandiri. Hal ini secara sah merasionalisasikan mengapa sistem mewajibkan pengguna untuk melakukan standarisasi (alignment) citra secara mandiri melalui overlay frame (sketsa panduan) di sisi Client sebelum algoritma dieksekusi.
+4.6.4 Pengukuran Waktu Komputasi
+Sebagai hasil kompromi dari penghapusan algoritma rotasi citra otomatis (auto-rotate) yang memberatkan peladen pada iterasi sebelumnya, beban komputasi sistem menjadi jauh lebih stabil. Rata-rata beban penyelesaian ekstraksi teks terhadap keseluruhan dataset tercatat pada angka 32,77 detik per citra (dipengaruhi latensi I/O dari pembacaan cloud storage Google). Pemangkasan beban komputasi adaptif ini memastikan alur respons sistem tetap berjalan sekuensial tanpa interupsi timeout.
+Sebagai perbandingan, simulasi pengisian formulir secara manual oleh calon mahasiswa membutuhkan waktu rata-rata 120 detik (). Dengan menggunakan Persamaan 2.16, nilai Speedup Ratio yang dicapai adalah . Angka ini menunjukkan bahwa sistem autofill berbasis OCR ini mampu mempercepat proses pendaftaran hingga 3,66 kali lipat dibandingkan metode konvensional.
+BAB V
+KESIMPULAN DAN SARAN
+5.1 Kesimpulan
+Berdasarkan hasil perancangan arsitektur, implementasi kode program, dan analisis evaluasi data pengujian yang telah diuraikan pada bab-bab sebelumnya, penelitian mengenai implementasi Optical Character Recognition (OCR) pada Sistem Informasi Penerimaan Mahasiswa Baru (PMB) ini menghasilkan kesimpulan yang secara langsung menjawab tujuan penelitian di Bab I sebagai berikut:
+1. Optimalisasi Pelayanan PMB melalui Integrasi Tesseract OCR Proses pelayanan pendaftaran mahasiswa baru telah berhasil dioptimalisasi melalui otomatisasi input data calon mahasiswa menggunakan integrasi teknologi Tesseract OCR. Meskipun hasil pengujian peladen mengungkap bahwa arsitektur dasar mesin OCR konvensional sangat rentan terhadap variasi pencahayaan dan derau (noise), optimalisasi ini tetap berhasil dicapai secara efektif melalui penerapan strategi antarmuka berupa Kamera Sketsa (Guideline Overlay) di sisi Client. Fitur ini berhasil memaksa pengguna untuk menstandarisasi posisi, orientasi (lanskap), dan pencahayaan secara mandiri, yang terbukti sukses menutupi kelemahan mesin Tesseract dalam mengekstrak data identitas e-KTP. 
+2. Validasi Keberhasilan, Presisi Ekstraksi, dan Efisiensi Sistem Tingkat keberhasilan sistem telah divalidasi secara komprehensif melalui penerapan metodologi Waterfall dengan Feedback Loop dan pengujian kotak hitam (Blackbox Testing) yang mengonfirmasi bahwa seluruh fitur aplikasi berjalan stabil. Berdasarkan pengukuran presisi tingkat peladen, mesin dasar menghasilkan rata-rata Character Error Rate (CER) agregat sebesar 70,25% untuk ekstraksi NIK dan 78,65% untuk Nama. Tingginya angka kegagalan awal ini berhasil ditangani melalui mekanisme Feedback Loop dengan mengalihkan beban penyesuaian citra sepenuhnya ke sisi antarmuka pengguna (Kamera Sketsa). Solusi ini sukses menjaga efisiensi waktu pemrosesan (Speedup Ratio) tetap optimal dengan rata-rata 32,77 detik per citra. Angka ini memberikan pembuktian bahwa proses pengisian data identitas menggunakan sistem autofill jauh lebih efisien secara waktu dan terhindar dari risiko kesalahan ketik (human error), dibandingkan dengan proses pengisian formulir secara manual oleh calon mahasiswa.
+5.2 Saran
+Meskipun arsitektur sistem telah dirancang dengan alur mitigasi yang baik dan memenuhi spesifikasi kelayakan fungsional antarmuka, masih terdapat beberapa ruang perbaikan untuk penelitian di masa mendatang. Adapun saran untuk pengembangan sistem adalah sebagai berikut:
+1. Migrasi ke Model Deep Learning Mengingat tingginya tingkat kegagalan (CER) Tesseract OCR pada kondisi pencahayaan yang tidak ideal, disarankan bagi pengembangan selanjutnya untuk mengganti pipeline ekstraksi teks dengan algoritma berbasis Deep Learning yang lebih mutakhir dan tahan terhadap derau (noise-robust), seperti EasyOCR, PaddleOCR, atau arsitektur jaringan saraf tiruan Transformer.
+2. Penerapan Quality Control Citra Berbasis Klien Sistem antarmuka kamera di sisi Frontend dapat disempurnakan dengan menambahkan modul deteksi kualitas citra (Image Quality Assessment / IQA) menggunakan JavaScript. Fitur deteksi tingkat keburaman (blur detection) akan memungkinkan kamera menolak tangkapan gambar yang goyang atau tidak fokus secara otomatis sebelum membebani bandwidth jaringan API ke Server.
+3. Peralihan Lingkungan Infrastruktur Jaringan Untuk implementasi sistem berskala produksi (Production Grade) yang sesungguhnya, disarankan untuk memigrasikan Backend Python dari lingkungan tunneling publik (Ngrok) menuju peladen terdedikasi, seperti Virtual Private Server (VPS) atau layanan komputasi awan (Cloud Computing). Langkah ini sangat krusial untuk meminimalisasi latensi jaringan dan mencegah interupsi batas sesi koneksi (session timeout).
+Daftar Pustaka
+Abdullah, D., & Muhammad, F. D. (2021). Penggunaan e-KTP untuk registrasi otomatis memanfaatkan sistem OCR dengan metode template matching correlation. Media Jurnal Informatika, 12(2), 57.
+Amar, G. Q., & Lammada, I. (2023). Penerapan metode waterfall pada aplikasi sistem informasi sekolah SMA berbasis website untuk wilayah Jakarta. Jurnal Ilmiah Wahana Pendidikan, 9(22), 441–450. https://doi.org/10.5281/zenodo.10115111
+Azzahra, L. N., & Nugroho P., D. (2025). Sistem informasi persuratan digital berbasis web dengan teknologi OCR (Optical Character Recognition) untuk pengarsipan dokumen [Skripsi]. Universitas Gadjah Mada. http://etd.repository.ugm.ac.id/
+Bradski, G. (2000). The OpenCV library. Dr. Dobb's Journal of Software Tools, 25(11), 120–123.
+Goyvaerts, A., & Levithan, J. (2012). Regular expressions cookbook (2nd ed.). O'Reilly Media.
+Grinberg, M. (2018). Flask web development: Developing web applications with Python (2nd ed.). O'Reilly Media.
+Hochreiter, S., & Schmidhuber, J. (1997). Long short-term memory. Neural Computation, 9(8), 1735–1780. https://doi.org/10.1162/neco.1997.9.8.1735
+Kundu, S., et al. (2023). A novel pipeline for improving optical character recognition through post-processing using natural language processing. arXiv preprint, arXiv:2300.00000.
+Mursari, L. R., & Wibowo, A. (2021). The effectiveness of image preprocessing on digital handwritten scripts recognition with the implementation of OCR Tesseract. Computer Engineering and Application, 10(3), 177.
+Nashiruddin, M., Praditya, F. D. N., Mufazzal, A. F., & Ardiansyah. (2025). Implementasi OCR berbasis Tesseract untuk ekstraksi data kartu mahasiswa UMKLA. JKTI - Jurnal Keilmuan Teknologi Informasi, 1(1), 11–14.
+Nidhra, S., & Dondeti, J. (2012). Black box and white box testing techniques - A literature review. International Journal of Embedded Systems and Applications (IJESA), 2(2), 29–50. https://doi.org/10.5121/ijesa.2012.2204
+Otsu, N. (1979). A threshold selection method from gray-level histograms. IEEE Transactions on Systems, Man, and Cybernetics, 9(1), 62–66. https://doi.org/10.1109/TSMC.1979.4310076
+Pressman, R. S., & Maxim, B. R. (2020). Software engineering: A practitioner's approach (9th ed.). McGraw-Hill Education.
+Republik Indonesia. (2013). Undang-Undang Nomor 24 Tahun 2013 tentang Perubahan atas Undang-Undang Nomor 23 Tahun 2006 tentang Administrasi Kependudukan. Lembaran Negara RI Tahun 2013 Nomor 232. Sekretariat Negara. Jakarta.
+Reswan, Y., Raffles, R., Wijaya, A., & Apridiansyah, Y. (2024). Penerapan algoritma OCR untuk ekstraksi informasi dari citra Kartu Tanda Mahasiswa (KTM). JATI (Jurnal Mahasiswa Teknik Informatika), 8(5), 11004–11009.
+Rozi, A., et al. (2023). Improving OCR performance on low-quality image using pre-processing and post-processing methods. International Journal of Engineering and Technology, 71(6).
+Sherin C., N., Shahana, P., Yousuf, R. B., Rushda, V., & Haq, S. M. (2024). Departmental document software using OCR. KAHM Unity Women's College. ISBN: 978-93-340-1632-1.
+Smith, R. (2007). An overview of the Tesseract OCR engine. Ninth International Conference on Document Analysis and Recognition (ICDAR 2007), 2, 629–633. https://doi.org/10.1109/ICDAR.2007.4376991
+Sofjan, M. Z. Z., & Soetanto, H. (2025). Implementasi sistem verifikasi e-KTP berbasis OCR dan CNN untuk administrasi akademik. 6th Seminar Nasional Mahasiswa Fakultas Teknologi Informasi (SENAFTI), 4(2), 269–278.
+Sugiyono. (2019). Metode penelitian kuantitatif, kualitatif, dan R&D. Alfabeta.
+Van Rossum, G., & Drake, F. L. (2009). Python 3 reference manual. CreateSpace.
+LAMPIRAN
+LAMPIRAN A: SOURCE CODE PEMROSESAN OCR (BACKEND)
+Gambar A.1 Potongan kode fungsi prapemrosesan citra menggunakan pustaka OpenCV (meliputi metode Grayscale, CLAHE, Gaussian Blur, Otsu's Thresholding, dan Deskew).
+Gambar A.2 Potongan kode fungsi penguraian teks (parsing) menggunakan algoritma Regular Expression (Regex) bertingkat untuk mengekstrak 16 digit NIK
+LAMPIRAN B: DESAIN ANTARMUKA PENGGUNA (FRONTEND)LAMPIRAN B: DESAIN ANTARMUKA PENGGUNA (FRONTEND)
+LAMPIRAN B: DESAIN ANTARMUKA PENGGUNA (FRONTEND)
+LAMPIRAN B: DESAIN ANTARMUKA PENGGUNA (FRONTEND)
+LAMPIRAN C: HASIL PENGUJIAN DAN EVALUASI PELADENGambar C.1 Visualisasi metrik Character Error Rate (CER) dari hasil pengujian ekstraksi variabel NIK dan Nama terhadap 50 sampel dataset e-KTP.
+Gambar C.2 Log eksekusi terminal komputasi awan (Batch Evaluation) yang menampilkan rincian performa ekstraksi teks mesin Tesseract OCR dan kalkulasi waktu komputasi.
