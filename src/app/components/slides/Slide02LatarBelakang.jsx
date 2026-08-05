@@ -1,12 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { AlertTriangle, Clock, UserX, ShieldCheck, ArrowRight } from "lucide-react";
+import { AlertTriangle, Clock, FileCheck, ArrowRight } from "lucide-react";
 
 const container = {
   hidden: {},
   visible: {
-    transition: { staggerChildren: 0.15, delayChildren: 0.05 },
+    transition: { staggerChildren: 0.14, delayChildren: 0.05 },
   },
 };
 
@@ -20,45 +20,37 @@ const item = {
   },
 };
 
-const bullets = [
+const bulletPoints = [
   {
-    icon: UserX,
-    label: "Kondisi Eksisting",
-    text: "Pengisian data diri PMB di Universitas Muhammadiyah Bandung masih dilakukan secara manual oleh calon mahasiswa.",
-    accent: "text-red-400",
-    bg: "rgba(239, 68, 68, 0.06)",
-    border: "rgba(239, 68, 68, 0.18)",
+    icon: Clock,
+    label: "Inefisiensi Waktu Waktu Pendaftaran",
+    text: "Proses pengisian formulir biodata secara manual memerlukan durasi rata-rata hingga 2 menit (120 detik) per calon mahasiswa.",
+    accent: "text-amber-400",
+    bg: "rgba(245, 158, 11, 0.08)",
+    border: "rgba(245, 158, 11, 0.2)",
   },
   {
     icon: AlertTriangle,
-    label: "Risiko Human Error",
-    text: "Pendekatan manual sangat rentan terhadap kesalahan ketik (typo) NIK dan Nama serta ketidaksesuaian dokumen kependudukan.",
-    accent: "text-amber-400",
-    bg: "rgba(251, 191, 36, 0.06)",
-    border: "rgba(251, 191, 36, 0.18)",
+    label: "Risiko Kesalahan Ketik (Human Error)",
+    text: "Potensi kesalahan entri data NIK, Nama, dan Alamat yang berdampak pada validasi dokumen PMB di PDDikti.",
+    accent: "text-red-400",
+    bg: "rgba(239, 68, 68, 0.08)",
+    border: "rgba(239, 68, 68, 0.2)",
   },
   {
-    icon: Clock,
-    label: "Inefisiensi Waktu",
-    text: "Membutuhkan waktu pemrosesan lama (rata-rata 120 detik per formulir), menciptakan hambatan efisiensi administrasi.",
-    accent: "text-cyan-400",
-    bg: "rgba(34, 211, 238, 0.06)",
-    border: "rgba(34, 211, 238, 0.18)",
-  },
-  {
-    icon: ShieldCheck,
-    label: "Proposisi Solusi",
-    text: "Diperlukan integrasi sistem ekstraksi data presisi dari dokumen identitas (e-KTP) berbasis OCR untuk mengotomatisasi proses input.",
+    icon: FileCheck,
+    label: "Solusi Otomatisasi OCR Tesseract",
+    text: "Mengintegrasikan teknologi OCR untuk ekstraksi otomatis data identitas e-KTP langsung ke dalam kolom formulir.",
     accent: "text-emerald-400",
-    bg: "rgba(52, 211, 153, 0.06)",
-    border: "rgba(52, 211, 153, 0.18)",
+    bg: "rgba(16, 185, 129, 0.08)",
+    border: "rgba(16, 185, 129, 0.2)",
   },
 ];
 
 export default function Slide02LatarBelakang() {
   return (
     <motion.div
-      className="flex flex-col h-full"
+      className="flex flex-col h-full overflow-hidden"
       variants={container}
       initial="hidden"
       animate="visible"
@@ -67,28 +59,26 @@ export default function Slide02LatarBelakang() {
         <div className="slide-heading-accent" />
         <h2 className="slide-title">Latar Belakang &amp; Urgensi Penelitian</h2>
         <p className="slide-subtitle mt-1">
-          Tantangan administrasi registrasi calon mahasiswa PMB UMB
+          Permasalahan utama dalam proses pendaftaran mahasiswa baru secara manual &amp; solusi OCR
         </p>
       </motion.div>
 
-      <div className="flex-1 flex items-center mt-3">
-        <div className="grid grid-cols-12 gap-5 w-full items-stretch">
-          {/* Left Column: 4 Bullets */}
-          <div className="col-span-7 flex flex-col justify-center gap-3">
-            {bullets.map((b, i) => {
+      <div className="flex-1 flex items-center mt-3 overflow-hidden">
+        <div className="grid grid-cols-12 gap-5 w-full items-stretch overflow-hidden">
+          {/* Left Column: Problem Points */}
+          <div className="col-span-6 flex flex-col justify-between gap-2.5">
+            {bulletPoints.map((b, i) => {
               const Icon = b.icon;
               return (
                 <motion.div
                   key={i}
                   variants={item}
-                  className="rounded-xl p-3.5 flex items-start gap-3.5"
-                  style={{
-                    background: b.bg,
-                    border: `1px solid ${b.border}`,
-                    backdropFilter: "blur(8px)",
-                  }}
+                  className="content-card p-3 flex items-start gap-3"
                 >
-                  <div className={`w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 ${b.accent}`} style={{ background: b.bg, border: `1px solid ${b.border}` }}>
+                  <div
+                    className={`w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 ${b.accent}`}
+                    style={{ background: b.bg, border: `1px solid ${b.border}` }}
+                  >
                     <Icon size={16} />
                   </div>
                   <div>
@@ -102,41 +92,41 @@ export default function Slide02LatarBelakang() {
             })}
           </div>
 
-          {/* Right Column: Comparative Transformation Card */}
-          <motion.div variants={item} className="col-span-5 flex flex-col justify-between content-card-gold p-5">
-            <div>
-              <p className="text-xs uppercase tracking-widest text-gold-400 font-semibold mb-3">
-                Transformasi Alur Pendaftaran
-              </p>
-              
-              {/* Process Comparison */}
-              <div className="space-y-4">
-                <div className="p-3 rounded-lg bg-red-500/10 border border-red-500/20">
-                  <div className="flex items-center justify-between mb-1">
-                    <span className="text-xs font-bold text-red-400">Sistem Berjalan (Manual)</span>
-                    <span className="text-xs font-mono text-red-400 font-bold">120 Detik</span>
-                  </div>
-                  <p className="text-[0.75rem] text-cream-300">Pengisian manual NIK, Nama, Alamat → Verifikasi fisik ulang → Rentan typo</p>
-                </div>
-
-                <div className="flex justify-center text-gold-400">
-                  <ArrowRight size={20} className="rotate-90" />
-                </div>
-
-                <div className="p-3 rounded-lg bg-emerald-500/10 border border-emerald-500/20">
-                  <div className="flex items-center justify-between mb-1">
-                    <span className="text-xs font-bold text-emerald-400">Sistem Usulan (OCR Autofill)</span>
-                    <span className="text-xs font-mono text-emerald-400 font-bold">32.77 Detik</span>
-                  </div>
-                  <p className="text-[0.75rem] text-cream-300">Scan KTP via Kamera Sketsa → Extracted NIK, Nama, Alamat → Auto-populates Form</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="mt-4 p-2.5 rounded bg-black/30 border border-white/10 text-center">
-              <span className="text-[0.72rem] text-gold-300 font-medium">
-                🎯 Target: Efisiensi waktu komputasi &amp; presisi data kependudukan PDDikti
-              </span>
+          {/* Right Column: Slide 2 Image Asset (Primary: slide2.jpeg with auto-fit) */}
+          <motion.div variants={item} className="col-span-6 flex items-center justify-center overflow-hidden">
+            <div className="image-placeholder w-full h-[320px] max-h-[55vh] rounded-xl flex items-center justify-center p-2.5 bg-black/40 border border-white/10 overflow-hidden">
+              <img
+                src="/assets/slide2.jpeg"
+                alt="Latar Belakang Slide 2"
+                className="max-w-full max-h-full w-auto h-auto object-contain rounded-lg shadow-lg"
+                onError={(e) => {
+                  if (!e.target.dataset.triedPng) {
+                    e.target.dataset.triedPng = "true";
+                    e.target.src = "/assets/slide2.png";
+                  } else if (!e.target.dataset.triedJpg) {
+                    e.target.dataset.triedJpg = "true";
+                    e.target.src = "/assets/slide2.jpg";
+                  } else if (!e.target.dataset.triedOld) {
+                    e.target.dataset.triedOld = "true";
+                    e.target.src = "/assets/latar-belakang.jpeg";
+                  } else {
+                    e.target.style.display = "none";
+                    e.target.parentElement.innerHTML = `
+                      <div className="p-4 text-center space-y-3 w-full">
+                        <span className="text-xs uppercase tracking-widest text-gold-400 font-semibold block">Transformasi Alur Pendaftaran</span>
+                        <div className="p-2.5 rounded bg-red-500/10 border border-red-500/20 text-left">
+                          <span className="text-xs font-bold text-red-400 block">Sistem Berjalan (Manual) — 120s</span>
+                          <span className="text-[0.7rem] text-cream-300">Pengisian manual NIK, Nama, Alamat → Rentan typo</span>
+                        </div>
+                        <div className="p-2.5 rounded bg-emerald-500/10 border border-emerald-500/20 text-left">
+                          <span className="text-xs font-bold text-emerald-400 block">Sistem Usulan (OCR Autofill) — 32.77s</span>
+                          <span className="text-[0.7rem] text-cream-300">Scan KTP via Kamera Sketsa → Auto-populates Form</span>
+                        </div>
+                      </div>
+                    `;
+                  }
+                }}
+              />
             </div>
           </motion.div>
         </div>
