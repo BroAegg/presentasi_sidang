@@ -26,16 +26,16 @@ const papers = [
     author: "Reswan et al. (2024)",
     objek: "KTM",
     teknologi: "OCR Template Matching",
-    hasil: "Accuracy 88%",
-    beda: "Standalone Word; belum integrasi web PMB",
+    hasil: "Akurasi 88,00%",
+    beda: "Aplikasi standalone; belum terintegrasi portal PMB web",
   },
   {
     no: "2",
     author: "Nashiruddin et al. (2025)",
     objek: "KTM UMKLA",
     teknologi: "Tesseract, OpenCV, Regex",
-    hasil: "Ekstraksi berhasil baik",
-    beda: "Objek KTM; belum integrasi portal web PMB",
+    hasil: "Ekstraksi Berhasil Baik",
+    beda: "Objek Kartu Mahasiswa; belum terintegrasi portal PMB web",
   },
   {
     no: "3",
@@ -43,15 +43,15 @@ const papers = [
     objek: "e-KTP",
     teknologi: "OCR & CNN",
     hasil: "CER 28,85%",
-    beda: "Fokus verifikasi keaslian, bukan autofill form",
+    beda: "Fokus verifikasi keaslian fisik, bukan autofill formulir",
   },
   {
     no: "4",
     author: "Sherin et al. (2024)",
     objek: "Dokumen Ujian",
     teknologi: "OCR",
-    hasil: "Efektif otomatisasi input",
-    beda: "Konteks administrasi umum, bukan PMB",
+    hasil: "Efektif Otomatisasi Input",
+    beda: "Konteks administrasi umum, bukan formulir PMB web",
   },
   {
     no: "5",
@@ -59,7 +59,7 @@ const papers = [
     objek: "Surat Digital",
     teknologi: "Tesseract, Laravel",
     hasil: "CER 5,71%, WER 9,59%",
-    beda: "Objek surat arsip; bukan dokumen e-KTP",
+    beda: "Objek surat cetak arsip; bukan dokumen identitas e-KTP",
   },
 ];
 
@@ -67,16 +67,16 @@ const researchGaps = [
   {
     icon: FileText,
     title: "Spesifikasi Objek e-KTP",
-    desc: "Mayoritas studi terdahulu berfokus pada KTM / surat, bukan dokumen kependudukan e-KTP.",
+    desc: "Studi terdahulu berfokus pada KTM dan dokumen arsip, belum menerapkan otomatisasi ekstraksi biodata e-KTP.",
   },
   {
     icon: Target,
-    title: "Fokus Otomasi Autofill",
-    desc: "Studi e-KTP sebelumnya berfokus pada verifikasi keaslian, bukan otomasi formulir pendaftaran.",
+    title: "Fokus Otomasi Autofill PMB",
+    desc: "Penelitian e-KTP terdahulu berfokus pada verifikasi keaslian dokumen, bukan untuk pengisian otomatis formulir PMB.",
   },
   {
     icon: ShieldAlert,
-    title: "UI Constraint Mitigation",
+    title: "Mitigasi UI Constraint",
     desc: "Belum ada yang menerapkan Kamera Sketsa sisi Klien untuk menutupi kelemahan Tesseract.",
   },
 ];
@@ -91,9 +91,9 @@ export default function Slide03TinjauanPustaka() {
     >
       <motion.div variants={item} className="mb-2">
         <div className="slide-heading-accent" />
-        <h2 className="slide-title">Tinjauan Pustaka &amp; Positionality Penelitian</h2>
+        <h2 className="slide-title">Tinjauan Pustaka &amp; Kebaruan Penelitian</h2>
         <p className="slide-subtitle">
-          Matriks perbandingan 5 penelitian terkait dan identifikasi celah penelitian (research gap)
+          Matriks perbandingan 5 penelitian terkait dan identifikasi celah penelitian (*research gap*)
         </p>
       </motion.div>
 
@@ -128,7 +128,7 @@ export default function Slide03TinjauanPustaka() {
           </div>
         </motion.div>
 
-        {/* 3 Research Gap Summary Cards - Fills the empty space cleanly */}
+        {/* 3 Research Gap Summary Cards */}
         <motion.div variants={item} className="grid grid-cols-3 gap-3">
           {researchGaps.map((g, i) => {
             const Icon = g.icon;
@@ -138,22 +138,19 @@ export default function Slide03TinjauanPustaka() {
                   <Icon size={14} />
                 </div>
                 <div>
-                  <h4 className="text-[0.72rem] font-bold text-cream-100">{g.title}</h4>
-                  <p className="text-[0.68rem] text-cream-300 leading-snug mt-0.5">{g.desc}</p>
+                  <h4 className="text-xs font-bold text-gold-300 mb-0.5">{g.title}</h4>
+                  <p className="text-cream-200 text-[0.68rem] leading-snug">{g.desc}</p>
                 </div>
               </div>
             );
           })}
         </motion.div>
 
-        {/* Highlight Novelty Banner */}
-        <motion.div variants={item} className="content-card-gold p-2.5">
-          <div className="flex items-center gap-2 mb-1 text-gold-400">
-            <Sparkles size={16} />
-            <h3 className="text-xs font-bold uppercase tracking-wider">Kebaruan Penelitian Ini (Aegner Billik, 2026)</h3>
-          </div>
-          <p className="text-cream-200 text-xs leading-relaxed">
-            <strong className="text-cream-100">Integrasi End-to-End:</strong> Mengombinasikan Tesseract OCR 5.0 + OpenCV + Regex Multi-Layered Fallback dengan <span className="text-gold-300 font-semibold">UI Constraint Kamera Sketsa (Guideline Overlay)</span> pada frontend web PMB UMB, terbukti secara empiris menutupi kelemahan inheren Tesseract OCR terhadap distorsi citra.
+        {/* Highlighted Golden Novelty Summary Badge */}
+        <motion.div variants={item} className="content-card-gold p-2.5 flex items-center gap-2">
+          <Sparkles size={16} className="text-gold-400 flex-shrink-0" />
+          <p className="text-[0.7rem] text-cream-100">
+            <strong className="text-gold-300">Kebaruan Penelitian (Novelty):</strong> Penggunaan Kamera Sketsa sisi Klien sebagai pembatasan antarmuka (UI Constraint) untuk menutupi kelemahan inheren Tesseract OCR pada peladen.
           </p>
         </motion.div>
       </div>
