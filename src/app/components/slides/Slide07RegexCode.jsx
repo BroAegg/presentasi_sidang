@@ -95,7 +95,7 @@ export default function Slide07RegexCode() {
                 <span className="font-semibold text-xs text-cream-100">Alur Ekstraksi &amp; Mapping Data (Blackbox View)</span>
               </div>
               <span className="text-[0.62rem] font-mono text-cyan-300 bg-cyan-400/10 px-2 py-0.5 rounded border border-cyan-400/20">
-                Raw Text $\rightarrow$ Clean Fields
+                Raw Text → Clean Fields
               </span>
             </div>
 

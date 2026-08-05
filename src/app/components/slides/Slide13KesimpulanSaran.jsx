@@ -30,7 +30,7 @@ export default function Slide13KesimpulanSaran() {
     >
       <motion.div variants={item}>
         <div className="slide-heading-accent" />
-        <h2 className="slide-title">Kesimpulan Penelitian & Saran Pengembangan</h2>
+        <h2 className="slide-title">Kesimpulan Penelitian &amp; Saran Pengembangan</h2>
         <p className="slide-subtitle mt-1">
           Rangkuman penemuan utama Bab V dan rekomendasi penelitian lanjutan
         </p>
@@ -53,10 +53,10 @@ export default function Slide13KesimpulanSaran() {
             <motion.div variants={item} className="content-card p-3">
               <div className="flex items-center gap-2 mb-1 text-amber-400">
                 <ShieldCheck size={16} />
-                <h4 className="text-xs font-bold uppercase tracking-wider">2. Validasi & Mitigasi UI Constraint</h4>
+                <h4 className="text-xs font-bold uppercase tracking-wider">2. Validasi &amp; Mitigasi UI Constraint</h4>
               </div>
               <p className="text-cream-200 text-[0.72rem] leading-snug">
-                Tingginya CER dasar peladen (70,25% NIK & 78,65% Nama) teratasi dengan mengalihkan beban standarisasi ke antarmuka pengguna (Client), menjaga presisi dan stabilitas sistem.
+                Tingginya CER dasar peladen (70,25% NIK &amp; 78,65% Nama) teratasi dengan mengalihkan beban standarisasi ke antarmuka pengguna (Client), menjaga presisi dan stabilitas sistem.
               </p>
             </motion.div>
 
@@ -66,7 +66,7 @@ export default function Slide13KesimpulanSaran() {
                 <h4 className="text-xs font-bold uppercase tracking-wider">3. Efisiensi Performa Terbukti</h4>
               </div>
               <p className="text-cream-200 text-[0.72rem] leading-snug">
-                Peningkatan efisiensi waktu hingga <strong className="text-emerald-400">3,66 kali lipat</strong> (120s $\rightarrow$ 32.77s) tercapai tanpa membebani memori peladen dengan rotasi citra otomatis.
+                Peningkatan efisiensi waktu hingga <strong className="text-emerald-400">3,66 kali lipat</strong> (120s → 32.77s) tercapai tanpa membebani memori peladen dengan rotasi citra otomatis.
               </p>
             </motion.div>
           </div>
@@ -79,7 +79,7 @@ export default function Slide13KesimpulanSaran() {
                 <h4 className="text-xs font-bold uppercase tracking-wider">1. Migrasi ke Deep Learning</h4>
               </div>
               <p className="text-cream-200 text-[0.72rem] leading-snug">
-                Mengganti Tesseract dengan model modern seperti EasyOCR, PaddleOCR, atau Vision Transformer untuk ketahanan derau & pencahayaan yang lebih tinggi.
+                Mengganti Tesseract dengan model modern seperti EasyOCR, PaddleOCR, atau Vision Transformer untuk ketahanan derau &amp; pencahayaan yang lebih tinggi.
               </p>
             </motion.div>
 

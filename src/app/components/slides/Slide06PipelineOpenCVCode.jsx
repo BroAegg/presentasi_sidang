@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Layers, ArrowRight, CheckCircle2, Eye } from "lucide-react";
+import { Layers, CheckCircle2, Eye } from "lucide-react";
 
 const container = {
   hidden: {},
@@ -106,7 +106,7 @@ export default function Slide06PipelineOpenCVCode() {
                 <span className="font-semibold text-xs text-cream-100">Visual Transformasi Citra (Blackbox View)</span>
               </div>
               <span className="text-[0.62rem] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">
-                Input $\rightarrow$ Preprocessed
+                Input → Preprocessed
               </span>
             </div>
 

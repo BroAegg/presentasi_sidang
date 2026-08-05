@@ -65,7 +65,7 @@ export default function Slide02LatarBelakang() {
     >
       <motion.div variants={item}>
         <div className="slide-heading-accent" />
-        <h2 className="slide-title">Latar Belakang & Urgensi Penelitian</h2>
+        <h2 className="slide-title">Latar Belakang &amp; Urgensi Penelitian</h2>
         <p className="slide-subtitle mt-1">
           Tantangan administrasi registrasi calon mahasiswa PMB UMB
         </p>
@@ -116,7 +116,7 @@ export default function Slide02LatarBelakang() {
                     <span className="text-xs font-bold text-red-400">Sistem Berjalan (Manual)</span>
                     <span className="text-xs font-mono text-red-400 font-bold">120 Detik</span>
                   </div>
-                  <p className="text-[0.75rem] text-cream-300">Pengisian manual NIK, Nama, Alamat $\rightarrow$ Verifikasi fisik ulang $\rightarrow$ Rentan typo</p>
+                  <p className="text-[0.75rem] text-cream-300">Pengisian manual NIK, Nama, Alamat → Verifikasi fisik ulang → Rentan typo</p>
                 </div>
 
                 <div className="flex justify-center text-gold-400">
@@ -128,14 +128,14 @@ export default function Slide02LatarBelakang() {
                     <span className="text-xs font-bold text-emerald-400">Sistem Usulan (OCR Autofill)</span>
                     <span className="text-xs font-mono text-emerald-400 font-bold">32.77 Detik</span>
                   </div>
-                  <p className="text-[0.75rem] text-cream-300">Scan KTP via Kamera Sketsa $\rightarrow$ Extracted NIK, Nama, Alamat $\rightarrow$ Auto-populates Form</p>
+                  <p className="text-[0.75rem] text-cream-300">Scan KTP via Kamera Sketsa → Extracted NIK, Nama, Alamat → Auto-populates Form</p>
                 </div>
               </div>
             </div>
 
             <div className="mt-4 p-2.5 rounded bg-black/30 border border-white/10 text-center">
               <span className="text-[0.72rem] text-gold-300 font-medium">
-                🎯 Target: Efisiensi waktu komputasi & presisi data kependudukan PDDikti
+                🎯 Target: Efisiensi waktu komputasi &amp; presisi data kependudukan PDDikti
               </span>
             </div>
           </motion.div>
