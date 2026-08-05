@@ -1,0 +1,287 @@
+@import "tailwindcss";
+
+/* ===== DESIGN SYSTEM: Academic Navy + Gold ===== */
+:root {
+  --navy-900: #0a1628;
+  --navy-850: #0d1b30;
+  --navy-800: #111d35;
+  --navy-700: #1a2a4a;
+  --navy-600: #243a5e;
+  --cream-100: #faf8f5;
+  --cream-200: #f0ece4;
+  --cream-300: #ddd6c8;
+  --gold-300: #e8c675;
+  --gold-400: #d4a853;
+  --gold-500: #c9952e;
+}
+
+@theme inline {
+  --color-navy-900: var(--navy-900);
+  --color-navy-850: var(--navy-850);
+  --color-navy-800: var(--navy-800);
+  --color-navy-700: var(--navy-700);
+  --color-navy-600: var(--navy-600);
+  --color-cream-100: var(--cream-100);
+  --color-cream-200: var(--cream-200);
+  --color-cream-300: var(--cream-300);
+  --color-gold-300: var(--gold-300);
+  --color-gold-400: var(--gold-400);
+  --color-gold-500: var(--gold-500);
+  --font-heading: "Playfair Display", serif;
+  --font-body: "Inter", sans-serif;
+}
+
+/* ===== BASE STYLES ===== */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  background-color: var(--navy-900);
+  color: var(--cream-100);
+  font-family: var(--font-body);
+}
+
+/* ===== PRESENTATION CONTAINER (16:9) ===== */
+.presentation-viewport {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #060d1a;
+}
+
+.slide-frame {
+  position: relative;
+  width: 100%;
+  max-width: 1440px;
+  aspect-ratio: 16 / 9;
+  background-color: var(--navy-900);
+  overflow: hidden;
+  box-shadow: 0 0 80px rgba(0, 0, 0, 0.5);
+}
+
+/* Scale slide-frame to fit viewport height if needed */
+@media (max-height: 810px) {
+  .slide-frame {
+    max-width: calc(100vh * 16 / 9);
+  }
+}
+
+/* ===== SLIDE CONTENT AREA ===== */
+.slide-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 3rem 4rem 4rem;
+}
+
+/* ===== TYPOGRAPHY ===== */
+.slide-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  font-weight: 700;
+  color: var(--cream-100);
+  line-height: 1.3;
+  margin-bottom: 0.25rem;
+}
+
+.slide-subtitle {
+  font-family: var(--font-body);
+  font-size: clamp(0.85rem, 1.2vw, 1rem);
+  color: var(--cream-300);
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.slide-heading-accent {
+  display: inline-block;
+  width: 3rem;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold-400), var(--gold-300));
+  border-radius: 2px;
+  margin-bottom: 1rem;
+}
+
+/* ===== CONTENT CARDS ===== */
+.content-card {
+  background-color: var(--navy-800);
+  border: 1px solid var(--navy-700);
+  border-radius: 0.75rem;
+  padding: 1.25rem 1.5rem;
+  transition: border-color 0.3s ease;
+}
+
+.content-card:hover {
+  border-color: var(--navy-600);
+}
+
+.content-card-gold {
+  background: linear-gradient(135deg, rgba(212, 168, 83, 0.08), rgba(212, 168, 83, 0.02));
+  border: 1px solid rgba(212, 168, 83, 0.2);
+  border-radius: 0.75rem;
+  padding: 1.25rem 1.5rem;
+}
+
+/* ===== BULLET POINTS ===== */
+.bullet-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.bullet-marker {
+  flex-shrink: 0;
+  width: 8px;
+  height: 8px;
+  margin-top: 0.45rem;
+  background-color: var(--gold-400);
+  border-radius: 50%;
+}
+
+.bullet-number {
+  flex-shrink: 0;
+  width: 1.75rem;
+  height: 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--gold-400), var(--gold-500));
+  color: var(--navy-900);
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: 50%;
+}
+
+/* ===== PROGRESS BAR ===== */
+.progress-bar-track {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: rgba(26, 42, 74, 0.6);
+  z-index: 100;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--gold-500), var(--gold-400), var(--gold-300));
+  transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 0 2px 2px 0;
+}
+
+/* ===== NAVIGATION BUTTONS ===== */
+.nav-button {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 50;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(17, 29, 53, 0.8);
+  border: 1px solid var(--navy-700);
+  border-radius: 50%;
+  color: var(--cream-300);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  backdrop-filter: blur(8px);
+}
+
+.nav-button:hover {
+  background-color: rgba(26, 42, 74, 0.9);
+  border-color: var(--gold-400);
+  color: var(--gold-400);
+  box-shadow: 0 0 20px rgba(212, 168, 83, 0.15);
+}
+
+.nav-button:disabled {
+  opacity: 0.2;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.nav-button.nav-prev {
+  left: 1.5rem;
+}
+
+.nav-button.nav-next {
+  right: 1.5rem;
+}
+
+/* ===== FOOTER ===== */
+.slide-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 2.5rem;
+  font-size: 0.7rem;
+  color: var(--cream-300);
+  border-top: 1px solid rgba(26, 42, 74, 0.5);
+  letter-spacing: 0.02em;
+  opacity: 0.7;
+}
+
+/* ===== IMAGE PLACEHOLDER ===== */
+.image-placeholder {
+  background-color: var(--navy-800);
+  border: 2px dashed var(--navy-600);
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cream-300);
+  font-size: 0.8rem;
+  overflow: hidden;
+}
+
+.image-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* ===== FLOW DIAGRAM ARROWS ===== */
+.flow-arrow {
+  color: var(--gold-400);
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===== STAT CARD ===== */
+.stat-value {
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-weight: 700;
+  color: var(--gold-400);
+  line-height: 1.1;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  color: var(--cream-300);
+  margin-top: 0.25rem;
+}
+
+/* ===== SCROLLBAR HIDE ===== */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
