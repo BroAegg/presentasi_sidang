@@ -1,48 +1,31 @@
-# 📸 DAFTAR SCREENSHOT (SS) RESMI (DUKUNGAN FORMAT .JPEG, .JPG, .PNG)
+# 📸 DAFTAR LENGKAP SCREENSHOT (SS) UNTUK SEMUA 13 SLIDE
 
-Sistem web presentasimu sekarang **otomatis mendukung format `.jpeg`, `.jpg`, maupun `.png`**!  
-Apapun format file gambar yang kamu simpan (apakah `.jpeg`, `.jpg`, atau `.png`), web akan otomatis mendeteksi dan menampilkannya di layar slide.
-
-Berikut adalah **6 Nama File Screenshot** yang bisa kamu simpan di folder `public/assets/`:
+Berikut adalah **Daftar Lengkap Nama File Gambar** untuk setiap slide (Slide 1 sampai Slide 13).  
+Sistem web **otomatis mendukung format `.jpeg`, `.png`, maupun `.jpg`**!
 
 ---
 
-### 📷 1. `waterfall-diagram.jpeg` (Slide 4: Metodologi Waterfall)
-* **Format**: `.jpeg` / `.jpg` / `.png`
-* **Apa Yang Di-SS**: Gambar diagram alur 4 tahap Waterfall penelitianmu.
-* **Lokasi Simpan**: `public/assets/waterfall-diagram.jpeg`
+### 📋 Tabel Rujukan Penamaan Gambar Per Slide:
+
+| Slide # | Nama Slide di Web Presentasi | Nama File Gambar di `public/assets/` | Format Yang Didukung | Apa Yang Harus Di-SS / Tampil |
+| :---: | :--- | :--- | :---: | :--- |
+| **Slide 1** | Cover & Pembukaan | `logo.png` / `logo.jpeg` | `.jpeg / .png / .jpg` | Logo Universitas Muhammadiyah Bandung (UMB) |
+| **Slide 2** | Latar Belakang & Urgensi | `latar-belakang.jpeg` | `.jpeg / .png / .jpg` | Screenshot Alur PMB Manual vs Usulan / Form PMB |
+| **Slide 3** | Tinjauan Pustaka | `tinjauan-pustaka.jpeg` | `.jpeg / .png / .jpg` | Screenshot Matriks Tabel 5 Paper Penelitian |
+| **Slide 4** | Metodologi Waterfall | **`waterfall-diagram.jpeg`** | `.jpeg / .png / .jpg` | Screenshot Diagram Alur Waterfall 4 Tahap |
+| **Slide 5** | Preprocessing OpenCV | **`preprocessing-opencv.jpeg`** | `.jpeg / .png / .jpg` | Screenshot Hasil 4 Tahap OpenCV (Grayscale, CLAHE, Blur, Otsu) |
+| **Slide 6** | Evaluasi Baseline Server | **`terminal-colab.jpeg`** | `.jpeg / .png / .jpg` | Screenshot Output Running Google Colab / Terminal CER 50 KTP |
+| **Slide 7** | Inovasi Kamera Sketsa | **`ui-kamera.jpeg`** | `.jpeg / .png / .jpg` | Screenshot Antarmuka Kamera Sketsa (Bingkai KTP) di HP/Web |
+| **Slide 8** | Integrasi Frontend PMB | **`simulasi-frontend.jpeg`** | `.jpeg / .png / .jpg` | Screenshot Form PMB Web yang Terisi Otomatis (Autofill) |
+| **Slide 9** | Live Demonstration | `live-demo.jpeg` | `.jpeg / .png / .jpg` | Screenshot Halaman Scanner OCR (`/pmb/scan-ktp`) |
+| **Slide 10** | Grafik CER Final | **`grafik-cer-final.jpeg`** | `.jpeg / .png / .jpg` | Screenshot Grafik Perbandingan CER Baseline vs Sistem Final |
+| **Slide 11** | Evaluasi Waktu Speedup | **`tabel-speedup.jpeg`** | `.jpeg / .png / .jpg` | Screenshot Tabel / Grafik Speedup Ratio 3,66x |
+| **Slide 12** | Kesimpulan & Saran | `kesimpulan.jpeg` | `.jpeg / .png / .jpg` | Screenshot Ringkasan Kesimpulan Skripsi |
+| **Slide 13** | Penutup & Sesi Q&A | `penutup.jpeg` | `.jpeg / .png / .jpg` | Screenshot Ucapan Terima Kasih / Penutup |
 
 ---
 
-### 📷 2. `terminal-colab.jpeg` (Slide 6: Evaluasi Server Baseline)
-* **Format**: `.jpeg` / `.jpg` / `.png`
-* **Apa Yang Di-SS**: Screenshot Colab / Terminal VS Code pengujian CER 50 KTP.
-* **Lokasi Simpan**: `public/assets/terminal-colab.jpeg`
-
----
-
-### 📷 3. `ui-kamera.jpeg` (Slide 7: Inovasi Kamera Sketsa)
-* **Format**: `.jpeg` / `.jpg` / `.png`
-* **Apa Yang Di-SS**: Screenshot antarmuka Kamera Sketsa (bingkai KTP) di HP/Web.
-* **Lokasi Simpan**: `public/assets/ui-kamera.jpeg`
-
----
-
-### 📷 4. `simulasi-frontend.jpeg` (Slide 8: Integrasi Frontend PMB)
-* **Format**: `.jpeg` / `.jpg` / `.png`
-* **Apa Yang Di-SS**: Screenshot form PMB Web UMB yang sudah terisi otomatis (autofill).
-* **Lokasi Simpan**: `public/assets/simulasi-frontend.jpeg`
-
----
-
-### 📷 5. `grafik-cer-final.jpeg` (Slide 10: Hasil Evaluasi CER Final)
-* **Format**: `.jpeg` / `.jpg` / `.png`
-* **Apa Yang Di-SS**: Grafik perbandingan CER Baseline vs CER Sistem Final.
-* **Lokasi Simpan**: `public/assets/grafik-cer-final.jpeg`
-
----
-
-### 📷 6. `tabel-speedup.jpeg` (Slide 11: Efisiensi Waktu Speedup)
-* **Format**: `.jpeg` / `.jpg` / `.png`
-* **Apa Yang Di-SS**: Tabel/grafik komparasi waktu pengisian manual 120s vs OCR 32,77s.
-* **Lokasi Simpan**: `public/assets/tabel-speedup.jpeg`
+### 💡 Catatan Penting:
+* Slide **4, 5, 6, 7, 8, 10, dan 11** adalah slide utama yang menampilkan gambar secara menonjol di sebelah kanan.
+* Kamu bisa menyimpan file gambarmu di folder `public/assets/` dengan nama file di atas (contoh: `waterfall-diagram.jpeg`).
+* Jika ada gambar berformat `.png` atau `.jpg`, sistem web akan **otomatis mendeteksi dan menampilkannya** tanpa error! 🚀
