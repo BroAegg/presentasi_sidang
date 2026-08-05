@@ -4,10 +4,8 @@ import { motion } from "framer-motion";
 import Slide01Cover from "./slides/Slide01Cover";
 import Slide02LatarBelakang from "./slides/Slide02LatarBelakang";
 import Slide03TinjauanPustaka from "./slides/Slide03TinjauanPustaka";
-import Slide04TesseractLSTM from "./slides/Slide04TesseractLSTM";
 import Slide05MetodologiWaterfall from "./slides/Slide05MetodologiWaterfall";
 import Slide06PipelineOpenCVCode from "./slides/Slide06PipelineOpenCVCode";
-import Slide07RegexCode from "./slides/Slide07RegexCode";
 import Slide08EvaluasiPeladen from "./slides/Slide08EvaluasiPeladen";
 import Slide09MitigasiKameraSketsa from "./slides/Slide09MitigasiKameraSketsa";
 import Slide10IntegrasiFrontend from "./slides/Slide10IntegrasiFrontend";
@@ -17,14 +15,13 @@ import Slide12EvaluasiWaktuSpeedup from "./slides/Slide12EvaluasiWaktuSpeedup";
 import Slide13KesimpulanSaran from "./slides/Slide13KesimpulanSaran";
 import Slide14PenutupQA from "./slides/Slide14PenutupQA";
 
+// 13 Streamlined Slides (Landasan Teori & Regex removed)
 const slides = [
   Slide01Cover,
   Slide02LatarBelakang,
   Slide03TinjauanPustaka,
-  Slide04TesseractLSTM,
   Slide05MetodologiWaterfall,
   Slide06PipelineOpenCVCode,
-  Slide07RegexCode,
   Slide08EvaluasiPeladen,
   Slide09MitigasiKameraSketsa,
   Slide10IntegrasiFrontend,
