@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { AlertTriangle, Clock, FileCheck, ArrowRight } from "lucide-react";
+import { AlertTriangle, Clock, FileCheck, ArrowDown } from "lucide-react";
 
 const container = {
   hidden: {},
@@ -92,13 +92,17 @@ export default function Slide02LatarBelakang() {
             })}
           </div>
 
-          {/* Right Column: Slide 2 Image Asset (Primary: slide2.jpeg with auto-fit) */}
-          <motion.div variants={item} className="col-span-6 flex items-center justify-center overflow-hidden">
-            <div className="image-placeholder w-full max-w-[360px] h-[320px] max-h-[55vh] rounded-xl p-2 bg-black/40 border border-white/10 overflow-y-auto overflow-x-hidden flex flex-col items-center">
+          {/* Right Column: Slide 2 Scrollable Image Container for Long Phone Screenshots */}
+          <motion.div variants={item} className="col-span-6 flex flex-col items-center justify-center overflow-hidden">
+            <div className="text-[0.65rem] font-mono text-gold-400/90 mb-1 flex items-center gap-1">
+              <ArrowDown size={12} className="animate-bounce" />
+              <span>Gulir ke bawah untuk melihat gambar HP penuh</span>
+            </div>
+            <div className="image-placeholder w-full max-w-[380px] h-[340px] max-h-[55vh] rounded-xl p-2 bg-black/50 border border-gold-400/30 overflow-y-auto overflow-x-hidden custom-scrollbar flex flex-col items-center">
               <img
                 src="/assets/slide2.jpeg"
                 alt="Latar Belakang Slide 2"
-                className="w-full h-auto object-contain rounded-lg shadow-lg my-auto"
+                className="w-full h-auto object-contain rounded-lg shadow-xl"
                 onError={(e) => {
                   if (!e.target.dataset.triedPng) {
                     e.target.dataset.triedPng = "true";

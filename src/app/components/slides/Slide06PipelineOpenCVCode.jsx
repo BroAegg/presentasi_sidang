@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Sliders, Sparkles, Layers } from "lucide-react";
+import { Sliders, Sparkles, Layers, ArrowDown } from "lucide-react";
 
 const container = {
   hidden: {},
@@ -90,12 +90,12 @@ export default function Slide06PipelineOpenCVCode() {
           ))}
         </div>
 
-        {/* Right Column: Slide 5 Scrollable Bounded Image Container */}
+        {/* Right Column: Slide 5 Scrollable Image Container for Long Phone Screenshots */}
         <motion.div
           variants={item}
           className="col-span-6 content-card p-3 flex flex-col justify-between overflow-hidden"
         >
-          <div className="flex items-center justify-between pb-2 border-b border-white/10 text-gold-400 mb-2">
+          <div className="flex items-center justify-between pb-2 border-b border-white/10 text-gold-400 mb-1">
             <div className="flex items-center gap-2">
               <Layers size={16} />
               <span className="font-semibold text-xs text-cream-100">Visualisasi Tahapan Prapemrosesan</span>
@@ -105,11 +105,16 @@ export default function Slide06PipelineOpenCVCode() {
             </span>
           </div>
 
-          <div className="image-placeholder w-full flex-1 max-w-[360px] mx-auto h-[260px] max-h-[50vh] rounded-xl p-2 bg-black/40 border border-white/10 overflow-y-auto overflow-x-hidden flex flex-col items-center">
+          <div className="text-[0.65rem] font-mono text-gold-400/90 mb-1 flex items-center justify-center gap-1">
+            <ArrowDown size={12} className="animate-bounce" />
+            <span>Gulir ke bawah untuk melihat gambar HP penuh</span>
+          </div>
+
+          <div className="image-placeholder w-full flex-1 max-w-[380px] mx-auto h-[250px] max-h-[48vh] rounded-xl p-2 bg-black/50 border border-gold-400/30 overflow-y-auto overflow-x-hidden custom-scrollbar flex flex-col items-center">
             <img
               src="/assets/slide5.jpeg"
               alt="Visualisasi Preprocessing Slide 5"
-              className="w-full h-auto object-contain rounded-lg shadow-lg my-auto"
+              className="w-full h-auto object-contain rounded-lg shadow-xl"
               onError={(e) => {
                 if (!e.target.dataset.triedPng) {
                   e.target.dataset.triedPng = "true";
