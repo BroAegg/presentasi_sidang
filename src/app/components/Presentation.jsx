@@ -6,13 +6,12 @@ import { ChevronLeft, ChevronRight, Maximize2, Minimize2, Download, BookOpen, X,
 import SlideRenderer from "./SlideRenderer";
 import Footer from "./Footer";
 
-// Import all slide components
+// Import all slide components (Regex & Landasan Teori removed for streamlined presentation)
 import Slide01Cover from "./slides/Slide01Cover";
 import Slide02LatarBelakang from "./slides/Slide02LatarBelakang";
 import Slide03TinjauanPustaka from "./slides/Slide03TinjauanPustaka";
 import Slide05MetodologiWaterfall from "./slides/Slide05MetodologiWaterfall";
 import Slide06PipelineOpenCVCode from "./slides/Slide06PipelineOpenCVCode";
-import Slide07RegexCode from "./slides/Slide07RegexCode";
 import Slide08EvaluasiPeladen from "./slides/Slide08EvaluasiPeladen";
 import Slide09MitigasiKameraSketsa from "./slides/Slide09MitigasiKameraSketsa";
 import Slide10IntegrasiFrontend from "./slides/Slide10IntegrasiFrontend";
@@ -28,7 +27,6 @@ const allSlideComponents = [
   Slide03TinjauanPustaka,
   Slide05MetodologiWaterfall,
   Slide06PipelineOpenCVCode,
-  Slide07RegexCode,
   Slide08EvaluasiPeladen,
   Slide09MitigasiKameraSketsa,
   Slide10IntegrasiFrontend,
@@ -41,7 +39,7 @@ const allSlideComponents = [
 
 const TOTAL_SLIDES = allSlideComponents.length;
 
-// Word-for-word speaker notes array matching each active slide index (0 to 13)
+// Word-for-word speaker notes array matching each active slide index (0 to 12)
 const speakerNotes = [
   // Slide 1: Cover
   "Bismillahirrahmanirrahim. Assalamu’alaikum Warahmatullahi Wabarakatuh. Yang saya hormati Ibu Rinanda, Pak Taufik, Pak Nana, serta Bapak/Ibu Dosen Penguji sekalian. Perkenalkan, nama saya Aegner Billik (NIM 220102007) dari Teknik Informatika UMB, di bawah bimbingan Ibu Aila Gema Safitri dan Ibu Firas Atqiya. Pada hari ini, saya mempresentasikan skripsi saya tentang Implementasi Fitur Autofill Data Calon Mahasiswa Menggunakan OCR Tesseract pada Sistem PMB UM Bandung.",
@@ -58,31 +56,28 @@ const speakerNotes = [
   // Slide 5: OpenCV Preprocessing
   "Sebelum foto KTP diproses OCR, citra diolah di Backend melalui 4 tahap OpenCV: 1. Grayscale (mengubah foto ke abu-abu biar hemat memori 66%), 2. CLAHE (penerang otomatis bagian foto yang gelap/terbayang), 3. Gaussian Blur (menghaluskan bintik foto HP), dan 4. Otsu Thresholding (memisahkan tegas tulisan hitam dari latar belakang KTP).",
   
-  // Slide 6: Regex Multi-Layer
-  "Untuk membaca data KTP dari teks OCR, saya buat Regex 3 Lapis agar tidak gampang gagal: Lapis 1 (Plan A: Cari kata NIK + 16 angka), Lapis 2 (Plan B: Cari 16 angka murni jika kata NIK rusak), Lapis 3 (Plan C: Bersihkan spasi liar hasil OCR jika angkanya terpisah).",
-  
-  // Slide 7: Baseline CER Error
+  // Slide 6: Baseline CER Error
   "Bapak/Ibu Penguji, dari pengujian awal 50 foto KTP tanpa batasan posisi, didapatkan hasil Character Error Rate (CER) yang tinggi: NIK 70,25% dan Nama 78,65%. Angka tinggi ini membuktikan secara ilmiah bahwa Tesseract OCR konvensional TIDAK BISA berdiri sendiri tanpa standarisasi posisi foto.",
   
-  // Slide 8: Inovasi Kamera Sketsa
+  // Slide 7: Inovasi Kamera Sketsa
   "Oleh karena itu, saya buat inovasi Kamera Sketsa (Guideline Overlay) di sisi Frontend. Fitur ini memaksa pengguna menyelaraskan posisi KTP sebelum difoto, sehingga foto yang dikirim ke server selalu rapi, terang, dan lurus tanpa membebani server dengan algoritma rotasi yang berat.",
   
-  // Slide 9: Integrasi REST API Flask
+  // Slide 8: Integrasi REST API Flask
   "Sistem dibangun secara terpisah (decoupled): Frontend Web menangkap foto KTP via Kamera Sketsa ➔ mengirim data ke Backend REST API Flask ➔ Backend menjalankan OpenCV & Tesseract ➔ mengembalikan data JSON NIK, Nama, Tanggal Lahir, & Alamat ke Frontend untuk langsung terisi di form PMB.",
   
-  // Slide 10: Live Demonstration
+  // Slide 9: Live Demonstration
   "Pada slide ini, Bapak/Ibu Dosen Penguji dipersilakan untuk menguji coba fitur OCR Autofill ini secara langsung melalui link demo yang tampil di layar: http://localhost:8000/pmb/scan-ktp. Alurnya sangat ringkas: Calon mahasiswa tinggal klik Scan KTP, posisikan KTP di kamera sketsa, dan seluruh kolom formulir akan terisi otomatis dalam hitungan detik.",
   
-  // Slide 11: Grafik CER Final
+  // Slide 10: Grafik CER Final
   "Dengan adanya bantuan Kamera Sketsa pada sistem final, tingkat kesalahan baca (CER) pada simulasi pengisian formulir berhasil ditekan menjadi presisi 100% pada elemen NIK, Nama, dan Alamat.",
   
-  // Slide 12: Speedup Ratio 3.66x
+  // Slide 11: Speedup Ratio 3.66x
   "Dari hasil pengujian efisiensi waktu: Pengisian manual membutuhkan rata-rata 120 detik (2 menit), sedangkan pengisian via OCR Autofill hanya butuh 32,77 detik. Diperoleh Speedup Ratio 3,66x, yang artinya proses pendaftaran menjadi 3,66 kali lebih cepat.",
   
-  // Slide 13: Kesimpulan & Saran
+  // Slide 12: Kesimpulan & Saran
   "Kesimpulannya: 1. Fitur OCR Autofill KTP berhasil mempercepat proses pengisian PMB hingga 3,66 kali lebih cepat. 2. Kamera Sketsa terbukti efektif menutupi kelemahan bawaan Tesseract OCR. Saran pengembangan: Memindahkan server backend ke Cloud VPS dan menambah fitur penolak foto blur otomatis.",
   
-  // Slide 14: Penutup & Q&A
+  // Slide 13: Penutup & Q&A
   "Demikian presentasi skripsi yang dapat saya sampaikan. Terima kasih atas perhatian Ibu Rinanda, Pak Taufik, Pak Nana, Bu Aila, Bu Firas, serta Bapak/Ibu Dosen sekalian. Waktu dan tempat saya kembalikan kepada Ketua Penguji. Wassalamu’alaikum Warahmatullahi Wabarakatuh."
 ];
 
@@ -305,7 +300,7 @@ export default function Presentation() {
         </button>
       </motion.div>
 
-      {/* Hidden Print Wrapper: Renders all 14 slides for window.print() PDF Export */}
+      {/* Hidden Print Wrapper: Renders all 13 slides for window.print() PDF Export */}
       <div className="hidden print:block print-wrapper">
         {allSlideComponents.map((SlideComp, idx) => (
           <div key={idx} className="print-slide-page">

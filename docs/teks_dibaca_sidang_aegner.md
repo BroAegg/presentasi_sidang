@@ -1,4 +1,4 @@
-# 📜 TEKS SIAP BACA UNTUK SIDANG SKRIPSI (VERSI PALING SEDERHANA)
+# 📜 TEKS SIAP BACA UNTUK SIDANG SKRIPSI (VERSI 13 SLIDE STREAMLINED)
 
 **Nama**: Aegner Billik (NIM: 220102007)  
 **Pembimbing I**: Aila Gema Safitri, S.T., M.T. (Bu Aila)  
@@ -49,50 +49,41 @@
 
 ---
 
-### 📌 SLIDE 6: LOGIKA PARSING REGEX MULTI-LAYERED FALLBACK
-**🗣️ Teks Siap Baca**:
-> *"Untuk membaca data KTP dari teks OCR, saya buat **Regex 3 Lapis** agar sistem tidak gampang gagal:*  
-> * **Lapis 1**: Mencari kata label 'NIK' diikuti 16 digit angka.  
-> * **Lapis 2**: Jika kata 'NIK' terpotong/rusak, sistem otomatis mencari **16 digit angka murni berurutan** di mana saja dalam teks.  
-> * **Lapis 3**: Jika angkanya terpisah spasi gara-gara OCR, sistem akan menyatukannya kembali dan mengambil 16 angka pertama."*
-
----
-
-### 📌 SLIDE 7: HASIL EVALUASI BASELINE (TANPA KINTRINSIK CONSTRAINT)
+### 📌 SLIDE 6: HASIL EVALUASI BASELINE (TANPA CONSTRAINT)
 **🗣️ Teks Siap Baca**:
 > *"Bapak/Ibu Penguji, dari pengujian awal 50 foto KTP tanpa batasan posisi/pencahayaan, didapatkan hasil Character Error Rate (CER) yang tinggi: NIK 70,25% dan Nama 78,65%.*  
 > *Angka tinggi ini **membuktikan secara ilmiah** bahwa Tesseract OCR konvensional TIDAK BISA berdiri sendiri tanpa standarisasi posisi foto."*
 
 ---
 
-### 📌 SLIDE 8: INOVASI MITIGASI KAMERA SKETSA
+### 📌 SLIDE 7: INOVASI MITIGASI KAMERA SKETSA
 **🗣️ Teks Siap Baca**:
 > *"Oleh karena itu, saya buat inovasi **Kamera Sketsa (Guideline Overlay)** di sisi Frontend.*  
 > *Fitur ini **memaksa pengguna** menyelaraskan posisi KTP sebelum difoto, sehingga foto yang dikirim ke server selalu rapi, terang, dan lurus tanpa membebani server dengan algoritma rotasi yang berat."*
 
 ---
 
-### 📌 SLIDE 9: INTEGRASI REST API FLASK & FRONTEND PMB
+### 📌 SLIDE 8: INTEGRASI REST API FLASK & FRONTEND PMB
 **🗣️ Teks Siap Baca**:
 > *"Sistem dibangun secara terpisah (decoupled):*  
 > * Frontend Web menangkap foto KTP via Kamera Sketsa $\rightarrow$ mengirim data ke Backend REST API Flask $\rightarrow$ Backend menjalankan OpenCV & Tesseract $\rightarrow$ mengembalikan data JSON NIK, Nama, Tanggal Lahir, & Alamat ke Frontend untuk langsung terisi di form PMB."*
 
 ---
 
-### 📌 SLIDE 10: DEMO SIMULASI FITUR OCR AUTOFILL
+### 📌 SLIDE 9: DEMO SIMULASI FITUR OCR AUTOFILL
 **🗣️ Teks Siap Baca**:
 > *"Pada slide ini, Bapak/Ibu Dosen Penguji dipersilakan untuk menguji coba fitur OCR Autofill ini secara langsung melalui link demo yang tampil di layar: `http://localhost:8000/pmb/scan-ktp`.*  
 > *Alurnya sangat ringkas: Calon mahasiswa tinggal klik Scan KTP, posisikan KTP di kamera sketsa, dan seluruh kolom formulir akan terisi otomatis dalam hitungan detik."*
 
 ---
 
-### 📌 SLIDE 11: GRAFIK EVALUASI HASIL AKHIR (CER)
+### 📌 SLIDE 10: GRAFIK EVALUASI HASIL AKHIR (CER)
 **🗣️ Teks Siap Baca**:
 > *"Dengan adanya bantuan Kamera Sketsa pada sistem final, tingkat kesalahan baca (CER) pada simulasi pengisian formulir berhasil ditekan menjadi presisi 100% pada elemen NIK, Nama, dan Alamat."*
 
 ---
 
-### 📌 SLIDE 12: EVALUASI EFISIENSI WAKTU (SPEEDUP 3,66x)
+### 📌 SLIDE 11: EVALUASI EFISIENSI WAKTU (SPEEDUP 3,66x)
 **🗣️ Teks Siap Baca**:
 > *"Dari hasil pengujian efisiensi waktu:*  
 > * Pengisian manual butuh rata-rata **120 detik** (2 menit).  
@@ -101,7 +92,7 @@
 
 ---
 
-### 📌 SLIDE 13: KESIMPULAN & SARAN PENGEMBANGAN
+### 📌 SLIDE 12: KESIMPULAN & SARAN PENGEMBANGAN
 **🗣️ Teks Siap Baca**:
 > *"Kesimpulannya:*  
 > 1. Fitur OCR Autofill KTP berhasil mempercepat proses pengisian PMB hingga 3,66 kali lebih cepat.  
@@ -110,6 +101,6 @@
 
 ---
 
-### 📌 SLIDE 14: PENUTUP & SESI TANYA JAWAB (Q&A)
+### 📌 SLIDE 13: PENUTUP & SESI TANYA JAWAB (Q&A)
 **🗣️ Teks Siap Baca**:
 > *"Demikian presentasi skripsi yang dapat saya sampaikan. Terima kasih atas perhatian Ibu Rinanda, Pak Taufik, Pak Nana, serta Bapak/Ibu Dosen sekalian. Waktu dan tempat saya kembalikan kepada Ketua Penguji. Wassalamu’alaikum Warahmatullahi Wabarakatuh."*
