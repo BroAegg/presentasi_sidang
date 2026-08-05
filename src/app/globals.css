@@ -247,7 +247,6 @@ html, body {
   align-items: center;
   gap: 0.5rem;
   padding: 0.5rem 0.75rem;
-
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 100%);
   backdrop-filter: blur(24px) saturate(1.3);
   -webkit-backdrop-filter: blur(24px) saturate(1.3);
@@ -297,7 +296,7 @@ html, body {
 
 .nav-pill-progress {
   position: relative;
-  width: 6rem;
+  width: 5rem;
   height: 3px;
   background: rgba(255, 255, 255, 0.08);
   border-radius: 9999px;
@@ -390,3 +389,56 @@ html, body {
 /* ===== SCROLLBAR HIDE ===== */
 .no-scrollbar::-webkit-scrollbar { display: none; }
 .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* ===== PRINT / PDF EXPORT STYLES ===== */
+@media print {
+  @page {
+    size: landscape;
+    margin: 0;
+  }
+
+  html, body {
+    overflow: visible !important;
+    height: auto !important;
+    background: #050d1a !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .presentation-viewport {
+    position: relative !important;
+    inset: auto !important;
+    display: block !important;
+    background: #050d1a !important;
+  }
+
+  .ambient-orb, .nav-pill {
+    display: none !important;
+  }
+
+  .print-wrapper {
+    display: block !important;
+  }
+
+  .print-slide-page {
+    width: 100vw !important;
+    height: 100vh !important;
+    page-break-after: always !important;
+    break-after: page !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: #050d1a !important;
+    box-sizing: border-box !important;
+    padding: 1rem !important;
+  }
+
+  .print-slide-page .slide-frame {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: none !important;
+    border-radius: 0.5rem !important;
+    box-shadow: none !important;
+    background: rgba(10, 22, 40, 0.95) !important;
+  }
+}
