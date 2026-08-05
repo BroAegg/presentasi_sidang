@@ -19,31 +19,34 @@ const item = {
   },
 };
 
-export default function Slide01Title() {
+export default function Slide01Cover() {
   return (
     <motion.div
-      className="flex flex-col items-center justify-center h-full text-center gap-5"
+      className="flex flex-col items-center justify-center h-full text-center gap-5 px-4"
       variants={container}
       initial="hidden"
       animate="visible"
     >
-      {/* University Logo */}
+      {/* Logo Placeholder */}
       <motion.div variants={item}>
-        <div className="image-placeholder w-28 h-28 rounded-full mx-auto" style={{ border: "1px solid rgba(212, 168, 83, 0.2)" }}>
+        <div
+          className="image-placeholder w-28 h-28 rounded-full mx-auto"
+          style={{ border: "1px solid rgba(212, 168, 83, 0.25)" }}
+        >
           <img
-            src="/assets/logo-umb.png"
+            src="/assets/logo.png"
             alt="Logo Universitas Muhammadiyah Bandung"
             className="w-full h-full object-contain p-2"
             onError={(e) => {
               e.target.style.display = "none";
               e.target.parentElement.innerHTML =
-                '<span style="color:#ddd6c8;font-size:0.7rem">logo-umb.png</span>';
+                '<span style="color:#ddd6c8;font-size:0.75rem;font-weight:500">/assets/logo.png</span>';
             }}
           />
         </div>
       </motion.div>
 
-      {/* Gold Divider */}
+      {/* Gold Accent */}
       <motion.div variants={item}>
         <div className="slide-heading-accent mx-auto" />
       </motion.div>
@@ -52,28 +55,25 @@ export default function Slide01Title() {
       <motion.h1
         variants={item}
         className="slide-title max-w-4xl"
-        style={{ fontSize: "clamp(1.3rem, 2.8vw, 2.2rem)" }}
+        style={{ fontSize: "clamp(1.5rem, 3.2vw, 2.4rem)" }}
       >
-        IMPLEMENTASI FITUR AUTOFILL DATA CALON MAHASISWA MENGGUNAKAN
-        TEKNOLOGI OCR BERBASIS TESSERACT PADA SISTEM PMB
+        IMPLEMENTASI FITUR AUTOFILL DATA CALON MAHASISWA
       </motion.h1>
 
       {/* Subtitle */}
       <motion.p
         variants={item}
-        className="slide-subtitle tracking-widest uppercase text-sm"
+        className="slide-subtitle max-w-3xl text-cream-200"
+        style={{ fontSize: "clamp(0.9rem, 1.4vw, 1.15rem)" }}
       >
-        Universitas Muhammadiyah Bandung
+        Menggunakan Teknologi OCR Berbasis Tesseract Pada Sistem PMB Universitas Muhammadiyah Bandung
       </motion.p>
 
-      {/* Presenter Info Card */}
-      <motion.div variants={item} className="mt-3">
+      {/* Presenter */}
+      <motion.div variants={item} className="mt-4">
         <div className="content-card-gold px-8 py-3 inline-block">
           <p className="text-cream-100 font-medium text-base tracking-wide">
-            Aegner Billik
-          </p>
-          <p className="glow-text-gold text-sm mt-0.5 font-mono">
-            220102007
+            Oleh: Aegner Billik (220102007)
           </p>
         </div>
       </motion.div>

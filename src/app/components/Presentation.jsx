@@ -6,7 +6,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import SlideRenderer from "./SlideRenderer";
 import Footer from "./Footer";
 
-const TOTAL_SLIDES = 9;
+const TOTAL_SLIDES = 11;
 
 export default function Presentation() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -69,7 +69,7 @@ export default function Presentation() {
         className="nav-pill"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.5, duration: 0.6, ease: "easeOut" }}
+        transition={{ delay: 0.3, duration: 0.5, ease: "easeOut" }}
       >
         <button
           className="nav-pill-btn"

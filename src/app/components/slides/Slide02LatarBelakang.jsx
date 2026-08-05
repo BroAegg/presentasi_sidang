@@ -1,12 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { AlertTriangle, Clock, Lightbulb } from "lucide-react";
+import { AlertCircle, UserX, Clock, ShieldCheck } from "lucide-react";
 
 const container = {
   hidden: {},
   visible: {
-    transition: { staggerChildren: 0.2, delayChildren: 0.05 },
+    transition: { staggerChildren: 0.15, delayChildren: 0.05 },
   },
 };
 
@@ -20,30 +20,22 @@ const item = {
   },
 };
 
-const points = [
+const bullets = [
   {
-    icon: AlertTriangle,
-    label: "Masalah",
-    text: "Pengisian data identitas PMB masih manual.",
-    accent: "text-red-400",
-    bg: "rgba(239, 68, 68, 0.06)",
-    border: "rgba(239, 68, 68, 0.15)",
+    icon: UserX,
+    text: "Pengisian data diri PMB di Universitas Muhammadiyah Bandung masih dilakukan secara manual.",
+  },
+  {
+    icon: AlertCircle,
+    text: "Pendekatan ini rentan terhadap kesalahan ketik (human error) dan ketidaksesuaian validasi dokumen.",
   },
   {
     icon: Clock,
-    label: "Dampak",
-    text: "Rentan kesalahan ketik (human error) dan memakan waktu lama.",
-    accent: "text-amber-400",
-    bg: "rgba(251, 191, 36, 0.06)",
-    border: "rgba(251, 191, 36, 0.15)",
+    text: "Membutuhkan waktu pemrosesan yang lama, menciptakan hambatan efisiensi administrasi.",
   },
   {
-    icon: Lightbulb,
-    label: "Solusi",
-    text: "Ekstraksi data KTP otomatis menggunakan Optical Character Recognition (OCR).",
-    accent: "text-emerald-400",
-    bg: "rgba(52, 211, 153, 0.06)",
-    border: "rgba(52, 211, 153, 0.15)",
+    icon: ShieldCheck,
+    text: "Diperlukan integrasi sistem ekstraksi data presisi dari dokumen identitas (e-KTP) untuk mengotomatisasi proses input.",
   },
 ];
 
@@ -55,51 +47,39 @@ export default function Slide02LatarBelakang() {
       initial="hidden"
       animate="visible"
     >
-      {/* Header */}
       <motion.div variants={item}>
         <div className="slide-heading-accent" />
-        <h2 className="slide-title">Latar Belakang & Permasalahan</h2>
+        <h2 className="slide-title">Latar Belakang & Masalah</h2>
         <p className="slide-subtitle mt-1">
-          Identifikasi masalah dan proposisi solusi
+          Tantangan administrasi registrasi calon mahasiswa
         </p>
       </motion.div>
 
-      {/* Content */}
-      <div className="flex-1 flex items-center mt-6">
-        <div className="grid grid-cols-1 gap-5 w-full max-w-4xl mx-auto">
-          {points.map((p, i) => {
-            const Icon = p.icon;
-            return (
-              <motion.div
-                key={i}
-                variants={item}
-                className="rounded-xl p-5 flex items-start gap-5"
-                style={{
-                  background: p.bg,
-                  border: `1px solid ${p.border}`,
-                  backdropFilter: "blur(8px)",
-                }}
-              >
-                <div
-                  className={`flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center ${p.accent}`}
-                  style={{
-                    background: p.bg,
-                    border: `1px solid ${p.border}`,
-                  }}
-                >
-                  <Icon size={20} />
-                </div>
-                <div>
-                  <p className={`text-xs font-semibold uppercase tracking-wider mb-1 ${p.accent}`}>
-                    {p.label}
-                  </p>
-                  <p className="text-cream-200 text-sm leading-relaxed">
-                    {p.text}
-                  </p>
-                </div>
-              </motion.div>
-            );
-          })}
+      <div className="flex-1 flex items-center mt-4">
+        <div className="grid grid-cols-12 gap-6 w-full items-stretch">
+          {/* Left Column: 4 Bullets */}
+          <div className="col-span-7 flex flex-col justify-center gap-3">
+            {bullets.map((b, i) => {
+              const Icon = b.icon;
+              return (
+                <motion.div key={i} variants={item} className="content-card flex items-start gap-4">
+                  <div className="bullet-number">
+                    <Icon size={14} />
+                  </div>
+                  <p className="text-cream-200 text-sm leading-relaxed">{b.text}</p>
+                </motion.div>
+              );
+            })}
+          </div>
+
+          {/* Right Column: Image Placeholder */}
+          <motion.div variants={item} className="col-span-5 flex items-center">
+            <div className="image-placeholder w-full h-full min-h-[280px] rounded-xl flex flex-col items-center justify-center p-6 text-center">
+              <UserX size={48} className="text-cream-300 opacity-40 mb-3" />
+              <span className="text-cream-300 text-sm font-medium">Frustrated Admin Illustration</span>
+              <span className="text-cream-300 text-xs opacity-60 mt-1">Placeholder asset: /assets/admin-frustrated.png</span>
+            </div>
+          </motion.div>
         </div>
       </div>
     </motion.div>

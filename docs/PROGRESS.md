@@ -1,4 +1,4 @@
-# PROGRESS — Presentasi Sidang Skripsi
+# PROGRESS — Presentasi Sidang Skripsi (11 Slides)
 
 > Last Updated: 2026-08-05
 
@@ -6,66 +6,21 @@
 
 ## Slide Status
 
-| # | Slide Title                         | Status       | Notes                           |
-|---|-------------------------------------|--------------|---------------------------------|
-| 1 | Title Slide                         | ✅ Done      | Glassmorphism + stagger anim    |
-| 2 | Latar Belakang & Permasalahan       | ✅ Done      | Sequential card reveal          |
-| 3 | Metodologi Penelitian               | ✅ Done      | Flow + feedback loop            |
-| 4 | Prapemrosesan Citra (OpenCV)        | ✅ Done      | Numbered steps stagger          |
-| 5 | Ekstraksi & Regex Bertingkat        | ✅ Done      | 3-layer fallback stagger        |
-| 6 | Evaluasi Peladen                    | ✅ Done      | Glowing CER stats               |
-| 7 | Inovasi Solusi: UI Constraint       | ✅ Done      | Strategy cards stagger          |
-| 8 | Hasil Akhir & Kesimpulan            | ✅ Done      | Stats glow + spring physics     |
-| 9 | Penutup                             | ✅ Done      | Dramatic slow stagger           |
-
----
-
-## Infrastructure Status
-
-| Task                                 | Status       |
-|--------------------------------------|--------------|
-| Next.js project initialization       | ✅ Done      |
-| Tailwind CSS configuration           | ✅ Done      |
-| Framer Motion installation           | ✅ Done      |
-| lucide-react installation            | ✅ Done      |
-| Google Fonts integration             | ✅ Done      |
-| `docs/PROJECT_GUIDELINE.md` created  | ✅ Done      |
-| `docs/PROGRESS.md` created           | ✅ Done      |
-| `public/assets/` directory created   | ✅ Done      |
-| Root layout (fonts, metadata)        | ✅ Done      |
-| Presentation container component     | ✅ Done      |
-| Footer component                     | ✅ Done      |
-| Floating pill navigation             | ✅ Done      |
-| Keyboard navigation                  | ✅ Done      |
-| Spring physics transitions           | ✅ Done      |
-| Mesh gradient background             | ✅ Done      |
-| Glassmorphism slide frame            | ✅ Done      |
-| Gradient text headings               | ✅ Done      |
-| Ambient animated orbs                | ✅ Done      |
-| Glow effects (gold, stats)           | ✅ Done      |
-| Production build verification        | ✅ Done      |
-| Git push to GitHub                   | ✅ Done      |
+| # | Slide Title | Status | Notes |
+|---|-------------|--------|-------|
+| 1 | Cover Slide | 🔄 Updating | Exact title, subtitle, presenter, logo.png |
+| 2 | Latar Belakang & Masalah | 🔄 Updating | 2 cols: 4 bullets + Frustrated Admin illustration |
+| 3 | Tujuan & Batasan | 🔄 Updating | 3 glassmorphism cards |
+| 4 | Metodologi & Arsitektur | 🔄 Updating | 2 cols: Waterfall & Client-Server |
+| 5 | Pipeline Pra-Pemrosesan | 🔄 Updating | 4 OpenCV steps horizontal process bar |
+| 6 | Strategi Parsing Regex | 🔄 Updating | Multi-layered fallback explanation + code image |
+| 7 | Analisis Keterbatasan | 🔄 Updating | 4 stat metrics (2 Red, 2 Green) + summary |
+| 8 | Mitigasi: Kamera Sketsa | 🔄 Updating | 3 steps/cards + camera UI image |
+| 9 | Evaluasi Waktu Komputasi | 🔄 Updating | 3.66x glowing metric + math formula |
+| 10 | Kesimpulan Penelitian | 🔄 Updating | 4 key conclusion & suggestion bullets |
+| 11 | Penutup | 🔄 Updating | Terima Kasih + Sesi Tanya Jawab |
 
 ---
 
 ## Changelog
-
-### 2026-08-05 — UI Overhaul (v2)
-- **Mesh Gradient Background**: Multi-layered radial gradients replacing flat navy.
-- **3 Ambient Orbs**: Animated floating blobs (navy + subtle gold) with CSS keyframe drift.
-- **Glassmorphism Slide Frame**: `backdrop-blur(40px)`, `rgba(255,255,255,0.04)` bg, inner glow, rounded corners.
-- **Glass Cards**: All `content-card` and `content-card-gold` now use `backdrop-filter: blur(12px)` with semi-transparent backgrounds.
-- **Spring Physics Transitions**: Slide enter/exit uses `type: "spring"` with `stiffness: 200, damping: 28` + blur effect.
-- **Sequential Stagger**: `staggerChildren` + `delayChildren` on every slide so title → subtitle → each bullet appears one by one.
-- **Gradient Text Headings**: `bg-clip-text text-transparent` white-to-gray gradient on all `.slide-title` elements.
-- **Floating Pill Navigation**: Replaced flat buttons with a glassmorphism pill at bottom-center containing: prev button, progress bar, slide counter, next button.
-- **Glow Effects**: Gold glow on accents, drop-shadows on icons, text-shadow on stat values.
-- **Removed**: Standalone `ProgressBar.jsx` (merged into floating pill).
-
-### 2026-08-05 — Initial Build (v1)
-- Created `docs/PROJECT_GUIDELINE.md` with full design system and tech stack.
-- Created `docs/PROGRESS.md` (this file).
-- Initialized Next.js project with App Router + Tailwind CSS v4.
-- Installed `framer-motion` and `lucide-react`.
-- Created all 9 slide components and core infrastructure.
-- Pushed to GitHub: https://github.com/BroAegg/presentasi_sidang.git
+- **v3 (11 Slides Architecture)**: Re-architected presentation to 11 full slides matching exact prompt requirements. Added math formulas, 4-step OpenCV timeline, 4-stat metrics grid, and 11-slide navigation.

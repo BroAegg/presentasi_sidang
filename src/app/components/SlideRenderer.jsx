@@ -1,53 +1,51 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Slide01Title from "./slides/Slide01Title";
+import Slide01Cover from "./slides/Slide01Cover";
 import Slide02LatarBelakang from "./slides/Slide02LatarBelakang";
-import Slide03Metodologi from "./slides/Slide03Metodologi";
-import Slide04Prapemrosesan from "./slides/Slide04Prapemrosesan";
-import Slide05Regex from "./slides/Slide05Regex";
-import Slide06Evaluasi from "./slides/Slide06Evaluasi";
-import Slide07Inovasi from "./slides/Slide07Inovasi";
-import Slide08Hasil from "./slides/Slide08Hasil";
-import Slide09Penutup from "./slides/Slide09Penutup";
+import Slide03TujuanBatasan from "./slides/Slide03TujuanBatasan";
+import Slide04MetodologiArsitektur from "./slides/Slide04MetodologiArsitektur";
+import Slide05PipelineOpenCV from "./slides/Slide05PipelineOpenCV";
+import Slide06Regex from "./slides/Slide06Regex";
+import Slide07AnalisisKeterbatasan from "./slides/Slide07AnalisisKeterbatasan";
+import Slide08MitigasiKameraSketsa from "./slides/Slide08MitigasiKameraSketsa";
+import Slide09EvaluasiWaktu from "./slides/Slide09EvaluasiWaktu";
+import Slide10Kesimpulan from "./slides/Slide10Kesimpulan";
+import Slide11Penutup from "./slides/Slide11Penutup";
 
 const slides = [
-  Slide01Title,
+  Slide01Cover,
   Slide02LatarBelakang,
-  Slide03Metodologi,
-  Slide04Prapemrosesan,
-  Slide05Regex,
-  Slide06Evaluasi,
-  Slide07Inovasi,
-  Slide08Hasil,
-  Slide09Penutup,
+  Slide03TujuanBatasan,
+  Slide04MetodologiArsitektur,
+  Slide05PipelineOpenCV,
+  Slide06Regex,
+  Slide07AnalisisKeterbatasan,
+  Slide08MitigasiKameraSketsa,
+  Slide09EvaluasiWaktu,
+  Slide10Kesimpulan,
+  Slide11Penutup,
 ];
 
 const slideVariants = {
   enter: (direction) => ({
     opacity: 0,
-    x: direction > 0 ? 60 : -60,
-    scale: 0.96,
-    filter: "blur(6px)",
+    x: direction > 0 ? 50 : -50,
   }),
   center: {
     opacity: 1,
     x: 0,
-    scale: 1,
-    filter: "blur(0px)",
   },
   exit: (direction) => ({
     opacity: 0,
-    x: direction > 0 ? -40 : 40,
-    scale: 0.96,
-    filter: "blur(4px)",
+    x: direction > 0 ? -50 : 50,
   }),
 };
 
 const slideTransition = {
   type: "spring",
-  stiffness: 200,
-  damping: 28,
+  stiffness: 220,
+  damping: 26,
   mass: 0.8,
 };
 
