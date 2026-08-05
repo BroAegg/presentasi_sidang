@@ -30,7 +30,7 @@ const phases = [
 export default function Slide05MetodologiWaterfall() {
   return (
     <motion.div
-      className="flex flex-col h-full"
+      className="flex flex-col h-full overflow-hidden"
       variants={container}
       initial="hidden"
       animate="visible"
@@ -43,8 +43,8 @@ export default function Slide05MetodologiWaterfall() {
         </p>
       </motion.div>
 
-      <div className="flex-1 flex items-center mt-3">
-        <div className="grid grid-cols-12 gap-5 w-full items-stretch">
+      <div className="flex-1 flex items-center mt-3 overflow-hidden">
+        <div className="grid grid-cols-12 gap-5 w-full items-stretch overflow-hidden">
           {/* Left Column: 4 Phases Grid */}
           <div className="col-span-6 flex flex-col justify-between gap-2.5">
             {phases.map((p, i) => (
@@ -74,13 +74,13 @@ export default function Slide05MetodologiWaterfall() {
             </motion.div>
           </div>
 
-          {/* Right Column: Slide 4 Image (Primary: slide4.jpeg) */}
-          <motion.div variants={item} className="col-span-6 flex items-center">
-            <div className="image-placeholder w-full h-full min-h-[270px] rounded-xl flex items-center justify-center p-3">
+          {/* Right Column: Slide 4 Image (Auto-fit bounded box) */}
+          <motion.div variants={item} className="col-span-6 flex items-center justify-center overflow-hidden">
+            <div className="image-placeholder w-full h-[320px] max-h-[55vh] rounded-xl flex items-center justify-center p-2.5 bg-black/40 border border-white/10 overflow-hidden">
               <img
                 src="/assets/slide4.jpeg"
                 alt="Diagram Waterfall Slide 4"
-                className="w-full h-full object-contain"
+                className="max-w-full max-h-full w-auto h-auto object-contain rounded-lg shadow-lg"
                 onError={(e) => {
                   if (!e.target.dataset.triedPng) {
                     e.target.dataset.triedPng = "true";

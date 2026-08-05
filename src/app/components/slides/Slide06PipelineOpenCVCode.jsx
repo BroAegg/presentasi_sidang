@@ -54,7 +54,7 @@ const steps = [
 export default function Slide06PipelineOpenCVCode() {
   return (
     <motion.div
-      className="flex flex-col h-full"
+      className="flex flex-col h-full overflow-hidden"
       variants={container}
       initial="hidden"
       animate="visible"
@@ -67,7 +67,7 @@ export default function Slide06PipelineOpenCVCode() {
         </p>
       </motion.div>
 
-      <div className="flex-1 grid grid-cols-12 gap-5 mt-3 items-stretch">
+      <div className="flex-1 grid grid-cols-12 gap-5 mt-3 items-stretch overflow-hidden">
         {/* Left Column: 4 Step List */}
         <div className="col-span-6 flex flex-col justify-between gap-2.5">
           {steps.map((s, i) => (
@@ -90,10 +90,10 @@ export default function Slide06PipelineOpenCVCode() {
           ))}
         </div>
 
-        {/* Right Column: Slide 5 Image (Primary: slide5.jpeg) */}
+        {/* Right Column: Slide 5 Image (Auto-fit bounded box) */}
         <motion.div
           variants={item}
-          className="col-span-6 content-card p-3 flex flex-col justify-between"
+          className="col-span-6 content-card p-3 flex flex-col justify-between overflow-hidden"
         >
           <div className="flex items-center justify-between pb-2 border-b border-white/10 text-gold-400 mb-2">
             <div className="flex items-center gap-2">
@@ -105,11 +105,11 @@ export default function Slide06PipelineOpenCVCode() {
             </span>
           </div>
 
-          <div className="image-placeholder w-full flex-1 min-h-[220px] rounded-xl flex items-center justify-center p-2">
+          <div className="image-placeholder w-full flex-1 h-[260px] max-h-[50vh] rounded-xl flex items-center justify-center p-2.5 bg-black/40 border border-white/10 overflow-hidden">
             <img
               src="/assets/slide5.jpeg"
               alt="Visualisasi Preprocessing Slide 5"
-              className="w-full h-full object-contain"
+              className="max-w-full max-h-full w-auto h-auto object-contain rounded-lg shadow-lg"
               onError={(e) => {
                 if (!e.target.dataset.triedPng) {
                   e.target.dataset.triedPng = "true";

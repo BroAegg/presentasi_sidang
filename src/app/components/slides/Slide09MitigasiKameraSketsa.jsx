@@ -85,12 +85,12 @@ export default function Slide09MitigasiKameraSketsa() {
           </div>
 
           {/* Right Column: MUST use ui-kamera.png Image Asset */}
-          <motion.div variants={item} className="col-span-6 flex items-center">
-            <div className="image-placeholder w-full h-full min-h-[270px] rounded-xl flex items-center justify-center p-3">
+          <motion.div variants={item} className="col-span-6 flex items-center justify-center overflow-hidden">
+            <div className="image-placeholder w-full h-[320px] max-h-[55vh] rounded-xl flex items-center justify-center p-2.5 bg-black/40 border border-white/10 overflow-hidden">
               <img
                 src="/assets/slide7.jpeg"
                 alt="Kamera Sketsa UI Slide 7"
-                className="w-full h-full object-contain"
+                className="max-w-full max-h-full w-auto h-auto object-contain rounded-lg shadow-lg"
                 onError={(e) => {
                   if (!e.target.dataset.triedPng) {
                     e.target.dataset.triedPng = "true";
