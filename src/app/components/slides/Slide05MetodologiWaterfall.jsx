@@ -74,24 +74,27 @@ export default function Slide05MetodologiWaterfall() {
             </motion.div>
           </div>
 
-          {/* Right Column: Waterfall Diagram Image (Auto-supports .jpeg, .png, .jpg) */}
+          {/* Right Column: Slide 4 Image (Primary: slide4.jpeg) */}
           <motion.div variants={item} className="col-span-6 flex items-center">
             <div className="image-placeholder w-full h-full min-h-[270px] rounded-xl flex items-center justify-center p-3">
               <img
-                src="/assets/waterfall-diagram.jpeg"
-                alt="Diagram Waterfall"
+                src="/assets/slide4.jpeg"
+                alt="Diagram Waterfall Slide 4"
                 className="w-full h-full object-contain"
                 onError={(e) => {
                   if (!e.target.dataset.triedPng) {
                     e.target.dataset.triedPng = "true";
-                    e.target.src = "/assets/waterfall-diagram.png";
+                    e.target.src = "/assets/slide4.png";
                   } else if (!e.target.dataset.triedJpg) {
                     e.target.dataset.triedJpg = "true";
-                    e.target.src = "/assets/waterfall-diagram.jpg";
+                    e.target.src = "/assets/slide4.jpg";
+                  } else if (!e.target.dataset.triedOld) {
+                    e.target.dataset.triedOld = "true";
+                    e.target.src = "/assets/waterfall-diagram.jpeg";
                   } else {
                     e.target.style.display = "none";
                     e.target.parentElement.innerHTML =
-                      '<span style="color:#ddd6c8;font-size:0.75rem">waterfall-diagram</span>';
+                      '<span style="color:#ddd6c8;font-size:0.75rem">slide4.jpeg</span>';
                   }
                 }}
               />

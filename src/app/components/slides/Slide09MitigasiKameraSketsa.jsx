@@ -88,20 +88,23 @@ export default function Slide09MitigasiKameraSketsa() {
           <motion.div variants={item} className="col-span-6 flex items-center">
             <div className="image-placeholder w-full h-full min-h-[270px] rounded-xl flex items-center justify-center p-3">
               <img
-                src="/assets/ui-kamera.jpeg"
-                alt="Kamera Sketsa UI"
+                src="/assets/slide7.jpeg"
+                alt="Kamera Sketsa UI Slide 7"
                 className="w-full h-full object-contain"
                 onError={(e) => {
                   if (!e.target.dataset.triedPng) {
                     e.target.dataset.triedPng = "true";
-                    e.target.src = "/assets/ui-kamera.png";
+                    e.target.src = "/assets/slide7.png";
                   } else if (!e.target.dataset.triedJpg) {
                     e.target.dataset.triedJpg = "true";
-                    e.target.src = "/assets/ui-kamera.jpg";
+                    e.target.src = "/assets/slide7.jpg";
+                  } else if (!e.target.dataset.triedOld) {
+                    e.target.dataset.triedOld = "true";
+                    e.target.src = "/assets/ui-kamera.jpeg";
                   } else {
                     e.target.style.display = "none";
                     e.target.parentElement.innerHTML =
-                      '<span style="color:#ddd6c8;font-size:0.75rem">ui-kamera</span>';
+                      '<span style="color:#ddd6c8;font-size:0.75rem">slide7.jpeg</span>';
                   }
                 }}
               />

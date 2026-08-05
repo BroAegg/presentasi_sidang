@@ -77,20 +77,23 @@ export default function Slide12EvaluasiWaktuSpeedup() {
         <motion.div variants={item} className="col-span-6 flex items-center">
           <div className="image-placeholder w-full h-full min-h-[270px] rounded-xl flex items-center justify-center p-3">
             <img
-              src="/assets/tabel-speedup.jpeg"
-              alt="Tabel Speedup Ratio"
+              src="/assets/slide11.jpeg"
+              alt="Tabel Speedup Ratio Slide 11"
               className="w-full h-full object-contain"
               onError={(e) => {
                 if (!e.target.dataset.triedPng) {
                   e.target.dataset.triedPng = "true";
-                  e.target.src = "/assets/tabel-speedup.png";
+                  e.target.src = "/assets/slide11.png";
                 } else if (!e.target.dataset.triedJpg) {
                   e.target.dataset.triedJpg = "true";
-                  e.target.src = "/assets/tabel-speedup.jpg";
+                  e.target.src = "/assets/slide11.jpg";
+                } else if (!e.target.dataset.triedOld) {
+                  e.target.dataset.triedOld = "true";
+                  e.target.src = "/assets/tabel-speedup.jpeg";
                 } else {
                   e.target.style.display = "none";
                   e.target.parentElement.innerHTML =
-                    '<span style="color:#ddd6c8;font-size:0.75rem">tabel-speedup</span>';
+                    '<span style="color:#ddd6c8;font-size:0.75rem">slide11.jpeg</span>';
                 }
               }}
             />

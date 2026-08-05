@@ -90,7 +90,7 @@ export default function Slide06PipelineOpenCVCode() {
           ))}
         </div>
 
-        {/* Right Column: OpenCV Pipeline Image Asset (Auto-supports .jpeg, .png, .jpg) */}
+        {/* Right Column: Slide 5 Image (Primary: slide5.jpeg) */}
         <motion.div
           variants={item}
           className="col-span-6 content-card p-3 flex flex-col justify-between"
@@ -107,23 +107,23 @@ export default function Slide06PipelineOpenCVCode() {
 
           <div className="image-placeholder w-full flex-1 min-h-[220px] rounded-xl flex items-center justify-center p-2">
             <img
-              src="/assets/preprocessing-opencv.jpeg"
-              alt="Visualisasi Preprocessing OpenCV"
+              src="/assets/slide5.jpeg"
+              alt="Visualisasi Preprocessing Slide 5"
               className="w-full h-full object-contain"
               onError={(e) => {
                 if (!e.target.dataset.triedPng) {
                   e.target.dataset.triedPng = "true";
-                  e.target.src = "/assets/preprocessing-opencv.png";
+                  e.target.src = "/assets/slide5.png";
                 } else if (!e.target.dataset.triedJpg) {
                   e.target.dataset.triedJpg = "true";
-                  e.target.src = "/assets/preprocessing-opencv.jpg";
-                } else if (!e.target.dataset.triedCode) {
-                  e.target.dataset.triedCode = "true";
-                  e.target.src = "/assets/code-opencv.png";
+                  e.target.src = "/assets/slide5.jpg";
+                } else if (!e.target.dataset.triedOld) {
+                  e.target.dataset.triedOld = "true";
+                  e.target.src = "/assets/preprocessing-opencv.jpeg";
                 } else {
                   e.target.style.display = "none";
                   e.target.parentElement.innerHTML =
-                    '<div className="p-3 text-center space-y-2"><span style="color:#ddd6c8;font-size:0.75rem">preprocessing-opencv.jpeg</span><p style="color:#aaa;font-size:0.7rem">Memastikan teks KTP kontras dan mudah dibaca Tesseract OCR</p></div>';
+                    '<span style="color:#ddd6c8;font-size:0.75rem">slide5.jpeg</span>';
                 }
               }}
             />
