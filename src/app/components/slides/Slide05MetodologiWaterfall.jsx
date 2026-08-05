@@ -74,17 +74,17 @@ export default function Slide05MetodologiWaterfall() {
             </motion.div>
           </div>
 
-          {/* Right Column: Slide 4 Scrollable Image Container for Long Phone Screenshots */}
+          {/* Right Column: Slide 4 Full-Width Scrollable Image Container */}
           <motion.div variants={item} className="col-span-6 flex flex-col items-center justify-center overflow-hidden">
             <div className="text-[0.65rem] font-mono text-gold-400/90 mb-1 flex items-center gap-1">
               <ArrowDown size={12} className="animate-bounce" />
-              <span>Gulir ke bawah untuk melihat gambar HP penuh</span>
+              <span>Gulir ke bawah untuk membaca screenshot HP penuh</span>
             </div>
-            <div className="image-placeholder w-full h-[340px] max-h-[55vh] rounded-xl p-2 bg-black/50 border border-gold-400/30 overflow-y-auto overflow-x-hidden custom-scrollbar flex flex-col items-center">
+            <div className="image-placeholder w-full h-[360px] rounded-xl p-3 bg-black/60 border border-gold-400/40 overflow-y-auto custom-scrollbar block">
               <img
                 src="/assets/slide4.jpeg"
                 alt="Diagram Waterfall Slide 4"
-                className="w-full h-auto object-contain rounded-lg shadow-xl"
+                className="w-full h-auto block rounded-lg shadow-2xl"
                 onError={(e) => {
                   if (!e.target.dataset.triedPng) {
                     e.target.dataset.triedPng = "true";

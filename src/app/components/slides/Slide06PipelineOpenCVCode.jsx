@@ -90,7 +90,7 @@ export default function Slide06PipelineOpenCVCode() {
           ))}
         </div>
 
-        {/* Right Column: Slide 5 Scrollable Image Container for Long Phone Screenshots */}
+        {/* Right Column: Slide 5 Full-Width Scrollable Image Container */}
         <motion.div
           variants={item}
           className="col-span-6 content-card p-3 flex flex-col justify-between overflow-hidden"
@@ -107,14 +107,14 @@ export default function Slide06PipelineOpenCVCode() {
 
           <div className="text-[0.65rem] font-mono text-gold-400/90 mb-1 flex items-center justify-center gap-1">
             <ArrowDown size={12} className="animate-bounce" />
-            <span>Gulir ke bawah untuk melihat gambar HP penuh</span>
+            <span>Gulir ke bawah untuk membaca screenshot HP penuh</span>
           </div>
 
-          <div className="image-placeholder w-full h-[250px] max-h-[48vh] rounded-xl p-2 bg-black/50 border border-gold-400/30 overflow-y-auto overflow-x-hidden custom-scrollbar flex flex-col items-center">
+          <div className="image-placeholder w-full h-[260px] rounded-xl p-3 bg-black/60 border border-gold-400/40 overflow-y-auto custom-scrollbar block">
             <img
               src="/assets/slide5.jpeg"
               alt="Visualisasi Preprocessing Slide 5"
-              className="w-full h-auto object-contain rounded-lg shadow-xl"
+              className="w-full h-auto block rounded-lg shadow-2xl"
               onError={(e) => {
                 if (!e.target.dataset.triedPng) {
                   e.target.dataset.triedPng = "true";
