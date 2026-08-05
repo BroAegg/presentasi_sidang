@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { GitBranch, RefreshCw, AlertTriangle, ArrowRight } from "lucide-react";
+import { GitBranch, CheckCircle2, ArrowRight } from "lucide-react";
 
 const container = {
   hidden: {},
@@ -21,10 +21,10 @@ const item = {
 };
 
 const phases = [
-  { step: "Fase 1", name: "Analisis Kebutuhan", desc: "Observasi PMB, wawancara stakeholder & dataset 50 e-KTP." },
-  { step: "Fase 2", name: "Desain Sistem", desc: "Blueprint Client-Server, DFD, arsitektur API & pipeline OCR." },
-  { step: "Fase 3", name: "Implementasi", desc: "Laravel Frontend, Python Flask OCR Backend, OpenCV & PyTesseract." },
-  { step: "Fase 4", name: "Pengujian", desc: "Blackbox Testing, evaluasi metrik CER, WER & Speedup Ratio." },
+  { step: "Fase 1", name: "Analisis Kebutuhan", desc: "Mengidentifikasi masalah pengisian form manual & mengumpulkan dataset foto e-KTP." },
+  { step: "Fase 2", name: "Desain Sistem", desc: "Merancang arsitektur REST API Flask, pipeline OpenCV, dan tampilan Kamera Sketsa." },
+  { step: "Fase 3", name: "Implementasi Kode", desc: "Membangun backend OCR Python dan menghubungkannya dengan form PMB Web." },
+  { step: "Fase 4", name: "Pengujian Sistem", desc: "Menguji fungsi autofill (Blackbox Testing), akurasi baca kata, dan efisiensi waktu." },
 ];
 
 export default function Slide05MetodologiWaterfall() {
@@ -37,9 +37,9 @@ export default function Slide05MetodologiWaterfall() {
     >
       <motion.div variants={item}>
         <div className="slide-heading-accent" />
-        <h2 className="slide-title">Metodologi Penelitian: Waterfall dengan Feedback Loop</h2>
+        <h2 className="slide-title">Metodologi Penelitian: Model Waterfall</h2>
         <p className="slide-subtitle mt-1">
-          Pendekatan pengembangan sistem sekuensial dengan iterasi umpan balik
+          Pendekatan pengembangan sistem PMB OCR yang terstruktur &amp; berurutan
         </p>
       </motion.div>
 
@@ -62,13 +62,13 @@ export default function Slide05MetodologiWaterfall() {
               </motion.div>
             ))}
 
-            {/* Feedback Trigger Box */}
+            {/* Simple Evaluation Focus Box */}
             <motion.div variants={item} className="content-card-gold p-3 flex items-start gap-3">
-              <RefreshCw size={18} className="text-gold-400 animate-[spin_4s_linear_infinite] flex-shrink-0 mt-0.5" />
+              <CheckCircle2 size={18} className="text-gold-400 flex-shrink-0 mt-0.5" />
               <div>
-                <p className="text-[0.7rem] font-bold text-gold-300 uppercase tracking-wider mb-0.5">Mekanisme Feedback Loop</p>
+                <p className="text-[0.7rem] font-bold text-gold-300 uppercase tracking-wider mb-0.5">Fokus Pengujian</p>
                 <p className="text-cream-200 text-[0.72rem] leading-tight">
-                  Jika pengujian iterasi 1 menemukan CER &gt; 10% atau server timeout, feedback loop diaktifkan untuk tuning parameter OpenCV & revisi UI Constraint Kamera.
+                  Pengujian dilakukan untuk memastikan form PMB terisi otomatis secara presisi dan pendaftaran menjadi lebih cepat.
                 </p>
               </div>
             </motion.div>
@@ -79,7 +79,7 @@ export default function Slide05MetodologiWaterfall() {
             <div className="image-placeholder w-full h-full min-h-[270px] rounded-xl flex items-center justify-center p-3">
               <img
                 src="/assets/waterfall-diagram.png"
-                alt="Diagram Waterfall dengan Feedback Loop"
+                alt="Diagram Waterfall"
                 className="w-full h-full object-contain"
                 onError={(e) => {
                   e.target.style.display = "none";

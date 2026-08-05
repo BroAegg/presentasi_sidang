@@ -30,7 +30,7 @@ export default function Slide08EvaluasiPeladen() {
     >
       <motion.div variants={item}>
         <div className="slide-heading-accent" />
-        <h2 className="slide-title">Evaluasi Peladen: Keterbatasan Mesin Dasar Tesseract</h2>
+        <h2 className="slide-title">Evaluasi Server (Backend): Keterbatasan Mesin Dasar Tesseract</h2>
         <p className="slide-subtitle mt-0.5">
           Pengujian Batch 50 Dataset citra e-KTP (5 KTP × 10 variasi skenario)
         </p>

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Filter, ArrowRight, ShieldCheck, Database } from "lucide-react";
+import { Filter, ArrowRight, ShieldCheck, Database, Sparkles } from "lucide-react";
 
 const container = {
   hidden: {},
@@ -30,9 +30,9 @@ export default function Slide07RegexCode() {
     >
       <motion.div variants={item} className="mb-2">
         <div className="slide-heading-accent" />
-        <h2 className="slide-title">Logika Parsing Teks: Regex Multi-Layered Fallback</h2>
+        <h2 className="slide-title">Logika Parsing Regex (3 Lapis Pencarian)</h2>
         <p className="slide-subtitle">
-          Alur Fungsional Ekstraksi &amp; Pemilahan Data Identitas dari Teks Mentah OCR
+          Strategi pencarian berlapis agar sistem tidak gampang gagal membaca data KTP
         </p>
       </motion.div>
 
@@ -42,11 +42,11 @@ export default function Slide07RegexCode() {
           <motion.div variants={item} className="content-card p-3 flex-1 flex flex-col justify-between bg-emerald-500/10 border-emerald-500/20">
             <div>
               <div className="flex items-center justify-between mb-1">
-                <span className="text-[0.7rem] font-bold text-emerald-400 uppercase tracking-wider">Lapis 1: Label Keyword Header</span>
-                <span className="font-mono text-[0.62rem] text-emerald-300 bg-emerald-500/20 px-2 py-0.5 rounded">Utama</span>
+                <span className="text-[0.7rem] font-bold text-emerald-400 uppercase tracking-wider">Lapis 1: Cari Kata Label &quot;NIK&quot;</span>
+                <span className="font-mono text-[0.62rem] text-emerald-300 bg-emerald-500/20 px-2 py-0.5 rounded">Plan A</span>
               </div>
               <p className="text-cream-200 text-[0.72rem] leading-snug">
-                Mencari kata kunci header &quot;NIK&quot; lalu mengisolasi 16 digit angka pertama setelah tanda baca <code className="text-emerald-300">:</code> atau <code className="text-emerald-300">-</code>.
+                Mencari kata tulisan &quot;NIK&quot; di KTP lalu mengambil 16 digit angka di sebelah kanannya.
               </p>
             </div>
           </motion.div>
@@ -54,23 +54,23 @@ export default function Slide07RegexCode() {
           <motion.div variants={item} className="content-card p-3 flex-1 flex flex-col justify-between bg-amber-500/10 border-amber-500/20">
             <div>
               <div className="flex items-center justify-between mb-1">
-                <span className="text-[0.7rem] font-bold text-amber-400 uppercase tracking-wider">Lapis 2: Fallback Absolute 16-Digit</span>
-                <span className="font-mono text-[0.62rem] text-amber-300 bg-amber-500/20 px-2 py-0.5 rounded">Cadangan 1</span>
+                <span className="text-[0.7rem] font-bold text-amber-400 uppercase tracking-wider">Lapis 2: Cari 16 Angka Murni</span>
+                <span className="font-mono text-[0.62rem] text-amber-300 bg-amber-500/20 px-2 py-0.5 rounded">Plan B</span>
               </div>
               <p className="text-cream-200 text-[0.72rem] leading-snug">
-                Jika kata kunci header pudar/terpotong: mengekstraksi 16 digit angka murni berurutan di mana saja dalam teks.
+                Jika kata &quot;NIK&quot; terpotong/rusak, sistem mencari sekuens **16 digit angka murni** di mana saja dalam teks.
               </p>
             </div>
           </motion.div>
 
-          <motion.div variants={item} className="content-card p-3 flex-1 flex flex-col justify-between bg-red-500/10 border-red-500/20">
+          <motion.div variants={item} className="content-card p-3 flex-1 flex flex-col justify-between bg-cyan-500/10 border-cyan-500/20">
             <div>
               <div className="flex items-center justify-between mb-1">
-                <span className="text-[0.7rem] font-bold text-red-400 uppercase tracking-wider">Lapis 3: Fallback Relaxed Spaced Match</span>
-                <span className="font-mono text-[0.62rem] text-red-300 bg-red-500/20 px-2 py-0.5 rounded">Cadangan 2</span>
+                <span className="text-[0.7rem] font-bold text-cyan-400 uppercase tracking-wider">Lapis 3: Bersihkan Spasi Liar</span>
+                <span className="font-mono text-[0.62rem] text-cyan-300 bg-cyan-500/20 px-2 py-0.5 rounded">Plan C</span>
               </div>
               <p className="text-cream-200 text-[0.72rem] leading-snug">
-                Toleransi spasi kotor: mengekstraksi 16 digit yang terpisah oleh spasi acak akibat noise scanner lalu membuang spasi.
+                Jika angkanya terpisah spasi akibat OCR (contoh: <code className="text-cyan-300">3273 0102...</code>), sistem menyatukan angkanya dan membuang spasinya.
               </p>
             </div>
           </motion.div>
@@ -78,12 +78,12 @@ export default function Slide07RegexCode() {
           <motion.div variants={item} className="content-card-gold p-2.5 flex items-center gap-2">
             <Filter size={16} className="text-gold-400 flex-shrink-0" />
             <p className="text-cream-200 text-[0.7rem] leading-snug">
-              <strong className="text-gold-300">Stop-Words Filter Nama:</strong> Mengabaikan entitas wilayah (&quot;PROVINSI&quot;, &quot;KOTA&quot;, &quot;AGAMA&quot;) via heuristik kapitalisasi.
+              <strong className="text-gold-300">Penyaring Nama:</strong> Mengabaikan kata nama kota/agama (&quot;PROVINSI&quot;, &quot;KOTA&quot;, &quot;AGAMA&quot;) agar tidak keliru sebagai Nama.
             </p>
           </motion.div>
         </div>
 
-        {/* Right Column: Blackbox Data Extraction Pipeline */}
+        {/* Right Column: Visual Explanation Card */}
         <motion.div
           variants={item}
           className="col-span-6 content-card p-4 flex flex-col justify-between"
@@ -92,50 +92,35 @@ export default function Slide07RegexCode() {
             <div className="flex items-center justify-between pb-2 border-b border-white/10 text-gold-400">
               <div className="flex items-center gap-2">
                 <Database size={16} />
-                <span className="font-semibold text-xs text-cream-100">Alur Ekstraksi &amp; Mapping Data (Blackbox View)</span>
+                <span className="font-semibold text-xs text-cream-100">Hasil Parsing Data KTP</span>
               </div>
-              <span className="text-[0.62rem] font-mono text-cyan-300 bg-cyan-400/10 px-2 py-0.5 rounded border border-cyan-400/20">
-                Raw Text → Clean Fields
+              <span className="text-[0.62rem] font-mono text-emerald-300 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">
+                Data Terisolasi Sempurna
               </span>
             </div>
 
-            {/* Step-by-Step Data Flow Visual */}
-            <div className="my-2 space-y-2.5 flex-1 flex flex-col justify-center">
-              {/* Step 1 */}
-              <div className="p-2.5 rounded-lg bg-black/40 border border-white/10">
-                <span className="text-[0.65rem] font-bold text-amber-400 uppercase tracking-wider block mb-1">1. Tesseract Raw Text (Input Mentah)</span>
-                <p className="font-mono text-[0.68rem] text-cream-300 italic">
-                  &quot;PROVINSI JAWA BARAT ... NIK : 3204 0125 0698 0001 ... NAMA : UJANG SURYADI&quot;
-                </p>
+            <div className="space-y-2.5 my-auto">
+              <div className="p-2.5 rounded bg-black/40 border border-white/10 flex items-center justify-between">
+                <span className="text-xs font-mono text-gold-400 font-bold">1. NIK</span>
+                <span className="text-xs font-mono text-cream-100 bg-white/5 px-2 py-0.5 rounded">16 Digit Angka Murni</span>
               </div>
-
-              {/* Arrow */}
-              <div className="flex justify-center text-gold-400">
-                <ArrowRight size={18} className="rotate-90" />
+              <div className="p-2.5 rounded bg-black/40 border border-white/10 flex items-center justify-between">
+                <span className="text-xs font-mono text-cyan-400 font-bold">2. Nama Lengkap</span>
+                <span className="text-xs font-mono text-cream-100 bg-white/5 px-2 py-0.5 rounded">Teks Huruf Kapital</span>
               </div>
-
-              {/* Step 2 */}
-              <div className="p-2.5 rounded-lg bg-emerald-500/10 border border-emerald-500/20">
-                <span className="text-[0.65rem] font-bold text-emerald-400 uppercase tracking-wider block mb-1">2. Parsed Output (Form Autofill Ready)</span>
-                <div className="grid grid-cols-2 gap-2 font-mono text-[0.7rem]">
-                  <div className="p-1.5 rounded bg-black/50 border border-white/10">
-                    <span className="text-cream-300 block text-[0.6rem]">NIK (16 Digit):</span>
-                    <span className="text-emerald-400 font-bold">3204012506980001</span>
-                  </div>
-                  <div className="p-1.5 rounded bg-black/50 border border-white/10">
-                    <span className="text-cream-300 block text-[0.6rem]">NAMA LENGKAP:</span>
-                    <span className="text-emerald-400 font-bold">UJANG SURYADI</span>
-                  </div>
-                </div>
+              <div className="p-2.5 rounded bg-black/40 border border-white/10 flex items-center justify-between">
+                <span className="text-xs font-mono text-emerald-400 font-bold">3. Tanggal Lahir</span>
+                <span className="text-xs font-mono text-cream-100 bg-white/5 px-2 py-0.5 rounded">Format DD-MM-YYYY</span>
+              </div>
+              <div className="p-2.5 rounded bg-black/40 border border-white/10 flex items-center justify-between">
+                <span className="text-xs font-mono text-amber-400 font-bold">4. Alamat</span>
+                <span className="text-xs font-mono text-cream-100 bg-white/5 px-2 py-0.5 rounded">Teks Lokasi &amp; RT/RW</span>
               </div>
             </div>
 
-            {/* Footer Benefit */}
-            <div className="pt-2 border-t border-white/10 flex items-center gap-2 text-xs text-gold-300">
-              <ShieldCheck size={16} className="text-emerald-400 flex-shrink-0" />
-              <p className="text-[0.72rem] text-cream-200 leading-tight">
-                <strong>Fail-Safe Protection:</strong> Menjamin 16 digit NIK selalu terisolasi presisi tanpa tergantung format kaku.
-              </p>
+            <div className="p-2.5 rounded bg-gold-400/10 border border-gold-400/20 text-[0.72rem] text-cream-200 flex items-center gap-2">
+              <Sparkles size={16} className="text-gold-400 flex-shrink-0" />
+              <span>Sistem otomatis mengisi 4 data ini ke formulir PMB dalam hitungan detik.</span>
             </div>
           </div>
         </motion.div>

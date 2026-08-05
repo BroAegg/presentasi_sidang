@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Undo2, Camera, ShieldCheck } from "lucide-react";
+import { Undo2, Camera, ShieldCheck, Sparkles } from "lucide-react";
 
 const container = {
   hidden: {},
@@ -23,20 +23,20 @@ const item = {
 const strategies = [
   {
     icon: Undo2,
-    step: "Langkah 1: Rollback Server Auto-Rotate",
-    desc: "Menghapus algoritma rotasi citra otomatis (OSD) di peladen backend yang menyebabkan server timeout & merusak speedup ratio.",
+    step: "Langkah 1: Hindari Rotasi Server Berat",
+    desc: "Nggak perlu lagi muter foto miring secara otomatis di server yang bikin lemot & server timeout.",
     accent: "text-red-400",
   },
   {
     icon: Camera,
-    step: "Langkah 2: Inovasi UI Constraint Kamera",
-    desc: "Mengganti upload konvensional dengan antarmuka Kamera Sketsa yang memiliki Guideline Overlay (garis bantu bingkai KTP).",
+    step: "Langkah 2: Inovasi Kamera Sketsa di HP",
+    desc: "Memasang bingkai panduan berbentuk kotak KTP pada layar HP/Web calon mahasiswa.",
     accent: "text-amber-400",
   },
   {
     icon: ShieldCheck,
-    step: "Langkah 3: Standarisasi Mandiri Sisi Klien",
-    desc: "Memaksa pengguna melakukan alignment posisi, orientasi lanskap, dan pencahayaan secara mandiri sebelum menekan tombol capture.",
+    step: "Langkah 3: Foto Pas & Lurus",
+    desc: "Pengguna dipaksa menyelaraskan posisi KTP ke dalam bingkai sebelum menekan tombol jepret.",
     accent: "text-emerald-400",
   },
 ];
@@ -51,9 +51,9 @@ export default function Slide09MitigasiKameraSketsa() {
     >
       <motion.div variants={item}>
         <div className="slide-heading-accent" />
-        <h2 className="slide-title">Solusi Mitigasi: Inovasi UI Constraint & Kamera Sketsa</h2>
+        <h2 className="slide-title">Solusi Mitigasi: Inovasi Kamera Sketsa (Bingkai KTP)</h2>
         <p className="slide-subtitle mt-1">
-          Mengalihkan beban standarisasi citra dari peladen server ke sisi antarmuka pengguna (Client)
+          Menjaga kerapian foto KTP sejak awal dari layar HP pengguna sebelum dikirim ke server
         </p>
       </motion.div>
 
@@ -76,9 +76,10 @@ export default function Slide09MitigasiKameraSketsa() {
               );
             })}
 
-            <motion.div variants={item} className="content-card-gold p-3 text-center">
+            <motion.div variants={item} className="content-card-gold p-3 flex items-center gap-2">
+              <Sparkles size={18} className="text-gold-400 flex-shrink-0" />
               <span className="text-[0.72rem] text-gold-300 font-medium">
-                💡 **Hasil**: Menstabilkan ekstraksi Tesseract tanpa membebani memori peladen dengan algoritma rotasi berat.
+                Foto KTP selalu lurus &amp; terang $\rightarrow$ OCR Tesseract sukses 100% $\rightarrow$ Server tetap ringan.
               </span>
             </motion.div>
           </div>

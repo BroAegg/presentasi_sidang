@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Layers, CheckCircle2, Eye } from "lucide-react";
+import { Layers, CheckCircle2, Eye, Sparkles } from "lucide-react";
 
 const container = {
   hidden: {},
@@ -23,30 +23,30 @@ const item = {
 const steps = [
   {
     num: "01",
-    name: "Grayscale Conversion",
-    desc: "Mengubah citra RGB 3-channel menjadi 1-channel skala abu-abu untuk mereduksi beban komputasi.",
-    tag: "Luminance Weighting",
+    name: "Konversi Grayscale",
+    desc: "Mengubah foto warna (RGB) menjadi skala abu-abu untuk menghemat penggunaan memori server hingga 66%.",
+    tag: "Hemat Memori 66%",
     accent: "text-gold-400 border-gold-400/30 bg-gold-400/10",
   },
   {
     num: "02",
-    name: "CLAHE Equalization",
-    desc: "Meningkatkan kontras lokal secara adaptif untuk memperjelas karakter teks yang pudar.",
-    tag: "clipLimit = 2.0",
+    name: "Pemerataan Kontras (CLAHE)",
+    desc: "Meratakan pencahayaan secara otomatis agar bagian foto KTP yang gelap atau terbayang tetap terlihat jelas.",
+    tag: "Penerang Bayangan",
     accent: "text-cyan-400 border-cyan-400/30 bg-cyan-400/10",
   },
   {
     num: "03",
-    name: "Gaussian Blur Filter",
-    desc: "Filtering frekuensi tinggi untuk meredam noise sensor kamera dan bintik pantulan cahaya.",
-    tag: "Kernel 3x3",
+    name: "Penghalus Bintik (Gaussian Blur)",
+    desc: "Menyaring bintik-bintik foto (noise kamera HP) agar gambar KTP menjadi lebih halus sebelum dibaca OCR.",
+    tag: "Filter Noise HP",
     accent: "text-emerald-400 border-emerald-400/30 bg-emerald-400/10",
   },
   {
     num: "04",
-    name: "Otsu's Binarization",
-    desc: "Segmentasi threshold bimodal otomatis memisahkan piksel teks hitam dari latar belakang KTP.",
-    tag: "THRESH_OTSU",
+    name: "Binarisasi Tegas (Otsu Thresholding)",
+    desc: "Memisahkan tulisan KTP menjadi Hitam Murni (teks) dan Putih Murni (background) tanpa warna abu-abu.",
+    tag: "Hitam-Putih Murni",
     accent: "text-amber-400 border-amber-400/30 bg-amber-400/10",
   },
 ];
@@ -61,9 +61,9 @@ export default function Slide06PipelineOpenCVCode() {
     >
       <motion.div variants={item} className="mb-2">
         <div className="slide-heading-accent" />
-        <h2 className="slide-title">Pipeline Pra-Pemrosesan (4 Tahapan Utama OpenCV)</h2>
+        <h2 className="slide-title">Pipeline Pra-Pemrosesan Citra (4 Tahap OpenCV)</h2>
         <p className="slide-subtitle">
-          Alur Blackbox Kondisioning Citra KTP dari Foto Mentah hingga Citra Biner Siap OCR
+          Alur penyiapan foto KTP dari jepretan kamera HP hingga menjadi gambar biner siap dibaca OCR
         </p>
       </motion.div>
 
@@ -94,50 +94,33 @@ export default function Slide06PipelineOpenCVCode() {
           ))}
         </div>
 
-        {/* Right Column: Visual Blackbox Transformation Flow */}
+        {/* Right Column: Simple Visual Card */}
         <motion.div
           variants={item}
           className="col-span-6 content-card p-4 flex flex-col justify-between"
         >
-          <div className="flex flex-col h-full justify-between">
-            <div className="flex items-center justify-between pb-2 border-b border-white/10 text-gold-400">
-              <div className="flex items-center gap-2">
-                <Eye size={16} />
-                <span className="font-semibold text-xs text-cream-100">Visual Transformasi Citra (Blackbox View)</span>
-              </div>
-              <span className="text-[0.62rem] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">
-                Input → Preprocessed
-              </span>
+          <div className="flex items-center justify-between pb-2 border-b border-white/10 text-gold-400">
+            <div className="flex items-center gap-2">
+              <Layers size={16} />
+              <span className="font-semibold text-xs text-cream-100">Hasil Akhir Pengolahan Foto</span>
+            </div>
+            <span className="text-[0.62rem] font-mono text-emerald-300 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">
+              Foto Mentah → Citra Biner
+            </span>
+          </div>
+
+          <div className="my-auto space-y-3">
+            <div className="p-3 rounded-lg bg-black/40 border border-white/10 text-center">
+              <span className="text-[0.68rem] text-gold-400 font-bold uppercase tracking-wider block mb-1">Tujuan 4 Tahapan OpenCV</span>
+              <p className="text-cream-200 text-xs leading-relaxed">
+                Memastikan bahwa tulisan NIK, Nama, Tanggal Lahir, dan Alamat pada KTP menjadi **sangat kontras dan jelas** sehingga mesin Tesseract OCR dapat membacanya tanpa salah huruf.
+              </p>
             </div>
 
-            {/* Blackbox Transformation Visual Box */}
-            <div className="my-3 grid grid-cols-2 gap-3 items-center flex-1">
-              <div className="p-3 rounded-lg bg-black/40 border border-white/10 flex flex-col items-center justify-center text-center h-full">
-                <span className="text-[0.68rem] font-bold text-red-400 uppercase tracking-wider mb-2">Citra Tangkapan Mentah</span>
-                <div className="w-16 h-10 rounded border border-red-500/30 bg-red-500/10 flex items-center justify-center text-[0.65rem] font-mono text-cream-200">
-                  e-KTP Foto
-                </div>
-                <p className="text-[0.68rem] text-cream-300 mt-2 leading-tight">
-                  Mengandung glare, pencahayaan tidak merata &amp; bayangan
-                </p>
-              </div>
-
-              <div className="p-3 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex flex-col items-center justify-center text-center h-full">
-                <span className="text-[0.68rem] font-bold text-emerald-400 uppercase tracking-wider mb-2">Citra Biner Hasil OpenCV</span>
-                <div className="w-16 h-10 rounded border border-emerald-500/40 bg-black flex items-center justify-center text-[0.65rem] font-mono text-white font-bold tracking-widest">
-                  TEKS BINER
-                </div>
-                <p className="text-[0.68rem] text-cream-300 mt-2 leading-tight">
-                  Teks hitam terisolasi kontras tinggi siap dibaca Tesseract
-                </p>
-              </div>
-            </div>
-
-            {/* Benefit Footer */}
-            <div className="pt-2 border-t border-white/10 flex items-center gap-2 text-xs text-gold-300">
-              <CheckCircle2 size={16} className="text-emerald-400 flex-shrink-0" />
-              <p className="text-[0.72rem] text-cream-200 leading-tight">
-                <strong>Blackbox Benefit:</strong> Memastikan Tesseract menerima citra bersih sehingga meminimalisasi kesalahan baca karakter.
+            <div className="p-3 rounded-lg bg-gold-400/10 border border-gold-400/20 flex items-center gap-3">
+              <Sparkles size={20} className="text-gold-400 flex-shrink-0" />
+              <p className="text-cream-200 text-[0.72rem] leading-snug">
+                Proses preprocessing ini berjalan cepat di RAM server (hanya hitungan milidetik per foto).
               </p>
             </div>
           </div>

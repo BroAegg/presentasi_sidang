@@ -81,10 +81,10 @@ export default function Slide01Cover() {
           </div>
           <div className="space-y-1 text-xs">
             <p className="text-cream-200">
-              <strong className="text-cream-100">Pembimbing I:</strong> Firas Atqiya, S.T., M.T.
+              <strong className="text-cream-100">Pembimbing I:</strong> Aila Gema Safitri, S.T., M.T.
             </p>
             <p className="text-cream-200">
-              <strong className="text-cream-100">Pembimbing II:</strong> Aila Gema Safitri, S.T., M.T.
+              <strong className="text-cream-100">Pembimbing II:</strong> Firas Atqiya, S.T., M.T.
             </p>
           </div>
         </div>
@@ -99,7 +99,7 @@ export default function Slide01Cover() {
             <p>1. Ririn Suharsih, S.Pd., M.T. (Ketua)</p>
             <p>2. Ahmad Suryan, S.T., M.T. (Sekretaris)</p>
             <p>3. Nana Karyana Kurdi, S.E., M.Kom.</p>
-            <p>4. Dianti Eka Aprilia, S.Kom., M.T.</p>
+            <p>4. Taufik Rahmat Kurniawan, S.Kom., M.T.</p>
             <p>5. Rinanda Febriani, S.ST., M.T.</p>
           </div>
         </div>

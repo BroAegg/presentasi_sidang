@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Cpu, Network } from "lucide-react";
+import { Cpu, Network, CheckCircle2, ShieldCheck } from "lucide-react";
 
 const container = {
   hidden: {},
@@ -30,89 +30,89 @@ export default function Slide04TesseractLSTM() {
     >
       <motion.div variants={item}>
         <div className="slide-heading-accent" />
-        <h2 className="slide-title">Landasan Teori: Arsitektur Tesseract 5.0 (LSTM)</h2>
+        <h2 className="slide-title">Landasan Teori: Mesin Tesseract OCR 5.0 (LSTM)</h2>
         <p className="slide-subtitle mt-1">
-          Pemodelan sekuensial dua arah (Bidirectional LSTM) tanpa segmentasi karakter eksplisit
+          Teknologi pengenalan teks berbasis arsitektur sekuensial Bidirectional LSTM
         </p>
       </motion.div>
 
       <div className="flex-1 flex items-center mt-3">
         <div className="grid grid-cols-12 gap-5 w-full items-stretch">
-          {/* Left Column: Pipeline Architecture */}
-          <div className="col-span-5 flex flex-col justify-between gap-3">
+          {/* Left Column: Core Architecture */}
+          <div className="col-span-6 flex flex-col justify-between gap-3">
             <motion.div variants={item} className="content-card p-4">
-              <div className="flex items-center gap-2 mb-2 text-cyan-400">
+              <div className="flex items-center gap-2 mb-3 text-cyan-400">
                 <Network size={18} />
-                <h3 className="text-xs font-bold uppercase tracking-wider">Pipeline Deep Learning Tesseract</h3>
+                <h3 className="text-xs font-bold uppercase tracking-wider">3 Alur Pengolahan Tesseract 5.0</h3>
               </div>
-              <div className="space-y-2 text-xs">
-                <div className="p-2 rounded bg-white/5 border border-white/10 flex items-center gap-2">
-                  <span className="font-mono font-bold text-gold-400">1. CNN Layer</span>
-                  <span className="text-cream-300 text-[0.72rem]">Ekstraksi fitur visual garis teks</span>
+              <div className="space-y-2.5 text-xs">
+                <div className="p-3 rounded-lg bg-white/5 border border-white/10 flex items-start gap-3">
+                  <span className="w-6 h-6 rounded-full bg-gold-400/20 text-gold-400 font-mono font-bold text-xs flex items-center justify-center flex-shrink-0">1</span>
+                  <div>
+                    <strong className="text-gold-300 block text-xs mb-0.5">Ekstraksi Fitur Citra (CNN Layer)</strong>
+                    <p className="text-cream-300 text-[0.72rem]">Menganalisis pola visual garis teks dan membentuk fitur karakter dari citra KTP.</p>
+                  </div>
                 </div>
-                <div className="p-2 rounded bg-white/5 border border-white/10 flex items-center gap-2">
-                  <span className="font-mono font-bold text-cyan-400">2. Bi-LSTM</span>
-                  <span className="text-cream-300 text-[0.72rem]">Pemodelan konteks sekuensial 2 arah</span>
+                <div className="p-3 rounded-lg bg-white/5 border border-white/10 flex items-start gap-3">
+                  <span className="w-6 h-6 rounded-full bg-cyan-400/20 text-cyan-400 font-mono font-bold text-xs flex items-center justify-center flex-shrink-0">2</span>
+                  <div>
+                    <strong className="text-cyan-300 block text-xs mb-0.5">Pemodelan Sekuensial (Bi-LSTM)</strong>
+                    <p className="text-cream-300 text-[0.72rem]">Mengingat urutan karakter dua arah (kiri ke kanan &amp; kanan ke kiri) tanpa perlu memotong huruf satu per satu.</p>
+                  </div>
                 </div>
-                <div className="p-2 rounded bg-white/5 border border-white/10 flex items-center gap-2">
-                  <span className="font-mono font-bold text-emerald-400">3. CTC Decoder</span>
-                  <span className="text-cream-300 text-[0.72rem]">Alignment & dekode string karakter</span>
+                <div className="p-3 rounded-lg bg-white/5 border border-white/10 flex items-start gap-3">
+                  <span className="w-6 h-6 rounded-full bg-emerald-400/20 text-emerald-400 font-mono font-bold text-xs flex items-center justify-center flex-shrink-0">3</span>
+                  <div>
+                    <strong className="text-emerald-300 block text-xs mb-0.5">Penerjemahan Karakter (CTC Decoder)</strong>
+                    <p className="text-cream-300 text-[0.72rem]">Mengonversi sekuens menjadi hasil teks digital (string NIK, Nama, Tanggal Lahir, dan Alamat).</p>
+                  </div>
                 </div>
               </div>
-            </motion.div>
-
-            <motion.div variants={item} className="content-card-gold p-4">
-              <p className="text-xs font-bold text-gold-400 uppercase tracking-wider mb-1">Keunggulan LSTM</p>
-              <p className="text-cream-200 text-xs leading-relaxed">
-                Memproses baris teks secara utuh tanpa segmentasi karakter individual, sehingga lebih tangguh terhadap variasi spasi dan huruf bersambung.
-              </p>
             </motion.div>
           </div>
 
-          {/* Right Column: Mathematical Equations Box */}
-          <motion.div variants={item} className="col-span-7 content-card p-5 flex flex-col justify-between">
-            <div>
-              <div className="flex items-center gap-2 mb-3 text-gold-400">
-                <Cpu size={18} />
-                <h3 className="text-xs font-bold uppercase tracking-wider">Formulasi Matematis Gating Unit LSTM</h3>
-              </div>
-
-              {/* Math Equations Grid */}
-              <div className="grid grid-cols-2 gap-3 text-xs font-mono">
-                <div className="p-3 rounded bg-black/40 border border-white/10">
-                  <span className="text-[0.7rem] text-gold-300 uppercase block mb-1">Forget Gate (f_t)</span>
-                  <div className="text-cream-100 text-center font-bold py-1">
-                    {"f_t = σ(W_f · [h_{t-1}, x_t] + b_f)"}
-                  </div>
+          {/* Right Column: Key Advantages for Campus Deployment */}
+          <div className="col-span-6 flex flex-col justify-between gap-3">
+            <motion.div variants={item} className="content-card-gold p-4 flex-1 flex flex-col justify-between">
+              <div>
+                <div className="flex items-center gap-2 mb-3 text-gold-400">
+                  <Cpu size={18} />
+                  <h3 className="text-xs font-bold uppercase tracking-wider">Mengapa Memilih Tesseract OCR 5.0?</h3>
                 </div>
 
-                <div className="p-3 rounded bg-black/40 border border-white/10">
-                  <span className="text-[0.7rem] text-cyan-300 uppercase block mb-1">Input Gate (i_t)</span>
-                  <div className="text-cream-100 text-center font-bold py-1">
-                    {"i_t = σ(W_i · [h_{t-1}, x_t] + b_i)"}
+                <div className="space-y-3 text-xs">
+                  <div className="flex items-start gap-2.5">
+                    <CheckCircle2 size={16} className="text-gold-400 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <strong className="text-cream-100 block">Open-Source &amp; Sangat Ringan</strong>
+                      <span className="text-cream-300 text-[0.72rem]">Dapat berjalan lancar di server CPU standar tanpa memerlukan infrastruktur GPU yang mahal.</span>
+                    </div>
                   </div>
-                </div>
 
-                <div className="p-3 rounded bg-black/40 border border-white/10">
-                  <span className="text-[0.7rem] text-emerald-300 uppercase block mb-1">Cell State Update (C_t)</span>
-                  <div className="text-cream-100 text-center font-bold py-1">
-                    {"C_t = f_t ⊙ C_{t-1} + i_t ⊙ C~_t"}
+                  <div className="flex items-start gap-2.5">
+                    <CheckCircle2 size={16} className="text-gold-400 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <strong className="text-cream-100 block">Tanpa Segmentasi Karakter Eksplisit</strong>
+                      <span className="text-cream-300 text-[0.72rem]">Arsitektur LSTM mampu membaca sekuens teks utuh sehingga lebih tangguh terhadap variasi spasi KTP.</span>
+                    </div>
                   </div>
-                </div>
 
-                <div className="p-3 rounded bg-black/40 border border-white/10">
-                  <span className="text-[0.7rem] text-amber-300 uppercase block mb-1">Output Gate (o_t & h_t)</span>
-                  <div className="text-cream-100 text-center font-bold py-1">
-                    {"h_t = o_t ⊙ tanh(C_t)"}
+                  <div className="flex items-start gap-2.5">
+                    <CheckCircle2 size={16} className="text-gold-400 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <strong className="text-cream-100 block">Konfigurasi Presisi (--psm 6 -l ind+eng)</strong>
+                      <span className="text-cream-300 text-[0.72rem]">Mode PSM 6 memperlakukan area KTP sebagai satu blok teks terstruktur dengan gabungan bahasa Indonesia &amp; Inggris.</span>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            <p className="text-[0.72rem] text-cream-300 italic mt-3 text-center">
-              *Di mana σ adalah fungsi sigmoid, W dan b adalah matriks bobot dan bias, serta ⊙ adalah Hadamard product.
-            </p>
-          </motion.div>
+              <div className="mt-4 p-2.5 rounded bg-black/30 border border-gold-400/20 text-[0.72rem] text-cream-200 flex items-center gap-2">
+                <ShieldCheck size={16} className="text-gold-400 flex-shrink-0" />
+                <span>Kelemahan Tesseract pada foto miring ditutupi oleh inovasi Kamera Sketsa di Frontend.</span>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </div>
     </motion.div>
