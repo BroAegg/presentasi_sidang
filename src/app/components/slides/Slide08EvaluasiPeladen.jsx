@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { AlertCircle, Terminal, Clock } from "lucide-react";
+import { AlertCircle, Clock } from "lucide-react";
 
 const container = {
   hidden: {},
@@ -32,7 +32,7 @@ export default function Slide08EvaluasiPeladen() {
         <div className="slide-heading-accent" />
         <h2 className="slide-title">Evaluasi Peladen: Keterbatasan Mesin Dasar Tesseract</h2>
         <p className="slide-subtitle mt-0.5">
-          Pengujian Batch 50 Dataset citra e-KTP (5 KTP $\times$ 10 variasi skenario)
+          Pengujian Batch 50 Dataset citra e-KTP (5 KTP × 10 variasi skenario)
         </p>
       </motion.div>
 
