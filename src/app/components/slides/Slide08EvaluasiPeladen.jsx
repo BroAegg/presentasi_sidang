@@ -23,21 +23,21 @@ const item = {
 export default function Slide08EvaluasiPeladen() {
   return (
     <motion.div
-      className="flex flex-col h-full"
+      className="flex flex-col h-full overflow-hidden"
       variants={container}
       initial="hidden"
       animate="visible"
     >
       <motion.div variants={item}>
         <div className="slide-heading-accent" />
-        <h2 className="slide-title">Evaluasi Server (Backend): Keterbatasan Mesin Dasar Tesseract</h2>
+        <h2 className="slide-title">Evaluasi Performa Peladen Baseline: Keterbatasan Tesseract OCR</h2>
         <p className="slide-subtitle mt-0.5">
-          Pengujian Batch 50 Dataset citra e-KTP (5 KTP × 10 variasi skenario)
+          Pengujian Batch 50 Sampel Dataset Citra e-KTP (5 Sampel × 10 Variasi Skenario)
         </p>
       </motion.div>
 
-      <div className="flex-1 grid grid-cols-12 gap-5 mt-3 items-stretch">
-        {/* Left Column: Stat Cards & Error Examples - Spans Full Height */}
+      <div className="flex-1 grid grid-cols-12 gap-5 mt-3 items-stretch overflow-hidden">
+        {/* Left Column: Stat Cards & Error Examples */}
         <div className="col-span-6 flex flex-col justify-between gap-3">
           {/* 4 Stat Metrics */}
           <motion.div variants={item} className="grid grid-cols-2 gap-3">
@@ -51,11 +51,11 @@ export default function Slide08EvaluasiPeladen() {
             </div>
             <div className="rounded-xl p-3 text-center bg-emerald-500/10 border border-emerald-500/20 backdrop-blur-md flex flex-col justify-center">
               <p className="text-2xl font-black text-emerald-400 font-mono">8% (4/50)</p>
-              <p className="text-[0.68rem] font-semibold text-cream-200 uppercase mt-0.5">Akurasi Sempurna NIK</p>
+              <p className="text-[0.68rem] font-semibold text-cream-200 uppercase mt-0.5">Presisi Sempurna NIK</p>
             </div>
             <div className="rounded-xl p-3 text-center bg-emerald-500/10 border border-emerald-500/20 backdrop-blur-md flex flex-col justify-center">
               <p className="text-2xl font-black text-emerald-400 font-mono">14% (7/50)</p>
-              <p className="text-[0.68rem] font-semibold text-cream-200 uppercase mt-0.5">Akurasi Sempurna Nama</p>
+              <p className="text-[0.68rem] font-semibold text-cream-200 uppercase mt-0.5">Presisi Sempurna Nama</p>
             </div>
           </motion.div>
 
@@ -63,7 +63,7 @@ export default function Slide08EvaluasiPeladen() {
           <motion.div variants={item} className="content-card p-3 flex-1 flex flex-col justify-between">
             <div className="flex items-center gap-1.5 mb-1.5 text-red-400 text-xs font-bold uppercase tracking-wider">
               <AlertCircle size={14} />
-              <span>Contoh Degradasi Tesseract pada Citra Non-Ideal</span>
+              <span>Contoh Kegagalan Ekstraksi Karakter pada Citra Non-Standar</span>
             </div>
             <div className="space-y-1.5 text-[0.68rem] font-mono">
               <div className="p-2 rounded bg-black/40 border border-white/10 flex justify-between items-center">
@@ -85,7 +85,7 @@ export default function Slide08EvaluasiPeladen() {
           <motion.div variants={item} className="content-card-gold p-2.5 flex items-center justify-between">
             <div className="flex items-center gap-2">
               <Clock size={16} className="text-gold-400" />
-              <span className="text-xs text-cream-100 font-semibold">Total Waktu Evaluasi Batch:</span>
+              <span className="text-xs text-cream-100 font-semibold">Total Durasi Komputasi Batch:</span>
             </div>
             <span className="font-mono text-xs font-bold text-gold-300">1638.39 Detik (32.77s / citra)</span>
           </motion.div>

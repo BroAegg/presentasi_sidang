@@ -24,28 +24,28 @@ const steps = [
   {
     num: "01",
     name: "Grayscale (Skala Abu-abu)",
-    desc: "Mengubah foto warna RGB 3-channel menjadi 1-channel. Menghemat memori RAM server hingga 66%.",
+    desc: "Konversi ruang warna RGB 3-kanal menjadi skala abu-abu 1-kanal guna mereduksi alokasi memori komputasi peladen hingga 66%.",
     tag: "cv2.cvtColor",
     accent: "text-cyan-400 border-cyan-400/30",
   },
   {
     num: "02",
-    name: "CLAHE (Ekualisasi Kontras)",
-    desc: "Menerangkan bagian foto KTP yang gelap atau tertutup bayangan tanpa merusak bagian yang terang.",
+    name: "CLAHE (Ekualisasi Kontras Adaptif)",
+    desc: "Meningkatkan distribusi kontras lokal pada area citra bereksposur rendah tanpa mengamplikasi derau (noise).",
     tag: "cv2.createCLAHE",
     accent: "text-gold-400 border-gold-400/30",
   },
   {
     num: "03",
-    name: "Gaussian Blur (Penghalus Bintik)",
-    desc: "Menghilangkan bintik-bintik halus (noise) hasil jepretan kamera HP agar teks tulisan lebih bersih.",
+    name: "Gaussian Blur (Reduksi Derau Spasial)",
+    desc: "Mengaplikasikan filter spasial Gaussian untuk mereduksi derau citra frekuensi tinggi hasil akuisisi perangkat seluler.",
     tag: "cv2.GaussianBlur",
     accent: "text-blue-400 border-blue-400/30",
   },
   {
     num: "04",
-    name: "Otsu Thresholding (Binarisasi)",
-    desc: "Memisahkan secara tegas antara huruf tulisan (Hitam) dari latar belakang KTP (Putih Murni).",
+    name: "Otsu Thresholding (Segmentasi Biner)",
+    desc: "Segmentasi citra secara otomatis untuk memisahkan objek karakter teks (foreground) secara tegas dari latar belakang (background).",
     tag: "cv2.threshold (Otsu)",
     accent: "text-emerald-400 border-emerald-400/30",
   },
@@ -63,7 +63,7 @@ export default function Slide06PipelineOpenCVCode() {
         <div className="slide-heading-accent" />
         <h2 className="slide-title">Pipeline Pra-Pemrosesan Citra (OpenCV)</h2>
         <p className="slide-subtitle mt-1">
-          4 Tahap pembersihan foto KTP di Backend sebelum dibaca oleh mesin Tesseract OCR
+          4 Tahap perbaikan mutu citra e-KTP pada peladen sebelum diekstraksi oleh mesin Tesseract OCR
         </p>
       </motion.div>
 
@@ -98,7 +98,7 @@ export default function Slide06PipelineOpenCVCode() {
           <div className="flex items-center justify-between pb-2 border-b border-white/10 text-gold-400 mb-2">
             <div className="flex items-center gap-2">
               <Layers size={16} />
-              <span className="font-semibold text-xs text-cream-100">Visualisasi 4 Tahap Preprocessing</span>
+              <span className="font-semibold text-xs text-cream-100">Visualisasi Tahapan Prapemrosesan</span>
             </div>
             <span className="text-[0.62rem] font-mono text-emerald-300 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">
               OpenCV Pipeline

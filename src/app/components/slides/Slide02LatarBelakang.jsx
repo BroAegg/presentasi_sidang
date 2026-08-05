@@ -23,16 +23,16 @@ const item = {
 const bulletPoints = [
   {
     icon: Clock,
-    label: "Inefisiensi Waktu Waktu Pendaftaran",
-    text: "Proses pengisian formulir biodata secara manual memerlukan durasi rata-rata hingga 2 menit (120 detik) per calon mahasiswa.",
+    label: "Inefisiensi Waktu Penginputan Formulir",
+    text: "Proses entri biodata calon mahasiswa secara manual memerlukan durasi rata-rata hingga 120 detik per pendaftar.",
     accent: "text-amber-400",
     bg: "rgba(245, 158, 11, 0.08)",
     border: "rgba(245, 158, 11, 0.2)",
   },
   {
     icon: AlertTriangle,
-    label: "Risiko Kesalahan Ketik (Human Error)",
-    text: "Potensi kesalahan entri data NIK, Nama, dan Alamat yang berdampak pada validasi dokumen PMB di PDDikti.",
+    label: "Risiko Kesalahan Entri Karakter (Human Error)",
+    text: "Potensi kesalahan pengetikan NIK, Nama, dan Alamat yang dapat berdampak pada proses verifikasi di PDDikti.",
     accent: "text-red-400",
     bg: "rgba(239, 68, 68, 0.08)",
     border: "rgba(239, 68, 68, 0.2)",
@@ -40,7 +40,7 @@ const bulletPoints = [
   {
     icon: FileCheck,
     label: "Solusi Otomatisasi OCR Tesseract",
-    text: "Mengintegrasikan teknologi OCR untuk ekstraksi otomatis data identitas e-KTP langsung ke dalam kolom formulir.",
+    text: "Mengintegrasikan teknologi OCR guna mengotomatisasi ekstraksi data identitas e-KTP secara langsung ke dalam formulir PMB.",
     accent: "text-emerald-400",
     bg: "rgba(16, 185, 129, 0.08)",
     border: "rgba(16, 185, 129, 0.2)",
@@ -94,11 +94,11 @@ export default function Slide02LatarBelakang() {
 
           {/* Right Column: Slide 2 Image Asset (Primary: slide2.jpeg with auto-fit) */}
           <motion.div variants={item} className="col-span-6 flex items-center justify-center overflow-hidden">
-            <div className="image-placeholder w-full h-[320px] max-h-[55vh] rounded-xl flex items-center justify-center p-2.5 bg-black/40 border border-white/10 overflow-hidden">
+            <div className="image-placeholder w-full max-w-[360px] h-[320px] max-h-[55vh] rounded-xl p-2 bg-black/40 border border-white/10 overflow-y-auto overflow-x-hidden flex flex-col items-center">
               <img
                 src="/assets/slide2.jpeg"
                 alt="Latar Belakang Slide 2"
-                className="max-w-full max-h-full w-auto h-auto object-contain rounded-lg shadow-lg"
+                className="w-full h-auto object-contain rounded-lg shadow-lg my-auto"
                 onError={(e) => {
                   if (!e.target.dataset.triedPng) {
                     e.target.dataset.triedPng = "true";
@@ -115,12 +115,12 @@ export default function Slide02LatarBelakang() {
                       <div className="p-4 text-center space-y-3 w-full">
                         <span className="text-xs uppercase tracking-widest text-gold-400 font-semibold block">Transformasi Alur Pendaftaran</span>
                         <div className="p-2.5 rounded bg-red-500/10 border border-red-500/20 text-left">
-                          <span className="text-xs font-bold text-red-400 block">Sistem Berjalan (Manual) — 120s</span>
-                          <span className="text-[0.7rem] text-cream-300">Pengisian manual NIK, Nama, Alamat → Rentan typo</span>
+                          <span className="text-xs font-bold text-red-400 block">Sistem Berjalan (Manual) — 120.00s</span>
+                          <span className="text-[0.7rem] text-cream-300">Penginputan manual NIK, Nama, Alamat → Rentan Human Error</span>
                         </div>
                         <div className="p-2.5 rounded bg-emerald-500/10 border border-emerald-500/20 text-left">
                           <span className="text-xs font-bold text-emerald-400 block">Sistem Usulan (OCR Autofill) — 32.77s</span>
-                          <span className="text-[0.7rem] text-cream-300">Scan KTP via Kamera Sketsa → Auto-populates Form</span>
+                          <span className="text-[0.7rem] text-cream-300">Akuisisi KTP via UI Constraint → Ekstraksi Otomatis Formulir</span>
                         </div>
                       </div>
                     `;
