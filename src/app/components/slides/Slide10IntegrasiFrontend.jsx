@@ -82,13 +82,21 @@ export default function Slide10IntegrasiFrontend() {
           <motion.div variants={item} className="col-span-7 flex items-center">
             <div className="image-placeholder w-full h-full min-h-[270px] rounded-xl flex items-center justify-center p-3">
               <img
-                src="/assets/simulasi-frontend.png"
+                src="/assets/simulasi-frontend.jpeg"
                 alt="Simulasi Frontend"
                 className="w-full h-full object-contain"
                 onError={(e) => {
-                  e.target.style.display = "none";
-                  e.target.parentElement.innerHTML =
-                    '<span style="color:#ddd6c8;font-size:0.75rem">simulasi-frontend.png</span>';
+                  if (!e.target.dataset.triedPng) {
+                    e.target.dataset.triedPng = "true";
+                    e.target.src = "/assets/simulasi-frontend.png";
+                  } else if (!e.target.dataset.triedJpg) {
+                    e.target.dataset.triedJpg = "true";
+                    e.target.src = "/assets/simulasi-frontend.jpg";
+                  } else {
+                    e.target.style.display = "none";
+                    e.target.parentElement.innerHTML =
+                      '<span style="color:#ddd6c8;font-size:0.75rem">simulasi-frontend</span>';
+                  }
                 }}
               />
             </div>

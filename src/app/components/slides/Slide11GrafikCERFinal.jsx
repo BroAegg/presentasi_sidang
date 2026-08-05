@@ -70,13 +70,24 @@ export default function Slide11GrafikCERFinal() {
           <motion.div variants={item} className="col-span-7 flex items-center">
             <div className="image-placeholder w-full h-full min-h-[270px] rounded-xl flex items-center justify-center p-3">
               <img
-                src="/assets/grafik-cer.png"
+                src="/assets/grafik-cer-final.jpeg"
                 alt="Grafik Analisis Character Error Rate (CER) Final"
                 className="w-full h-full object-contain"
                 onError={(e) => {
-                  e.target.style.display = "none";
-                  e.target.parentElement.innerHTML =
-                    '<span style="color:#ddd6c8;font-size:0.75rem">grafik-cer.png</span>';
+                  if (!e.target.dataset.triedPng) {
+                    e.target.dataset.triedPng = "true";
+                    e.target.src = "/assets/grafik-cer-final.png";
+                  } else if (!e.target.dataset.triedJpg) {
+                    e.target.dataset.triedJpg = "true";
+                    e.target.src = "/assets/grafik-cer-final.jpg";
+                  } else if (!e.target.dataset.triedOld) {
+                    e.target.dataset.triedOld = "true";
+                    e.target.src = "/assets/grafik-cer.png";
+                  } else {
+                    e.target.style.display = "none";
+                    e.target.parentElement.innerHTML =
+                      '<span style="color:#ddd6c8;font-size:0.75rem">grafik-cer-final</span>';
+                  }
                 }}
               />
             </div>

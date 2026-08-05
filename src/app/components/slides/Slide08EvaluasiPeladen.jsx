@@ -95,13 +95,21 @@ export default function Slide08EvaluasiPeladen() {
         <motion.div variants={item} className="col-span-6 flex items-center">
           <div className="image-placeholder w-full h-full min-h-[300px] rounded-xl flex items-center justify-center p-3">
             <img
-              src="/assets/terminal-colab.png"
+              src="/assets/terminal-colab.jpeg"
               alt="Colab Terminal CER"
               className="w-full h-full object-contain"
               onError={(e) => {
-                e.target.style.display = "none";
-                e.target.parentElement.innerHTML =
-                  '<span style="color:#ddd6c8;font-size:0.75rem">terminal-colab.png</span>';
+                if (!e.target.dataset.triedPng) {
+                  e.target.dataset.triedPng = "true";
+                  e.target.src = "/assets/terminal-colab.png";
+                } else if (!e.target.dataset.triedJpg) {
+                  e.target.dataset.triedJpg = "true";
+                  e.target.src = "/assets/terminal-colab.jpg";
+                } else {
+                  e.target.style.display = "none";
+                  e.target.parentElement.innerHTML =
+                    '<span style="color:#ddd6c8;font-size:0.75rem">terminal-colab</span>';
+                }
               }}
             />
           </div>
