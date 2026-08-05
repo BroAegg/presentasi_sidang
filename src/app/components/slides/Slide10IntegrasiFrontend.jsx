@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Server } from "lucide-react";
+import { Code2, Cpu, ShieldCheck, CheckCircle2 } from "lucide-react";
 
 const container = {
   hidden: {},
@@ -30,77 +30,104 @@ export default function Slide10IntegrasiFrontend() {
     >
       <motion.div variants={item}>
         <div className="slide-heading-accent" />
-        <h2 className="slide-title">Hasil Integrasi Frontend &amp; Simulasi Autofill</h2>
+        <h2 className="slide-title">Logika Ekstraksi Regex Multi-Layered Fallback</h2>
         <p className="slide-subtitle mt-1">
-          Alur komunikasi Client-Server via RESTful API dan responsivitas formulir PMB UMB
+          Algoritma pemrosesan teks hasil OCR berbasis Regular Expression berlapis (Fail-Safe Strategy)
         </p>
       </motion.div>
 
-      <div className="flex-1 grid grid-cols-12 gap-5 mt-3 items-center overflow-hidden">
-        {/* Left Column: API Architecture & JSON Structure (Fixed 5 Columns, Always Visible!) */}
-        <div className="col-span-5 flex flex-col justify-between gap-3 h-full overflow-y-auto custom-scrollbar pr-1">
-          {/* Architecture Card */}
-          <motion.div variants={item} className="content-card p-4">
-            <div className="flex items-center gap-2 mb-2 text-cyan-400">
-              <Server size={18} />
-              <h3 className="text-xs font-bold uppercase tracking-wider">Arsitektur API Communication</h3>
+      <div className="flex-1 grid grid-cols-12 gap-5 mt-3 items-stretch overflow-hidden">
+        {/* Left Column: Regex Multi-Layer Strategy */}
+        <div className="col-span-5 flex flex-col justify-between gap-3 overflow-y-auto custom-scrollbar pr-1">
+          {/* Architecture Concept */}
+          <motion.div variants={item} className="content-card p-3.5">
+            <div className="flex items-center gap-2 mb-1 text-gold-400">
+              <Cpu size={16} />
+              <h3 className="text-xs font-bold uppercase tracking-wider">Konsep Algoritma Fallback</h3>
             </div>
-            <div className="space-y-1.5 text-xs">
-              <p className="text-cream-200">
-                <strong className="text-cream-100">Frontend:</strong> Portal PMB Laravel (PHP)
-              </p>
-              <p className="text-cream-200">
-                <strong className="text-cream-100">Tunneling:</strong> Ngrok Secure Public Tunnel
-              </p>
-              <p className="text-cream-200">
-                <strong className="text-cream-100">Endpoint:</strong> <code className="text-cyan-300">POST /api/scan-ktp</code>
-              </p>
+            <p className="text-cream-200 text-xs leading-relaxed">
+              Tesseract sering kali merusak kata label seperti <code className="text-gold-300">"NIK"</code> menjadi <code className="text-red-400">"N1K"</code> atau memberi spasi pada angka. Algoritma 3-Lapis ini menjamin data NIK tetap terekstraksi presisi.
+            </p>
+          </motion.div>
+
+          {/* 3 Regex Layers for NIK */}
+          <motion.div variants={item} className="space-y-2">
+            <div className="p-2.5 rounded-xl bg-white/5 border border-white/10">
+              <div className="flex items-center justify-between text-[0.68rem] mb-1">
+                <span className="font-bold text-gold-300">Lapis 1: Direct Label Match</span>
+                <span className="font-mono text-cream-300">NIK + 16 Digit</span>
+              </div>
+              <code className="text-[0.65rem] font-mono text-cyan-300 bg-black/40 px-2 py-0.5 rounded block">
+                r"NIK\s*[:\.-]?\s*(\d{16})"
+              </code>
+            </div>
+
+            <div className="p-2.5 rounded-xl bg-white/5 border border-white/10">
+              <div className="flex items-center justify-between text-[0.68rem] mb-1">
+                <span className="font-bold text-cyan-300">Lapis 2: Pure 16-Digit Sequence</span>
+                <span className="font-mono text-cream-300">Label NIK Rusak</span>
+              </div>
+              <code className="text-[0.65rem] font-mono text-cyan-300 bg-black/40 px-2 py-0.5 rounded block">
+                r"\b\d{16}\b"
+              </code>
+            </div>
+
+            <div className="p-2.5 rounded-xl bg-white/5 border border-white/10">
+              <div className="flex items-center justify-between text-[0.68rem] mb-1">
+                <span className="font-bold text-emerald-400">Lapis 3: Spaced Digit Normalization</span>
+                <span className="font-mono text-cream-300">Angka Terpisah Spasi</span>
+              </div>
+              <code className="text-[0.65rem] font-mono text-cyan-300 bg-black/40 px-2 py-0.5 rounded block">
+                r"\b(?:\d\s*){16}\b"
+              </code>
             </div>
           </motion.div>
 
-          {/* JSON Response Sample Payload */}
-          <motion.div variants={item} className="content-card p-3 font-mono text-[0.65rem] bg-[#060b13]">
-            <div className="text-gold-400 font-bold mb-1 border-b border-white/10 pb-0.5">JSON Payload Response (200 OK)</div>
-            <pre className="text-emerald-400 overflow-x-auto">
-{`{
-  "status": "success",
-  "nik": "3204012506980001",
-  "nama": "UJANG SURYADI",
-  "tempat_lahir": "BANDUNG",
-  "tanggal_lahir": "25-06-1998",
-  "jenis_kelamin": "LAKI-LAKI",
-  "alamat": "JL. SOEKARNO HATTA NO. 752",
-  "confidence": 88.5,
-  "processing_time": 32.77
-}`}
-            </pre>
+          {/* Benefit Badge */}
+          <motion.div variants={item} className="content-card-gold p-3">
+            <div className="flex items-center gap-1.5 text-gold-400 mb-0.5">
+              <ShieldCheck size={16} />
+              <span className="text-xs font-bold uppercase tracking-wider">Garansi Keandalan (Fail-Safe)</span>
+            </div>
+            <p className="text-[0.7rem] text-cream-200">
+              Jika Lapis 1 gagal akibat noise OCR, Lapis 2 &amp; 3 otomatis mengambil alih pemindaian.
+            </p>
           </motion.div>
         </div>
 
-        {/* Right Column: Clean Bounded Image Frame */}
-        <motion.div variants={item} className="col-span-7 flex items-center justify-center h-full overflow-hidden">
-          <div className="w-full h-full max-h-[380px] rounded-2xl p-2 bg-black/60 border border-gold-400/30 overflow-hidden flex items-center justify-center">
-            <img
-              src="/assets/slide8.jpeg"
-              alt="Simulasi Frontend Slide 8"
-              className="max-w-full max-h-full w-auto h-auto object-contain rounded-xl shadow-2xl block"
-              onError={(e) => {
-                if (!e.target.dataset.triedPng) {
-                  e.target.dataset.triedPng = "true";
-                  e.target.src = "/assets/slide8.png";
-                } else if (!e.target.dataset.triedJpg) {
-                  e.target.dataset.triedJpg = "true";
-                  e.target.src = "/assets/slide8.jpg";
-                } else if (!e.target.dataset.triedOld) {
-                  e.target.dataset.triedOld = "true";
-                  e.target.src = "/assets/simulasi-frontend.jpeg";
-                } else {
-                  e.target.style.display = "none";
-                  e.target.parentElement.innerHTML =
-                    '<span style="color:#ddd6c8;font-size:0.75rem">slide8.jpeg</span>';
-                }
-              }}
-            />
+        {/* Right Column: Code Window & Python Function Implementation */}
+        <motion.div variants={item} className="col-span-7 content-card p-3 flex flex-col justify-between overflow-hidden">
+          <div className="flex items-center justify-between pb-2 border-b border-white/10 text-gold-400 mb-2">
+            <div className="flex items-center gap-2">
+              <Code2 size={16} />
+              <span className="font-semibold text-xs text-cream-100">Implementasi Python regex_parser.py</span>
+            </div>
+            <span className="text-[0.62rem] font-mono text-emerald-300 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">
+              Backend Flask Module
+            </span>
+          </div>
+
+          {/* Python Code Window */}
+          <div className="w-full flex-1 rounded-xl p-3 bg-[#060b13] border border-white/10 overflow-x-auto font-mono text-[0.68rem] leading-relaxed my-1">
+            <pre className="text-cream-200">
+              <span className="text-purple-400">import</span> re{"\n\n"}
+              <span className="text-blue-400">def</span> <span className="text-yellow-300">extract_nik</span>(ocr_text):{"\n"}
+              {"    "}<span className="text-cream-300"># Lapis 1: Cari kata NIK + 16 digit</span>{"\n"}
+              {"    "}match = re.search(<span className="text-emerald-300">r"NIK\s*[:\.-]?\s*(\d{16})"</span>, ocr_text, re.IGNORECASE){"\n"}
+              {"    "}<span className="text-purple-400">if</span> match: <span className="text-purple-400">return</span> match.group(<span className="text-cyan-300">1</span>){"\n\n"}
+              {"    "}<span className="text-cream-300"># Lapis 2: Fallback 16 digit murni</span>{"\n"}
+              {"    "}match = re.search(<span className="text-emerald-300">r"\b\d{16}\b"</span>, ocr_text){"\n"}
+              {"    "}<span className="text-purple-400">if</span> match: <span className="text-purple-400">return</span> match.group(<span className="text-cyan-300">0</span>){"\n\n"}
+              {"    "}<span className="text-cream-300"># Lapis 3: Fallback angka terpisah spasi</span>{"\n"}
+              {"    "}raw_digits = re.sub(<span className="text-emerald-300">r"\D"</span>, <span className="text-emerald-300">""</span>, ocr_text){"\n"}
+              {"    "}<span className="text-purple-400">if</span> len(raw_digits) &gt;= <span className="text-cyan-300">16</span>: <span className="text-purple-400">return</span> raw_digits[:<span className="text-cyan-300">16</span>]{"\n\n"}
+              {"    "}<span className="text-purple-400">return</span> <span className="text-red-400">None</span>
+            </pre>
+          </div>
+
+          <div className="p-2.5 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-between text-xs mt-1">
+            <span className="text-cream-200">Output Hasil Extraction:</span>
+            <span className="font-mono font-bold text-emerald-400">"3204012506980001" (NIK Sah)</span>
           </div>
         </motion.div>
       </div>
