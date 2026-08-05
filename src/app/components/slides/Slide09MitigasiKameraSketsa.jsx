@@ -81,7 +81,7 @@ export default function Slide09MitigasiKameraSketsa() {
           <motion.div variants={item} className="content-card-gold p-3 flex items-center gap-2 mt-auto">
             <Sparkles size={18} className="text-gold-400 flex-shrink-0" />
             <span className="text-[0.72rem] text-gold-300 font-medium">
-              Citra terstandar $\rightarrow$ Ekstraksi Tesseract presisi 100% $\rightarrow$ Performa peladen efisien.
+              Citra terstandar → Ekstraksi Tesseract presisi 100% → Performa peladen efisien.
             </span>
           </motion.div>
         </div>
