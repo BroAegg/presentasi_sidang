@@ -98,7 +98,7 @@ export default function Slide02LatarBelakang() {
               <ArrowDown size={12} className="animate-bounce" />
               <span>Gulir ke bawah untuk melihat gambar HP penuh</span>
             </div>
-            <div className="image-placeholder w-full max-w-[380px] h-[340px] max-h-[55vh] rounded-xl p-2 bg-black/50 border border-gold-400/30 overflow-y-auto overflow-x-hidden custom-scrollbar flex flex-col items-center">
+            <div className="image-placeholder w-full h-[340px] max-h-[55vh] rounded-xl p-2 bg-black/50 border border-gold-400/30 overflow-y-auto overflow-x-hidden custom-scrollbar flex flex-col items-center">
               <img
                 src="/assets/slide2.jpeg"
                 alt="Latar Belakang Slide 2"

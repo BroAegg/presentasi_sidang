@@ -110,7 +110,7 @@ export default function Slide06PipelineOpenCVCode() {
             <span>Gulir ke bawah untuk melihat gambar HP penuh</span>
           </div>
 
-          <div className="image-placeholder w-full flex-1 max-w-[380px] mx-auto h-[250px] max-h-[48vh] rounded-xl p-2 bg-black/50 border border-gold-400/30 overflow-y-auto overflow-x-hidden custom-scrollbar flex flex-col items-center">
+          <div className="image-placeholder w-full h-[250px] max-h-[48vh] rounded-xl p-2 bg-black/50 border border-gold-400/30 overflow-y-auto overflow-x-hidden custom-scrollbar flex flex-col items-center">
             <img
               src="/assets/slide5.jpeg"
               alt="Visualisasi Preprocessing Slide 5"
