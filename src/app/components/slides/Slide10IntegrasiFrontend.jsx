@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Server, ArrowDown } from "lucide-react";
+import { Server } from "lucide-react";
 
 const container = {
   hidden: {},
@@ -78,17 +78,13 @@ export default function Slide10IntegrasiFrontend() {
             </motion.div>
           </div>
 
-          {/* Right Column: Full-Width Scrollable Image Container for Phone Screenshots */}
-          <motion.div variants={item} className="col-span-7 flex flex-col items-center justify-center overflow-hidden">
-            <div className="text-[0.65rem] font-mono text-gold-400/90 mb-1 flex items-center gap-1">
-              <ArrowDown size={12} className="animate-bounce" />
-              <span>Gulir ke bawah untuk membaca screenshot HP penuh</span>
-            </div>
-            <div className="image-placeholder w-full h-[360px] rounded-xl p-3 bg-black/60 border border-gold-400/40 overflow-y-auto custom-scrollbar block">
+          {/* Right Column: Full Size Clean Image Frame */}
+          <motion.div variants={item} className="col-span-7 flex flex-col h-full overflow-hidden">
+            <div className="w-full flex-1 rounded-2xl p-2 bg-black/60 border border-gold-400/30 overflow-y-auto custom-scrollbar flex items-start justify-center">
               <img
                 src="/assets/slide8.jpeg"
                 alt="Simulasi Frontend Slide 8"
-                className="w-full h-auto block rounded-lg shadow-2xl"
+                className="w-full h-auto min-h-full object-contain rounded-xl shadow-2xl block"
                 onError={(e) => {
                   if (!e.target.dataset.triedPng) {
                     e.target.dataset.triedPng = "true";
