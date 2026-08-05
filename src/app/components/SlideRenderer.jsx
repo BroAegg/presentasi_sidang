@@ -26,29 +26,33 @@ const slides = [
 const slideVariants = {
   enter: (direction) => ({
     opacity: 0,
-    y: direction > 0 ? 40 : -40,
-    scale: 0.98,
+    x: direction > 0 ? 60 : -60,
+    scale: 0.96,
+    filter: "blur(6px)",
   }),
   center: {
     opacity: 1,
-    y: 0,
+    x: 0,
     scale: 1,
+    filter: "blur(0px)",
   },
   exit: (direction) => ({
     opacity: 0,
-    y: direction > 0 ? -30 : 30,
-    scale: 0.98,
+    x: direction > 0 ? -40 : 40,
+    scale: 0.96,
+    filter: "blur(4px)",
   }),
 };
 
 const slideTransition = {
-  duration: 0.5,
-  ease: [0.25, 0.46, 0.45, 0.94],
+  type: "spring",
+  stiffness: 200,
+  damping: 28,
+  mass: 0.8,
 };
 
 export default function SlideRenderer({ index, direction }) {
   const SlideComponent = slides[index];
-
   if (!SlideComponent) return null;
 
   return (

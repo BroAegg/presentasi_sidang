@@ -3,14 +3,21 @@
 import { motion } from "framer-motion";
 import { Undo2, Camera, ShieldCheck, ArrowRight } from "lucide-react";
 
-const stagger = {
+const container = {
   hidden: {},
-  visible: { transition: { staggerChildren: 0.15 } },
+  visible: {
+    transition: { staggerChildren: 0.15, delayChildren: 0.05 },
+  },
 };
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+const item = {
+  hidden: { opacity: 0, y: 25, filter: "blur(4px)" },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: { type: "spring", stiffness: 180, damping: 22 },
+  },
 };
 
 const strategies = [
@@ -21,7 +28,7 @@ const strategies = [
   },
   {
     icon: Camera,
-    title: 'Kamera Sketsa (Guideline Overlay)',
+    title: "Kamera Sketsa (Guideline Overlay)",
     desc: "Mengganti tombol upload konvensional dengan UI kamera yang memiliki panduan visual overlay.",
   },
   {
@@ -35,12 +42,11 @@ export default function Slide07Inovasi() {
   return (
     <motion.div
       className="flex flex-col h-full"
-      variants={stagger}
+      variants={container}
       initial="hidden"
       animate="visible"
     >
-      {/* Header */}
-      <motion.div variants={fadeUp}>
+      <motion.div variants={item}>
         <div className="slide-heading-accent" />
         <h2 className="slide-title">Inovasi Solusi: UI Constraint</h2>
         <p className="slide-subtitle mt-1">
@@ -48,30 +54,25 @@ export default function Slide07Inovasi() {
         </p>
       </motion.div>
 
-      {/* Two-column layout */}
       <div className="flex-1 flex items-center mt-4">
         <div className="grid grid-cols-2 gap-6 w-full">
-          {/* Left: Strategy Steps */}
+          {/* Left */}
           <div className="flex flex-col gap-4">
-            {strategies.map((item, i) => {
-              const Icon = item.icon;
+            {strategies.map((s, i) => {
+              const Icon = s.icon;
               return (
-                <motion.div key={i} variants={fadeUp}>
+                <motion.div key={i} variants={item}>
                   <div className="content-card flex items-start gap-4">
                     <div className="bullet-number">
                       <Icon size={14} />
                     </div>
                     <div>
-                      <p className="text-cream-100 font-semibold text-sm">
-                        {item.title}
-                      </p>
-                      <p className="text-cream-300 text-xs mt-1 leading-relaxed">
-                        {item.desc}
-                      </p>
+                      <p className="text-cream-100 font-semibold text-sm">{s.title}</p>
+                      <p className="text-cream-300 text-xs mt-1 leading-relaxed">{s.desc}</p>
                     </div>
                   </div>
                   {i < strategies.length - 1 && (
-                    <div className="flex justify-center my-1 text-gold-400 opacity-50">
+                    <div className="flex justify-center my-1 text-gold-400 opacity-40">
                       <ArrowRight size={14} className="rotate-90" />
                     </div>
                   )}
@@ -79,9 +80,8 @@ export default function Slide07Inovasi() {
               );
             })}
 
-            {/* Impact card */}
-            <motion.div variants={fadeUp} className="content-card-gold">
-              <p className="text-xs font-semibold text-gold-400 uppercase tracking-wider mb-1">
+            <motion.div variants={item} className="content-card-gold">
+              <p className="text-xs font-semibold glow-text-gold uppercase tracking-wider mb-1">
                 Dampak
               </p>
               <p className="text-cream-200 text-sm leading-relaxed">
@@ -91,8 +91,8 @@ export default function Slide07Inovasi() {
             </motion.div>
           </div>
 
-          {/* Right: Camera UI Image */}
-          <motion.div variants={fadeUp} className="flex items-center">
+          {/* Right */}
+          <motion.div variants={item} className="flex items-center">
             <div className="image-placeholder w-full h-full min-h-[250px] rounded-xl">
               <img
                 src="/assets/ui-kamera.png"
@@ -101,7 +101,7 @@ export default function Slide07Inovasi() {
                 onError={(e) => {
                   e.target.style.display = "none";
                   e.target.parentElement.innerHTML =
-                    '<span class="text-cream-300 text-xs">ui-kamera.png</span>';
+                    '<span style="color:#ddd6c8;font-size:0.75rem">ui-kamera.png</span>';
                 }}
               />
             </div>
