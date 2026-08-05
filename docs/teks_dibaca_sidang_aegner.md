@@ -2,7 +2,7 @@
 
 **Nama**: Aegner Billik (NIM: 220102007)  
 **Pembimbing I**: Aila Gema Safitri, S.T., M.T.  
-**Pembimbing II**: Firas Atqiya, S.T., M.T.  
+**Pembimbing II**: Firas Atqiya, M.Si., M.Sc.  
 **Dewan Penguji**: Pak Taufik Rahmat Kurniawan, S.Kom., M.T., Bu Rinanda Febriani, S.ST., M.T., Pak Nana Karyana Kurdi, S.E., M.Kom.  
 
 ---

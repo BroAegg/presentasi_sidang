@@ -84,7 +84,7 @@ export default function Slide01Cover() {
               <strong className="text-cream-100">Pembimbing I:</strong> Aila Gema Safitri, S.T., M.T.
             </p>
             <p className="text-cream-200">
-              <strong className="text-cream-100">Pembimbing II:</strong> Firas Atqiya, S.T., M.T.
+              <strong className="text-cream-100">Pembimbing II:</strong> Firas Atqiya, M.Si., M.Sc.
             </p>
           </div>
         </div>

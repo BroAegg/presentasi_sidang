@@ -11,7 +11,7 @@ Topic: **"IMPLEMENTASI FITUR AUTOFILL DATA CALON MAHASISWA MENGGUNAKAN TEKNOLOGI
 - **Presenter**: Aegner Billik (NIM: 220102007)
 - **Institution**: Program Studi Teknik Informatika, Fakultas Sains dan Teknologi, Universitas Muhammadiyah Bandung
 - **Dosen Pembimbing**:
-  1. Firas Atqiya, S.T., M.T. (Pembimbing I)
+  1. Firas Atqiya, M.Si., M.Sc. (Pembimbing II)
   2. Aila Gema Safitri, S.T., M.T. (Pembimbing II)
 - **Dewan Penguji**:
   1. Ririn Suharsih, S.Pd., M.T. (Ketua Penguji / Kaprodi)

@@ -2,7 +2,7 @@
 **Judul Skripsi**: Implementasi Fitur Autofill Data Calon Mahasiswa Menggunakan Teknologi Optical Character Recognition (OCR) Berbasis Tesseract pada Sistem PMB Universitas Muhammadiyah Bandung  
 **Penyusun**: Aegner Billik (NIM: 220102007) — Teknik Informatika UMB  
 **Pembimbing I**: Aila Gema Safitri, S.T., M.T.  
-**Pembimbing II**: Firas Atqiya, S.T., M.T.  
+**Pembimbing II**: Firas Atqiya, M.Si., M.Sc.  
 
 ---
 
