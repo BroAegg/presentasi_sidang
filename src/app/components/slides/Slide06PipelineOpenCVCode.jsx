@@ -90,7 +90,7 @@ export default function Slide06PipelineOpenCVCode() {
           ))}
         </div>
 
-        {/* Right Column: Slide 5 Image (Auto-fit bounded box) */}
+        {/* Right Column: Slide 5 Scrollable Bounded Image Container */}
         <motion.div
           variants={item}
           className="col-span-6 content-card p-3 flex flex-col justify-between overflow-hidden"
@@ -105,11 +105,11 @@ export default function Slide06PipelineOpenCVCode() {
             </span>
           </div>
 
-          <div className="image-placeholder w-full flex-1 h-[260px] max-h-[50vh] rounded-xl flex items-center justify-center p-2.5 bg-black/40 border border-white/10 overflow-hidden">
+          <div className="image-placeholder w-full flex-1 max-w-[360px] mx-auto h-[260px] max-h-[50vh] rounded-xl p-2 bg-black/40 border border-white/10 overflow-y-auto overflow-x-hidden flex flex-col items-center">
             <img
               src="/assets/slide5.jpeg"
               alt="Visualisasi Preprocessing Slide 5"
-              className="max-w-full max-h-full w-auto h-auto object-contain rounded-lg shadow-lg"
+              className="w-full h-auto object-contain rounded-lg shadow-lg my-auto"
               onError={(e) => {
                 if (!e.target.dataset.triedPng) {
                   e.target.dataset.triedPng = "true";

@@ -74,13 +74,13 @@ export default function Slide05MetodologiWaterfall() {
             </motion.div>
           </div>
 
-          {/* Right Column: Slide 4 Image (Auto-fit bounded box) */}
+          {/* Right Column: Scrollable Bounded Image Container */}
           <motion.div variants={item} className="col-span-6 flex items-center justify-center overflow-hidden">
-            <div className="image-placeholder w-full h-[320px] max-h-[55vh] rounded-xl flex items-center justify-center p-2.5 bg-black/40 border border-white/10 overflow-hidden">
+            <div className="image-placeholder w-full max-w-[360px] h-[340px] max-h-[55vh] rounded-xl p-2 bg-black/40 border border-white/10 overflow-y-auto overflow-x-hidden flex flex-col items-center">
               <img
                 src="/assets/slide4.jpeg"
                 alt="Diagram Waterfall Slide 4"
-                className="max-w-full max-h-full w-auto h-auto object-contain rounded-lg shadow-lg"
+                className="w-full h-auto object-contain rounded-lg shadow-lg my-auto"
                 onError={(e) => {
                   if (!e.target.dataset.triedPng) {
                     e.target.dataset.triedPng = "true";
